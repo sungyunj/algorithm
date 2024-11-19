@@ -28,3 +28,4 @@ if let T = Int(readLine()!) {
         print(result)
     }
 }
+
