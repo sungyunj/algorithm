@@ -18,3 +18,25 @@
 // 출력의 각 줄은 '#t'로 시작하고, 공백을 한 칸 둔 다음 정답을 출력한다.
 
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+
+import Foundation
+
+func findPatternLength(_ s: String) -> Int {
+    for length in 1...10 {
+        let pattern = String(s.prefix(length))
+        if s.hasPrefix(String(repeating: pattern, count: s.count / length)) {
+            return length
+        }
+    }
+    return s.count
+}
+
+if let T = Int(readLine()!) {
+    for t in 1...T {
+        if let testCase = readLine() {
+            let patternLength = findPatternLength(testCase)
+            print("#\(t) \(patternLength)")
+        }
+    }
+}
