@@ -37,5 +37,23 @@ def pascal(n):
         for j in range(1, i):
             row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j] # 왼쪽 위와 오른쪽 위 숫자의 합 계산
         triangle.append(row)
+
     return triangle
 
+# 테스트 케이스 입력 처리
+T = int(input())
+
+for t in range(1, T + 1):
+    N = int(input())
+
+    if not (1 <= N <= 10):
+        print("N 값은 1 이상 10 이하의 정수")
+        continue
+
+    # 파스칼의 삼각형
+    pascals_triangle = pascal(N)
+
+    print(f"#{t}")
+
+    for row in pascals_triangle:
+        print(' '.join(map(str, row)))
