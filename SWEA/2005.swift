@@ -32,6 +32,7 @@ func pascal(_ n: Int) -> [[Int]] {
     
     for i in 0..<n {
         var row = Array(repeating: 1, count: i + 1) // 각 줄은 1로 시작하고 끝남
+        
         for j in 1..<i {
             row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j] // 왼쪽 위와 오른쪽 위 숫자의 합 계산
         }
@@ -41,4 +42,18 @@ func pascal(_ n: Int) -> [[Int]] {
     return triangle
 }
 
-
+if let T = Int(readLine()!) {
+    for t in 1...T {
+        if let input = readLine(), let N = Int(input), (1...10).contains(N) {
+            // 파스칼의 삼각형 생성
+            let pascalsTriangle = pascal(N)
+            
+            print("#\(t)")
+            for row in pascalsTriangle {
+                print(row.map { String($0) }.joined(separator: " "))
+            }
+        } else {
+            print("N 값은 1 이상 10 이하의 정수")
+        }
+    }
+}
