@@ -22,3 +22,29 @@
 # 출력의 각 줄은 '#t'로 시작하고, 공백을 한 칸 둔 다음 정답을 출력한다.
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
 
+t = int(input())
+
+for i in range(1, t + 1):
+    n, m = map(int, input().split())
+
+    space = []
+    for _ in range(n):
+        a = list(map(int, input().split()))
+        space.append(a)
+
+    max_hap = 0
+
+    for j in range(n - m + 1):  # 시작 지점의 행 범위
+
+        for k in range(n - m + 1):  # 시작 지점의 열 범위
+            temp = 0
+
+            for l in range(j, j + m):  # MxM 영역의 행 순회
+                
+                for o in range(k, k + m):  # MxM 영역의 열 순회
+                    temp += space[l][o]
+
+            if temp > max_hap:
+                max_hap = temp
+
+    print(f'#{i} {max_hap}')
