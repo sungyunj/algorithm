@@ -21,3 +21,40 @@
 // [출력]
 // 출력의 각 줄은 '#t'로 시작하고, 공백을 한 칸 둔 다음 정답을 출력한다.
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+import Foundation
+
+if let t = Int(readLine()!) {
+    for i in 1...t {
+        // 첫 번째 줄 입력: n과 m
+        let nm = readLine()!.split(separator: " ").compactMap { Int($0) }
+        let n = nm[0]
+        let m = nm[1]
+        
+        // 2차원 배열 입력
+        var space: [[Int]] = []
+        for _ in 0..<n {
+            let row = readLine()!.split(separator: " ").compactMap { Int($0) }
+            space.append(row)
+        }
+        
+        var maxSum = 0
+        
+        // MxM 영역에서 최대 합 계산
+        for j in 0...(n - m) { // 시작 지점의 행 범위
+            for k in 0...(n - m) { // 시작 지점의 열 범위
+                var tempSum = 0
+                
+                for l in j..<(j + m) { // MxM 영역의 행 순회
+                    for o in k..<(k + m) { // MxM 영역의 열 순회
+                        tempSum += space[l][o]
+                    }
+                }
+                
+                maxSum = max(maxSum, tempSum)
+            }
+        }
+        
+        print("#\(i) \(maxSum)")
+    }
+}
