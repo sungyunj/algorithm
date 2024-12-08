@@ -14,3 +14,21 @@
 # [출력]
 # 출력의 각 줄은 '#t'로 시작하고, 공백을 한 칸 둔 다음 정답을 출력한다.
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+def reverse(word):
+    return word == word[::-1]
+
+def main():
+    T = int(input())
+    
+    results = []
+    for t in range(1, T + 1):
+        word = input().strip()
+        result = 1 if reverse(word) else 0
+        results.append(f"#{t} {result}")
+    
+    print()
+    print("\n".join(results))
+
+if __name__ == "__main__":
+    main()
