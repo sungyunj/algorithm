@@ -14,3 +14,26 @@
 // [출력]
 // 출력의 각 줄은 '#t'로 시작하고, 공백을 한 칸 둔 다음 정답을 출력한다.
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+import Foundation
+
+func isPalindrome(_ word: String) -> Bool {
+    return word == String(word.reversed())
+}
+
+func main() {
+    if let T = Int(readLine()!) {
+        var results: [String] = []
+        
+        for t in 1...T {
+            if let word = readLine() {
+                let result = isPalindrome(word) ? 1 : 0
+                results.append("#\(t) \(result)")
+            }
+        }
+        
+        print("\n" + results.joined(separator: "\n"))
+    }
+}
+
+main()
