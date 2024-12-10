@@ -20,3 +20,12 @@
 # [출력]
 # 각 줄은 '#t'로 시작하고, 공백을 한 칸 둔 다음 누적된 값을 출력한다.
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+T = int(input())\
+
+for i in range(1, T + 1):
+    n = int(input())
+    
+    result = sum(map(lambda x: -x if x % 2 == 0 else x, range(1, n + 1)))
+    
+    print(f"#{i} {result}")
