@@ -3,7 +3,6 @@
 // [예제 풀이]
 // N이 5일 경우,
 // 1 – 2 + 3 – 4 + 5 = 3
-
 // N이 6일 경우,
 // 1 – 2 + 3 – 4 + 5 – 6 = -3
 
@@ -32,7 +31,7 @@ if let T = Int(readLine()!) {
             let result = (1...n).reduce(0) { sum, num in
                 sum + (num % 2 == 0 ? -num : num)
             }
-            
+
             print("#\(i) \(result)")
         }
     }
