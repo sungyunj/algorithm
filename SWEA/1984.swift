@@ -16,3 +16,22 @@
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
 
 
+import Foundation
+
+if let T = Int(readLine() ?? "0") {
+    var results = [String]()
+    
+    for testCase in 1...T {
+
+        if let inputLine = readLine() {
+            let num = inputLine.split(separator: " ").compactMap { Int($0) }
+            let sortedNum = num.sorted()
+            let total = sortedNum[1...8].reduce(0, +)
+            let average = Int(round(Double(total) / 8.0))
+            
+            results.append("#\(testCase) \(average)")
+        }
+    }
+    
+    results.forEach { print($0) }
+}
