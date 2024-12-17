@@ -30,3 +30,25 @@
 # [출력]
 # 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+
+T = int(input())
+
+for test_case in range(1, T + 1):
+    N, K = map(int, input().split())
+    grade = ['A+', 'A0', 'A-', 'B+', 'B0', 'B-', 'C+', 'C0', 'C-', 'D0']  # 학점 리스트
+
+    scores = []
+
+    for i in range(N):
+        mid, final, assign = map(int, input().split())  # 중간, 기말, 과제
+        total = mid * 0.35 + final * 0.45 + assign * 0.2  # 총점
+        scores.append((total, i + 1))  # 총점, 학생 번호
+
+    scores.sort(reverse=True, key=lambda x: x[0])
+
+    k_index = [student[1] for student in scores].index(K)
+    
+    grade_index = k_index // (N // 10)
+
+    print(f"#{test_case} {grade[grade_index]}")
