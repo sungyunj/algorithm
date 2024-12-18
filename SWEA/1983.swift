@@ -31,3 +31,34 @@
 // 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
 
+import Foundation
+
+if let T = Int(readLine()!) {
+    for testCase in 1...T {
+        // N과 K 입력
+        let firstLine = readLine()!.split(separator: " ").compactMap { Int($0) }
+        let N = firstLine[0]
+        let K = firstLine[1]
+        
+        let grades = ["A+", "A0", "A-", "B+", "B0", "B-", "C+", "C0", "C-", "D0"] // 학점 리스트
+        var scores: [(total: Double, student: Int)] = [] // 총점과 학생 번호를 저장
+        
+        for student in 1...N {
+            let line = readLine()!.split(separator: " ").compactMap { Double($0) }
+            let mid = line[0], final = line[1], assign = line[2]
+            
+            // 총점 계산
+            let total = mid * 0.35 + final * 0.45 + assign * 0.2
+            scores.append((total: total, student: student))
+        }
+        
+        scores.sort { $0.total > $1.total }
+        
+        // K번 학생의 순위 찾기
+        let kIndex = scores.firstIndex { $0.student == K }!
+
+        let gradeIndex = kIndex / (N / 10)
+        
+        print("#\(testCase) \(grades[gradeIndex])")
+    }
+}
