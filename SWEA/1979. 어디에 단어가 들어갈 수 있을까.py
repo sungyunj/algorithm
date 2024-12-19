@@ -17,3 +17,29 @@
 # [출력]
 # 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+T = int(input())  # 테스트 케이스 수 입력
+
+for test_case in range(1, T + 1):
+    # N, K 입력
+    N, K = map(int, input().split())
+    
+    # 퍼즐 보드 입력
+    board = [input().split() for _ in range(N)]
+    
+    match_string = '1' * K  # 찾으려는 연속된 1의 문자열
+
+    # 행 순회
+    row_cnt = 0
+    for row in board:
+        str_row = "".join(row).split("0")
+        row_cnt += str_row.count(match_string)
+
+    # 열 순회
+    col_cnt = 0
+    for col in zip(*board):  # 열을 추출
+        str_col = "".join(col).split("0")
+        col_cnt += str_col.count(match_string)
+
+    # 결과 출력
+    print(f"#{test_case} {row_cnt + col_cnt}")
