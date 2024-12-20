@@ -18,3 +18,39 @@
 // 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
 
+import Foundation
+
+if let T = Int(readLine()!) {
+    
+    for testCase in 1...T {
+        // N과 K 입력
+        let firstLine = readLine()!.split(separator: " ").compactMap { Int($0) }
+        let N = firstLine[0]
+        let K = firstLine[1]
+        
+        // 퍼즐 보드 입력
+        var board: [[String]] = []
+        for _ in 0..<N {
+            let row = readLine()!.split(separator: " ").map { String($0) }
+            board.append(row)
+        }
+        
+        let matchString = String(repeating: "1", count: K)
+
+        var rowCount = 0
+        for row in board {
+            let strRow = row.joined().components(separatedBy: "0")
+            rowCount += strRow.filter { $0 == matchString }.count
+        }
+        
+        // 열 순회
+        var colCount = 0
+        for col in 0..<N {
+            let column = (0..<N).map { board[$0][col] }
+            let strCol = column.joined().components(separatedBy: "0")
+            colCount += strCol.filter { $0 == matchString }.count
+        }
+
+        print("#\(testCase) \(rowCount + colCount)")
+    }
+}
