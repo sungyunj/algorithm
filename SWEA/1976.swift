@@ -17,3 +17,29 @@
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
 
 
+import Foundation
+
+if let T = Int(readLine()!) {
+    for testCase in 1...T {
+        // a, b, c, d 입력
+        let timeInputs = readLine()!.split(separator: " ").compactMap { Int($0) }
+        let a = timeInputs[0], b = timeInputs[1], c = timeInputs[2], d = timeInputs[3]
+
+        // 시간과 분 합산
+        var totalHour = a + c
+        var totalMinute = b + d
+
+        // 분이 60 이상일 경우 시간 추가 및 분 조정
+        if totalMinute >= 60 {
+            totalHour += 1
+            totalMinute -= 60
+        }
+
+        // 시간이 12를 초과하면 12시간제로 변경
+        if totalHour > 12 {
+            totalHour -= 12
+        }
+
+        print("#\(testCase) \(totalHour) \(totalMinute)")
+    }
+}
