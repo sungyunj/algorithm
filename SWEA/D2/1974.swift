@@ -16,3 +16,51 @@
 // [출력]
 // 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+import Foundation
+
+if let T = Int(readLine()!) {
+    for testCase in 1...T {
+        var arr: [[Int]] = []
+        
+        // 9x9 스도쿠 배열 입력
+        for _ in 0..<9 {
+            let row = readLine()!.split(separator: " ").compactMap { Int($0) }
+            arr.append(row)
+        }
+        
+        func checkSudoku() -> Int {
+            // 조건 1: 3x3 박스 검사
+            for r in stride(from: 0, to: 9, by: 3) {
+                for c in stride(from: 0, to: 9, by: 3) {
+                    var numbersBox: [Int] = []
+                    for i in 0..<3 {
+                        for j in 0..<3 {
+                            numbersBox.append(arr[r + i][c + j])
+                        }
+                    }
+                    if numbersBox.sorted() != Array(1...9) { // 1~9 포함 확인
+                        return 0
+                    }
+                }
+            }
+
+            // 조건 2: 가로와 세로 검사
+            for i in 0..<9 {
+                var row: [Int] = []
+                var column: [Int] = []
+                for j in 0..<9 {
+                    row.append(arr[i][j])      // i번째 행
+                    column.append(arr[j][i])  // i번째 열
+                }
+                if row.sorted() != Array(1...9) || column.sorted() != Array(1...9) {
+                    return 0
+                }
+            }
+
+            return 1
+        }
+
+        print("#\(testCase) \(checkSudoku())")
+    }
+}
