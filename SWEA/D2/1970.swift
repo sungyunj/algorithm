@@ -35,3 +35,25 @@
 // [출력]
 // 각 줄은 '#t'로 시작하고, 다음줄에 각 돈의 종류마다 필요한 개수를 빈칸을 사이에 두고 출력한다.
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+import Foundation
+
+if let T = Int(readLine()!) {
+    let currency = [50000, 10000, 5000, 1000, 500, 100, 50, 10]
+
+    for testCase in 1...T {
+        if let N = Int(readLine()!) {
+            var amount = N
+            var result: [Int] = []
+
+            for unit in currency {
+                let count = amount / unit
+                result.append(count)
+                amount %= unit
+            }
+
+            print("#\(testCase)")
+            print(result.map { String($0) }.joined(separator: " "))
+        }
+    }
+}
