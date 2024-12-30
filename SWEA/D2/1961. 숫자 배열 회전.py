@@ -16,3 +16,22 @@
 # 입력과는 달리 출력에서는 회전한 모양 사이에만 공백이 존재함에 유의하라.
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
 
+T = int(input())
+
+for test in range(1, T + 1):
+    N = int(input())
+    field = [list(map(int, input().split())) for _ in range(N)]
+
+    # 90도, 180도, 270도 회전 행렬 생성
+    rotated_90 = [[field[N - 1 - j][i] for j in range(N)] for i in range(N)]
+    rotated_180 = [[field[N - 1 - i][N - 1 - j] for j in range(N)] for i in range(N)]
+    rotated_270 = [[field[j][N - 1 - i] for j in range(N)] for i in range(N)]
+
+
+    print(f'#{test}')
+    for i in range(N):
+        print(
+            "".join(map(str, rotated_90[i])),
+            "".join(map(str, rotated_180[i])),
+            "".join(map(str, rotated_270[i]))
+        )
