@@ -53,5 +53,6 @@ if let T = Int(readLine()!) {
             maxSum = max(maxSum, tempSum)
 
         print("#\(t) \(maxSum)")
+        }   
     }
 }
