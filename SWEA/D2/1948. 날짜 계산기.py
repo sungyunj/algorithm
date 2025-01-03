@@ -15,3 +15,31 @@
 
 # [출력]
 # 출력의 각 줄은 '#t'로 시작하고, 공백을 한 칸 둔 다음 정답을 출력한다. (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+T = int(input())
+
+
+month_days = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}
+
+for test_case in range(1, T + 1):
+    
+    arr = list(map(int, input().split()))
+    start_month, start_day, end_month, end_day = arr[0], arr[1], arr[2], arr[3]
+
+    ans = 0
+
+    if start_month == end_month:
+        # 같은 달인 경우
+        ans = end_day - start_day + 1
+    else:
+        # 시작 월의 남은 일수 추가
+        ans += month_days[start_month] - start_day + 1
+        
+        # 시작 월, 종료 월 사이의 월의 일수를 모두 더함
+        for month in range(start_month + 1, end_month):
+            ans += month_days[month]
+
+        # 종료 월의 일수 추가
+        ans += end_day
+
+    print(f'#{test_case} {ans}')
