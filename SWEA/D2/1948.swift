@@ -15,3 +15,39 @@
 
 // [출력]
 // 출력의 각 줄은 '#t'로 시작하고, 공백을 한 칸 둔 다음 정답을 출력한다. (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+
+import Foundation
+
+let monthDays: [Int: Int] = [
+    1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30,
+    7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31
+]
+
+if let T = Int(readLine()!) {
+    for testCase in 1...T {
+        
+        let arr = readLine()!.split(separator: " ").compactMap { Int($0) }
+        let startMonth = arr[0], startDay = arr[1], endMonth = arr[2], endDay = arr[3]
+        
+        var ans = 0
+
+        if startMonth == endMonth {
+            // 같은 달인 경우
+            ans = endDay - startDay + 1
+        } else {
+            // 시작 월 남은 일수 추가
+            ans += (monthDays[startMonth] ?? 0) - startDay + 1
+            
+            // 시작 월, 종료 월 사이 모든 월 일수 더함
+            for month in (startMonth + 1)..<endMonth {
+                ans += monthDays[month] ?? 0
+            }
+
+            // 종료 월 일수 추가
+            ans += endDay
+        }
+
+        print("#\(testCase) \(ans)")
+    }
+}
