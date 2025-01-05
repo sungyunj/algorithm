@@ -29,3 +29,19 @@
 # [출력]
 # 각 줄은 '#t'로 시작하고, 다음 줄부터 원본 문서를 출력한다.
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+
+T = int(input())
+
+for test_case in range(1, T + 1):
+    N = int(input())
+    result = ""  # 압축 해제된 문자열 저장할 변수
+
+    for _ in range(N):
+        Ci, Ki = input().split()  # 알파벳, 개수를 입력
+        result += Ci * int(Ki)  # 압축 해제
+
+    print(f"#{test_case}")
+    # 원본 문서 너비 10으로
+    for i in range(0, len(result), 10):
+        print(result[i:i + 10])  # 10개씩 출력
