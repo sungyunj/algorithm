@@ -30,3 +30,32 @@
 // # 각 줄은 '#t'로 시작하고, 다음 줄부터 원본 문서를 출력한다.
 // # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
 
+
+import Foundation
+
+if let T = Int(readLine()!) {
+
+    for testCase in 1...T {
+
+        if let N = Int(readLine()!) {
+            var result = "" // 압축 해제된 문자열 저장
+            
+            for _ in 0..<N {
+                let input = readLine()!.split(separator: " ")
+                let Ci = String(input[0])
+                let Ki = Int(input[1]) ?? 0
+                result += String(repeating: Ci, count: Ki)
+            }
+            
+            print("#\(testCase)")
+            // 원본 문서를 너비 10으로 나눠 출력
+            for i in stride(from: 0, to: result.count, by: 10) {
+
+                let startIndex = result.index(result.startIndex, offsetBy: i)
+                let endIndex = result.index(startIndex, offsetBy: min(10, result.count - i), limitedBy: result.endIndex) ?? result.endIndex
+                
+                print(String(result[startIndex..<endIndex]))
+            }
+        }
+    }
+}
