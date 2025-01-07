@@ -17,3 +17,18 @@
 # 출력의 각 줄은 '#t'로 시작하고, 공백을 한 칸 둔 다음 정답을 출력한다.
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
 
+
+T = int(input())
+
+for i in range(1, T + 1):
+
+    N = int(input())
+    d = {2: 0, 3: 0, 5: 0, 7: 0, 11: 0}  # 소인수 초기화
+
+    for num in d.keys():
+
+        while N % num == 0:
+            d[num] += 1
+            N //= num 
+
+    print(f'#{i} {" ".join(map(str, d.values()))}')
