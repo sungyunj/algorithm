@@ -16,3 +16,24 @@
 // [출력]
 // 출력의 각 줄은 '#t'로 시작하고, 공백을 한 칸 둔 다음 정답을 출력한다.
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+import Foundation
+
+if let T = Int(readLine()!) {
+    for i in 1...T {
+        if let N = Int(readLine()!) {
+            var number = N
+            var factors = [2: 0, 3: 0, 5: 0, 7: 0, 11: 0] // 소인수 초기화
+            
+            for key in factors.keys.sorted() {
+                while number % key == 0 {
+                    factors[key]! += 1
+                    number /= key
+                }
+            }
+            
+            let result = factors.values.map { String($0) }.joined(separator: " ")
+            print("#\(i) \(result)")
+        }
+    }
+}
