@@ -33,3 +33,35 @@
 # [출력]
 # 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+
+def calculate_distance():
+    
+    T = int(input())
+    results = []
+
+    for t in range(1, T + 1):
+
+        N = int(input())
+        speed = 0
+        distance = 0
+
+        for _ in range(N):
+
+            command = list(map(int, input().split()))
+
+            if command[0] == 0:  # 속도 유지
+                pass
+            elif command[0] == 1:  # 가속
+                speed += command[1]
+            elif command[0] == 2:  # 감속
+                speed = max(0, speed - command[1])
+
+            distance += speed
+
+        results.append(f"#{t} {distance}")
+
+    for result in results:
+        print(result)
+
+calculate_distance()
