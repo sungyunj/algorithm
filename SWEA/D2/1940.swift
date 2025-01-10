@@ -34,3 +34,41 @@
 // 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
 
+
+import Foundation
+
+func calculateDistance() {
+    
+    if let T = Int(readLine()!) {
+        var results: [String] = []
+        
+        for t in 1...T {
+
+            if let N = Int(readLine()!) {
+                var speed = 0
+                var distance = 0
+                
+                for _ in 0..<N {
+
+                    if let command = readLine()?.split(separator: " ").compactMap({ Int($0) }) {
+                        if command[0] == 1 { // 가속
+                            speed += command[1]
+                        } else if command[0] == 2 { // 감속
+                            speed = max(0, speed - command[1])
+                        }
+                        // 속도 유지일 경우 (command[0] == 0) 처리 없음
+                    }
+                    distance += speed
+                }
+                
+                results.append("#\(t) \(distance)")
+            }
+        }
+        
+        for result in results {
+            print(result)
+        }
+    }
+}
+
+calculateDistance()
