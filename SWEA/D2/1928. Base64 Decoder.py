@@ -18,3 +18,29 @@
 # 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
 
+
+base64_table = list("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/")
+
+T = int(input())
+
+results = []
+
+for t in range(1, T + 1):
+
+    encoded_string = input()
+    
+    # Base64 디코딩 임시 변수
+    temp = ""
+    for char in encoded_string:
+        # Base64 문자 6비트 바이너리로 변환
+        temp += format(base64_table.index(char), '06b')
+    
+    # 디코딩된 원문
+    decoded_string = ""
+    for k in range(0, len(temp), 8):
+        # 8비트씩 자르고 ASCII 문자로 변환
+        decoded_string += chr(int(temp[k:k+8], 2))
+
+    results.append(f"#{t} {decoded_string}")
+
+print("\n".join(results))
