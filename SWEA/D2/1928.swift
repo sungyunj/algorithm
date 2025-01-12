@@ -17,3 +17,49 @@
 // [출력]
 // 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+import Foundation
+
+let base64Table = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/")
+
+if let T = Int(readLine()!) {
+    var results: [String] = []
+    
+    for t in 1...T {
+        if let encodedString = readLine() {
+            var temp = ""
+            
+            // Base64 문자 6비트 바이너리로 변환
+            for char in encodedString {
+                if let index = base64Table.firstIndex(of: char) {
+                    temp += String(index, radix: 2).leftPadded(to: 6)
+                }
+            }
+            
+            // 디코딩된 원문
+            var decodedString = ""
+            var currentIndex = temp.startIndex
+            
+            while currentIndex < temp.endIndex {
+                let nextIndex = temp.index(currentIndex, offsetBy: 8, limitedBy: temp.endIndex) ?? temp.endIndex
+                let binaryString = String(temp[currentIndex..<nextIndex])
+                if let asciiValue = Int(binaryString, radix: 2), let scalar = Unicode.Scalar(asciiValue) {
+                    decodedString.append(Character(scalar))
+                }
+                currentIndex = nextIndex
+            }
+            
+            results.append("#\(t) \(decodedString)")
+        }
+    }
+    
+    results.forEach { print($0) }
+}
+
+extension String {
+    /// 문자열을 주어진 길이로 왼쪽에 0을 추가하여 패딩 처리
+    func leftPadded(to length: Int) -> String {
+        let paddingCount = max(0, length - self.count)
+        return String(repeating: "0", count: paddingCount) + self
+    }
+}
