@@ -29,3 +29,21 @@
 # 각 테스트 케이스마다 ‘#x’(x는 테스트케이스 번호를 의미하며 1부터 시작한다)를 출력하고,
 # 최소 몇 번 양을 세었을 때 이전에 봤던 숫자들의 자릿수에서 0에서 9까지의 모든 숫자를 보게 되는지 출력한다.
 # ( 호석이는 xN번 양을 세고 있다. )
+
+
+T = int(input())
+
+for test_case in range(1, T + 1):
+
+    N = int(input())
+    seen_digits = set()  # 0에서 9까지 본 숫자를 저장할 집합
+    k = 0  # 몇 번째 양을 셌는지 기록
+    
+    while len(seen_digits) < 10:  # 모든 숫자를 다 볼 때까지
+
+        k += 1
+        current_number = N * k  # 현재 k번째 양의 번호
+        seen_digits.update(str(current_number))  # 숫자를 문자열로 변환해 자릿수를 추가
+
+    
+    print(f'#{test_case} {current_number}')
