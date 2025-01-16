@@ -28,3 +28,29 @@
 // [출력]
 // 각 테스트 케이스마다 ‘#x’(x는 테스트케이스 번호를 의미하며 1부터 시작한다)를 출력하고,
 // 최소 몇 번 양을 세었을 때 이전에 봤던 숫자들의 자릿수에서 0에서 9까지의 모든 숫자를 보게 되는지 출력한다.
+// ( 호석이는 xN번 양을 세고 있다. )
+
+
+import Foundation
+
+if let T = Int(readLine()!) {
+
+    for testCase in 1...T {
+
+        if let N = Int(readLine()!) {
+            
+            var seenDigits = Set<Character>() // 0에서 9까지 본 숫자를 저장할 집합
+            var k = 0 // 몇 번째 양을 셌는지 기록
+            var currentNumber = 0
+            
+            while seenDigits.count < 10 {
+                k += 1
+                currentNumber = N * k // 현재 k번째 양의 번호
+                seenDigits.formUnion(String(currentNumber)) // 숫자를 문자열로 변환해 자릿수를 추가
+            }
+            
+            print("#\(testCase) \(currentNumber)")
+        }
+    }
+}
+
