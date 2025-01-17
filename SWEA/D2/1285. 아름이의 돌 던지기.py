@@ -13,3 +13,26 @@
 # 각 테스트 케이스마다 ‘#x’(x는 테스트케이스 번호를 의미하며 1부터 시작한다)를 출력하고,
 # 돌이 가장 0에 가깝게 떨어진 곳과 0 사이의 거리 차이와 그렇게 던진 사람이 몇 명인지 나타내는 정수를 공백 하나로 구분하여 출력한다.
 
+
+T = int(input())
+
+for test_case in range(1, T + 1):
+    
+    N = int(input())
+   
+    distances = list(map(int, input().split()))
+
+    min_distance = 100001
+    count = 0
+
+    for distance in distances:
+        current_distance = abs(distance)
+
+        if current_distance < min_distance:
+            min_distance = current_distance
+            count = 1  # 새로운 최소 거리가 나오면 카운트 초기화
+
+        elif current_distance == min_distance:
+            count += 1  # 최소 거리와 같은 경우 카운트 증가
+
+    print(f'#{test_case} {min_distance} {count}')
