@@ -12,3 +12,33 @@
 // [출력]
 // 각 테스트 케이스마다 ‘#x’(x는 테스트케이스 번호를 의미하며 1부터 시작한다)를 출력하고,
 // 돌이 가장 0에 가깝게 떨어진 곳과 0 사이의 거리 차이와 그렇게 던진 사람이 몇 명인지 나타내는 정수를 공백 하나로 구분하여 출력한다.
+
+
+import Foundation
+
+if let T = Int(readLine()!) {
+
+    for testCase in 1...T {
+
+        if let N = Int(readLine()!) {
+            let distances = readLine()!.split(separator: " ").compactMap { Int($0) }
+            
+            var minDistance = 100001
+            var count = 0
+            
+            for distance in distances {
+                let currentDistance = abs(distance)
+                
+                if currentDistance < minDistance {
+                    minDistance = currentDistance
+                    count = 1 // 새로운 최소 거리가 나오면 카운트를 초기화
+                } 
+                else if currentDistance == minDistance {
+                    count += 1 // 최소 거리와 같은 경우 카운트 증가
+                }
+            }
+            
+            print("#\(testCase) \(minDistance) \(count)")
+        }
+    }
+}
