@@ -13,3 +13,21 @@
 
 # [출력]
 # 각 테스트 케이스마다 ‘#x’(x는 테스트케이스 번호를 의미하며 1부터 시작한다)를 출력하고, 종민이가 내야 하는 수도 요금을 출력한다.
+
+
+T = int(input())
+
+for test_case in range(1, T + 1):
+    
+    p, q, r, s, w = map(int, input().split())
+    
+    # A사
+    a = p * w
+    
+    # B사
+    if w <= r:
+        b = q  # 사용량이 기본량 이하
+    else:
+        b = q + (w - r) * s  # 초과 추가 요금
+
+    print(f"#{test_case} {min(a, b)}")
