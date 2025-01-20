@@ -13,3 +13,30 @@
 
 // [출력]
 // 각 테스트 케이스마다 ‘#x’(x는 테스트케이스 번호를 의미하며 1부터 시작한다)를 출력하고, 종민이가 내야 하는 수도 요금을 출력한다.
+
+
+
+import Foundation
+
+if let T = Int(readLine()!) {
+
+    for testCase in 1...T {
+
+        let inputs = readLine()!.split(separator: " ").compactMap { Int($0) }
+        let (p, q, r, s, w) = (inputs[0], inputs[1], inputs[2], inputs[3], inputs[4])
+        
+        // A사 요금 계산
+        let a = p * w
+        
+        // B사 요금 계산
+        let b: Int
+
+        if w <= r {
+            b = q // 사용량 기본량 이하
+        } else {
+            b = q + (w - r) * s // 초과 요금
+        }
+
+        print("#\(testCase) \(min(a, b))")
+    }
+}
