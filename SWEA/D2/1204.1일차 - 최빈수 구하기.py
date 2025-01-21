@@ -17,3 +17,27 @@
 # [출력]
 # #부호와 함께 테스트 케이스의 번호를 출력하고, 공백 문자 후 테스트 케이스에 대한 답을 출력한다.
 
+
+T = int(input())
+
+for test_case in range(1, T + 1):
+    test_case_number = int(input())
+    num_list = list(map(int, input().split()))
+    
+    # 점수 카운트 리스트
+    num_check = [0] * 101
+
+    # 점수 빈도수 카운트
+    for score in num_list:
+        num_check[score] += 1
+
+    # 최빈수 여러 개일 경우 가장 큰 점수 선택
+    max_index = 0
+    max_count = 0
+    
+    for score in range(101):
+        if num_check[score] > max_count or (num_check[score] == max_count and score > max_index):
+            max_index = score
+            max_count = num_check[score]
+
+    print(f"#{test_case_number} {max_index}")
