@@ -16,3 +16,35 @@
 
 // [출력]
 // #부호와 함께 테스트 케이스의 번호를 출력하고, 공백 문자 후 테스트 케이스에 대한 답을 출력한다.
+
+
+import Foundation
+
+if let T = Int(readLine()!) {
+    
+    for _ in 1...T {
+        let testCaseNumber = Int(readLine()!)!
+        let numList = readLine()!.split(separator: " ").compactMap { Int($0) }
+        
+        // 점수 카운트 배열
+        var numCheck = Array(repeating: 0, count: 101)
+        
+        // 점수 빈도수 카운트
+        for score in numList {
+            numCheck[score] += 1
+        }
+        
+        // 최빈수와 그 빈도를 저장
+        var maxIndex = 0
+        var maxCount = 0
+        
+        for score in 0...100 {
+            if numCheck[score] > maxCount || (numCheck[score] == maxCount && score > maxIndex) {
+                maxIndex = score
+                maxCount = numCheck[score]
+            }
+        }
+        
+        print("#\(testCaseNumber) \(maxIndex)")
+    }
+}
