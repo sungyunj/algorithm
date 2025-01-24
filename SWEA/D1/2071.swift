@@ -13,3 +13,18 @@
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
 
 
+import Foundation
+
+if let T = Int(readLine()!) {
+
+    for i in 1...T {
+        
+        let tenNums = readLine()!.split(separator: " ").compactMap { Double($0) }
+        
+        // 평균 계산
+        let answer = tenNums.reduce(0, +) / 10
+        
+        // 결과 출력
+        print("#\(i) \(Int(round(answer)))")
+    }
+}
