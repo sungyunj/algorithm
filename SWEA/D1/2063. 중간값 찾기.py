@@ -20,3 +20,10 @@
 
 # [출력]
 # N 개의 점수들 중, 중간값에 해당하는 점수를 정답으로 출력한다.
+
+T = int(input())
+
+lst = list(map(int,input().split()))
+lst.sort()
+
+print(lst[round(T/2)]-1)
