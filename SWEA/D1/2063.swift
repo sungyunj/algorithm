@@ -20,3 +20,14 @@
 
 // [출력]
 // N 개의 점수들 중, 중간값에 해당하는 점수를 정답으로 출력한다.
+
+
+import Foundation
+
+if let T = Int(readLine()!) {
+    
+    var lst = readLine()!.split(separator: " ").compactMap { Int($0) }
+    lst.sort()
+    
+    print(lst[T / 2] - 1)
+}
