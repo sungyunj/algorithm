@@ -13,3 +13,24 @@
 // [출력]
 // 출력의 각 줄은 '#t'로 시작하고, 공백을 한 칸 둔 다음 정답을 출력한다.
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+
+import Foundation
+
+if let T = Int(readLine()!) {
+
+    var results = [String]()
+
+    for i in 1...T {
+
+        let a = readLine()!.split(separator: " ").compactMap { Int($0) }
+
+        let oddSum = a.filter { $0 % 2 == 1 }.reduce(0, +)
+        results.append("#\(i) \(oddSum)")
+    }
+
+    for result in results {
+        
+        print(result)
+    }
+}
