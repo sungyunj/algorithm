@@ -13,3 +13,7 @@
 # 각 자릿수의 합을 출력한다.
 
 
+
+T = map(int,str(input()))
+
+print(sum(T))
