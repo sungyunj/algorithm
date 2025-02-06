@@ -12,3 +12,12 @@
 // [출력]
 // 각 자릿수의 합을 출력한다.
 
+
+import Foundation
+
+if let T = readLine() {
+    
+    let sumOfDigits = T.compactMap { Int(String($0)) }.reduce(0, +)
+
+    print(sumOfDigits)
+}
