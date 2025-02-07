@@ -37,3 +37,32 @@
 # 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+
+
+T = int(input())
+
+max_days = {
+    1: 31, 2: 28, 3: 31,
+    4: 30, 5: 31, 6: 30,
+    7: 31, 8: 31, 9: 30,
+    10: 31, 11: 30, 12: 31
+}
+
+for t in range(1, T+1):
+
+    date = input()  # 8자리 날짜
+    
+    # 연, 월, 일
+    year = date[0:4]
+    month = int(date[4:6])
+    day = int(date[6:8])
+    
+    # 월 1~12 사이, 일은 해당 월의 1일~최대 일 수 사이
+    if month in max_days and 1 <= day <= max_days[month]:
+        result = f"{year}/{date[4:6]}/{date[6:8]}"
+    else:
+        result = -1
+
+    print(f"#{t} {result}")
+
