@@ -37,3 +37,42 @@
 // 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+
+import Foundation
+
+let maxDays: [Int: Int] = [
+    1: 31, 2: 28, 3: 31,
+    4: 30, 5: 31, 6: 30,
+    7: 31, 8: 31, 9: 30,
+    10: 31, 11: 30, 12: 31
+]
+
+if let T = Int(readLine()!) {
+
+    for t in 1...T {
+
+        if let date = readLine(), date.count == 8, let month = Int(date[4..<6]), let day = Int(date[6..<8]) {
+
+            let year = date.prefix(4)
+            
+            if let maxDay = maxDays[month], (1...maxDay).contains(day) {
+                print("#\(t) \(year)/\(date[4..<6])/\(date[6..<8])")
+            } 
+            else {
+                print("#\(t) -1")
+            }
+        }
+    }
+}
+
+
+extension String {
+
+    subscript(range: Range<Int>) -> String {
+        
+        let start = index(startIndex, offsetBy: range.lowerBound)
+        let end = index(startIndex, offsetBy: range.upperBound)
+        return String(self[start..<end])
+    }
+}
