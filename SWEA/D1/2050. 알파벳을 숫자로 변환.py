@@ -11,4 +11,23 @@
 
 # [출력]
 # 각 알파벳을 숫자로 변환한 결과값을 빈 칸을 두고 출력한다.
- 
+
+
+
+def alphabet(T):
+    result = []
+
+    for char in T:
+        # 아스키 코드를 이용
+        number = ord(char) - ord('A') + 1
+        result.append(number)
+
+    return result
+
+
+T = input()
+
+result = alphabet(T)
+
+
+print(' '.join(map(str, result)))
