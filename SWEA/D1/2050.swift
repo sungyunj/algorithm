@@ -11,3 +11,24 @@
 
 // [출력]
 // 각 알파벳을 숫자로 변환한 결과값을 빈 칸을 두고 출력한다.
+
+
+import Foundation
+
+func alphabet(_ T: String) -> [Int] {
+    var result: [Int] = []
+    
+    for char in T {
+        if let asciiValue = char.asciiValue {
+            result.append(Int(asciiValue) - Int(Character("A").asciiValue!) + 1)
+        }
+    }
+    
+    return result
+}
+
+if let T = readLine() {
+    
+    let result = alphabet(T)
+    print(result.map { String($0) }.joined(separator: " "))
+}
