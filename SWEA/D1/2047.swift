@@ -20,3 +20,8 @@
 
 // [출력]
 // 문자열의 소문자를 모두 대문자로 변경한 결과를 출력한다.
+
+if let a = readLine() {
+
+    print(a.uppercased())
+}
