@@ -13,3 +13,15 @@
 # 몇 번 만에 비밀번호를 맞출 수 있는지 출력한다.
 
 
+T = list(map(int,input().split(" ")))
+
+if T[0] > T[1]:
+
+    print(T[0]-T[1]+1)
+
+elif T[0] == T[1]:
+
+    print(0)
+    
+else:
+    print(T[0]-T[1]+1)
