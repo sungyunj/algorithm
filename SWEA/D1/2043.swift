@@ -11,3 +11,19 @@
 
 // [출력]
 // 몇 번 만에 비밀번호를 맞출 수 있는지 출력한다.
+
+
+if let input = readLine() {
+
+    let T = input.split(separator:" ").compactMap { Int($0) }
+
+    if T.count == 2 {
+
+        if T[0] > T[1] || T[0] < T[1] {
+            print(T[0] - T[1] + 1)
+        }
+        else {
+            print(0)
+        }
+    }
+}
