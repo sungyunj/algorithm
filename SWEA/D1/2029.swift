@@ -12,3 +12,22 @@
 // [출력]
 // 출력의 각 줄은 '#t'로 시작하고 공백을 한 칸 둔 다음, 몫을 출력하고 공백을 한 칸 둔 다음 나머지를 출력한다.
 // (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
+
+
+
+
+if let T = Int(readLine()!) {
+
+    for test_case in 1...T {
+        
+        if let input = readLine() {
+            let numbers = input.split(separator: " ").compactMap { Int($0) }
+            
+            if numbers.count == 2 {
+                let a = numbers[0]
+                let b = numbers[1]
+                print("#\(test_case) \(a / b) \(a % b)")
+            }
+        }
+    }
+}
