@@ -6,3 +6,14 @@
 // 주어진 숫자가 10 일 경우 출력해야 할 정답은,
 
 // 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55
+
+if let T = Int(readLine()!) {
+
+    var total = 0
+
+    for i in 0...T {
+        total += i
+    }
+
+    print(total)
+}
