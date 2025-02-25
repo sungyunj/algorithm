@@ -13,3 +13,8 @@
  
 # [출력]
 # 사칙연산의 결과를 각 줄에 순서대로 출력한다.
+
+
+a,b = map(int,input().split())
+
+print(a+b,"\n",a-b,"\n",a*b,"\n",a//b,sep='')
