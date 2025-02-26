@@ -15,3 +15,11 @@
 // 사칙연산의 결과를 각 줄에 순서대로 출력한다.
 
 
+
+if let T = readLine()?.split(separator: " ").map({Int($0)!}) {
+
+    let a = T[0]
+    let b = T[1]
+
+    print(a + b, "\n", a - b, "\n", a * b, "\n", a / b, separator: "")
+}
