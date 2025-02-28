@@ -12,3 +12,17 @@
 
 // [출력]
 // 정수 N의 모든 약수를 오름차순으로 출력한다.
+
+
+import Foundation
+
+if let input = readLine(), let N = int(input) {
+
+    for i in 1...N {
+
+        if N % i == 0 {
+            print(i, terminator: " ")
+        }
+    }
+
+}
