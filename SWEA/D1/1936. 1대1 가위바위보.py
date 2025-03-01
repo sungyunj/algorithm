@@ -12,3 +12,12 @@
 
 # [출력]
 # A가 이기면 A, B가 이기면 B를 출력한다.
+
+
+a, b = map(int, input().split())
+
+# 가위(1), 바위(2), 보(3)
+if (a == 1 and b == 3) or (a == 2 and b == 1) or (a == 3 and b == 2):
+    print("A")
+else:
+    print("B")
