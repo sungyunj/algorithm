@@ -13,3 +13,20 @@
 // A가 이기면 A, B가 이기면 B를 출력한다.
 
 
+
+import Foundation
+
+if let input = readLine() {
+
+    let numbers = input.split(separator: " ")
+    if let a = Int(numbers[0]), let b = Int(numbers[1]) {
+
+        if (a == 1 and b == 3) || (a == 2 and b == 1) || (a == 3 and b == 2) {
+        print("A")
+        }
+        else
+        {
+        print("B")
+        }
+    }
+}
