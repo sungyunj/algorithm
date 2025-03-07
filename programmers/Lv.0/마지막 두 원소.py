@@ -22,3 +22,14 @@
 
 # 입출력 예 #2
 # 마지막 원소인 5가 그전 원소인 7보다 크지 않기 때문에 5의 두 배인 10을 추가해 return합니다.
+
+
+
+def solution(num_list):
+    
+    if num_list[-1] > num_list[-2]:
+        num_list.append(num_list[-1] - num_list[-2])
+    else:
+        num_list.append(num_list[-1] * 2)
+    
+    return num_list
