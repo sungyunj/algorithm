@@ -24,3 +24,17 @@
 // 마지막 원소인 5가 그전 원소인 7보다 크지 않기 때문에 5의 두 배인 10을 추가해 return합니다.
 
 
+import Foundation
+
+func solution(_ num_list: [Int]) -> [Int] {
+    var numList = num_list
+    
+    if numList.last! > numList[numList.count - 2] {
+        numList.append(numList.last! - numList[numList.count - 2])
+    } 
+    else {
+        numList.append(numList.last! * 2)
+    }
+    
+    return numList
+}
