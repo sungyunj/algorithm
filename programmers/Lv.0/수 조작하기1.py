@@ -20,3 +20,19 @@
 # 수 n은 control에 따라 다음과 같은 순서로 변하게 됩니다.
 # 0 → 1 → 0 → 10 → 0 → 1 → 0 → 10 → 0 → -1 → -2 → -1
 # 따라서 -1을 return 합니다.
+
+
+
+def solution(n, control):
+
+    for ch in control:
+        if ch == "w":
+            n += 1
+        elif ch == "s":
+            n -= 1
+        elif ch == "d":
+            n+= 10
+        elif ch == "a":
+            n -= 10
+
+    return n
