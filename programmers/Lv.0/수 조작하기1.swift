@@ -20,3 +20,25 @@
 // 수 n은 control에 따라 다음과 같은 순서로 변하게 됩니다.
 // 0 → 1 → 0 → 10 → 0 → 1 → 0 → 10 → 0 → -1 → -2 → -1
 // 따라서 -1을 return 합니다.
+
+
+import Foundation
+
+func solution(_ n:Int, _ control:String) -> Int {
+    
+    var n = n
+    
+    for ch in control {
+        if ch == "w" {
+            n += 1
+        } else if ch == "s" {
+            n -= 1
+        } else if ch == "d" {
+            n += 10
+        } else if ch == "a" {
+            n -= 10
+        }
+    }
+    
+    return n
+}
