@@ -29,5 +29,22 @@
 
 # Hint
 # "수 조작하기 1" 문제의 n값이 numLog[0]에 해당하며, 이 문제에서 주어진 numLog에 따라 "수 조작하기 1" 문제의 control을 구하는 문제라고 이해할 수 있습니다.
-
 # 입출력 예 #1은 "수 조작하기 1" 문제의 입출력 예 #1과 같은 예시이므로 참고하시기 바랍니다.
+
+
+def solution(numLog):
+    answer = ''
+    
+    for i in range(1, len(numLog)):
+        difference = numLog[i] - numLog[i - 1]
+        
+        if difference == 1:
+            answer += 'w'
+        elif difference == -1:
+            answer += 's'
+        elif difference == 10:
+            answer += 'd'
+        elif difference == -10:
+            answer += 'a'
+    
+    return answer
