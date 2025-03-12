@@ -32,3 +32,24 @@
 // 입출력 예 #1은 "수 조작하기 1" 문제의 입출력 예 #1과 같은 예시이므로 참고하시기 바랍니다.
 
 
+import Foundation
+
+func solution(_ numLog: [Int]) -> String {
+    var answer = ""
+    
+    for i in 1..<numLog.count {
+        let difference = numLog[i] - numLog[i - 1]
+        
+        if difference == 1 {
+            answer += "w"
+        } else if difference == -1 {
+            answer += "s"
+        } else if difference == 10 {
+            answer += "d"
+        } else if difference == -10 {
+            answer += "a"
+        }
+    }
+    
+    return answer
+}
