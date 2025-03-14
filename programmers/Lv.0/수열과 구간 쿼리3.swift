@@ -30,3 +30,15 @@
 // [3, 2, 1, 0, 4]
 // [3, 4, 1, 0, 2]
 // 따라서 [3, 4, 1, 0, 2]를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ arr:[Int], _ queries:[[Int]]) -> [Int] {
+    
+    var arr = arr
+    
+    queries.forEach { arr.swapAt($0[0], $0[1]) }
+    return arr
+}
