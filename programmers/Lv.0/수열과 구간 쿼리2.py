@@ -31,3 +31,20 @@
 # 두 번째 쿼리의 범위에는 0, 1, 2, 4가 있으며 이 중 2보다 크면서 가장 작은 값은 4입니다.
 # 세 번째 쿼리의 범위에는 0, 1, 2가 있으며 여기에는 2보다 큰 값이 없습니다.
 # 따라서 [3, 4, -1]을 return 합니다.
+
+
+def solution(arr, queries):
+    answer = []
+    
+    for s, e, k in queries:
+
+        sub_array = arr[s:e+1]
+        
+        filtered = [x for x in sub_array if x > k]
+
+        if filtered:
+            answer.append(min(filtered))
+        else:
+            answer.append(-1)
+    
+    return answer
