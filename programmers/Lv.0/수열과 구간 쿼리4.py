@@ -31,3 +31,17 @@
 # [2, 2, 4, 5, 4]
 # [3, 2, 4, 6, 4]
 # 따라서 [3, 2, 4, 6, 4]를 return 합니다.
+
+
+
+def solution(arr, queries):
+
+    for query in queries:
+        s, e, k = query
+
+        for i in range(s, e + 1):
+            if i % k == 0:
+                arr[i] += 1
+    
+    return arr
+
