@@ -31,3 +31,19 @@
 // [2, 2, 4, 5, 4]
 // [3, 2, 4, 6, 4]
 // 따라서 [3, 2, 4, 6, 4]를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ arr:[Int], _ queries:[[Int]]) -> [Int] {
+
+    var arr = arr
+
+    queries.forEach { 
+        let (s, e, k) = ($0[0], $0[1], $0[2])
+        (s...e).forEach { if $0 % k == 0 { arr[$0] += 1 } }
+    }
+    
+    return arr
+}
