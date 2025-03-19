@@ -25,3 +25,30 @@
 # 입출력 예 #2
 
 # 10 이상 20 이하이면서 0과 5로만 이루어진 정수는 없습니다. 따라서 [-1]을 return 합니다.
+
+
+
+# 1
+def solution(l, r):
+    answer = []
+
+    for num in range(l, r + 1):
+    
+        if all(digit in '05' for digit in str(num)):
+            answer.append(num)
+    
+    if not answer:
+        return [-1]
+    
+    return answer
+
+
+
+
+# 2
+def solution(l, r):
+    answer = []
+    for num in range(l, r + 1):
+        if not set(str(num)) - set(['0', '5']):
+            answer.append(num)
+    return answer if answer else [-1]
