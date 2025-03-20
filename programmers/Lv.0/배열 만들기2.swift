@@ -25,3 +25,19 @@
 // 입출력 예 #2
 
 // 10 이상 20 이하이면서 0과 5로만 이루어진 정수는 없습니다. 따라서 [-1]을 return 합니다.
+
+
+import Foundation
+
+func solution(_ l:Int, _ r:Int) -> [Int] {
+
+    var result: [Int] = []
+
+    for i in l...r {
+        
+        let temp = Array(String(i)).filter { $0 != "5" && $0 != "0" }
+        if temp.isEmpty { result.append(i) }
+    }
+
+    return result.isEmpty ? [-1] : result.sorted()
+}
