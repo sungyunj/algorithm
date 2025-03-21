@@ -18,3 +18,9 @@
 
 # 입출력 예 #1
 # 3부터 10까지의 숫자들을 담은 리스트 [3, 4, 5, 6, 7, 8, 9, 10]를 return합니다.
+
+
+
+def solution(start_num, end_num):
+    
+    return list(range(start_num, end_num + 1))
