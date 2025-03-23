@@ -37,3 +37,19 @@
 # 6	      1	    홀수
 
 # 따라서 [10, 5, 16, 8, 4, 2, 1]을 return 합니다.
+
+
+
+def solution(n):
+    answer = []
+    
+    while n != 1:
+        answer.append(n)
+
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+    
+    answer.append(1)
+    return answer
