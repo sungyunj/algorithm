@@ -37,3 +37,27 @@
 // 6	      1	    홀수
 
 // 따라서 [10, 5, 16, 8, 4, 2, 1]을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ n: Int) -> [Int] {
+
+    var answer = [Int]()
+    var current = n
+
+    while current != 1 {
+        answer.append(current)
+
+        if current % 2 == 0 {
+            current = current / 2
+        } 
+        else {
+            current = 3 * current + 1
+        }
+    }
+    
+    answer.append(1)
+    return answer
+}
