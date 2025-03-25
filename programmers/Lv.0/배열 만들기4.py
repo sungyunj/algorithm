@@ -37,3 +37,21 @@
 # 4	3	    [1, 2]
 # -	-	    [1, 2, 3]
 # 따라서 [1, 2, 3]을 return 합니다.
+
+
+
+def solution(arr):
+    stk = []
+    i = 0 
+    
+    while i < len(arr):
+        if not stk:
+            stk.append(arr[i])
+            i += 1
+        elif stk[-1] < arr[i]:
+            stk.append(arr[i])
+            i += 1 
+        else:
+            stk.pop()
+          
+    return stk
