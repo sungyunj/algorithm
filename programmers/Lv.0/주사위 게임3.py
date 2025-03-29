@@ -44,3 +44,29 @@
 
 
 
+def solution(a, b, c, d):
+    
+    dice = [a, b, c, d]
+    count = {x: dice.count(x) for x in set(dice)}
+
+    if len(count) == 1:
+        return 1111 * list(count.keys())[0]
+
+    if len(count) == 2 and 3 in count.values():
+        p = [k for k, v in count.items() if v == 3][0]
+        q = [k for k, v in count.items() if v == 1][0]
+
+        return (10 * p + q) ** 2
+
+    if len(count) == 2 and 2 in count.values():
+        p, q = list(count.keys())
+
+        return (p + q) * abs(p - q)
+
+    if len(count) == 3:
+        p = [k for k, v in count.items() if v == 2][0]
+        q, r = [k for k, v in count.items() if v == 1]
+
+        return q * r
+
+    return min(dice)
