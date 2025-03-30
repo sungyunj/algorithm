@@ -41,3 +41,34 @@
 
 // 입출력 예 #5
 // 예제 5번에서 네 주사위 숫자가 모두 다르고 나온 숫자 중 가장 작은 숫자가 2이므로 2점을 얻습니다. 따라서 2를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ a:Int, _ b:Int, _ c:Int, _ d:Int) -> Int {
+
+    let nums = [a, b, c, d]
+    let counts = nums.map { num in nums.filter { $0 == num }.count }
+    
+    if counts.max() == 4 {
+        return a * 1111
+    } 
+    else if counts.max() == 3 {
+        let p = nums[counts.firstIndex(of: 3)!]
+        let q = nums[counts.firstIndex(of: 1)!]
+        return (10 * p + q) * (10 * p + q)
+    } 
+    else if counts.max() == 2 {
+        if counts.min() == 2 {
+            return a == b ? (a + c) * abs(a - c) : (a + b) * abs(a - b)
+        } 
+        else {
+            let p = nums[counts.firstIndex(of: 2)!]
+            return nums.filter { $0 != p }.reduce(1, *)
+        }
+    } 
+    else {
+        return nums.min()!
+    }
+}
