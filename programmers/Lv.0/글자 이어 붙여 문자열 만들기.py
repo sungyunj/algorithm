@@ -33,3 +33,10 @@
 # 예제 2번의 my_string에서 인덱스 0, 1, 2, 3에 해당하는 글자는 각각 z, p, i, a이므로 
 # my_string에서 index_list에 들어있는 원소에 해당하는 인덱스의 글자들은 각각 순서대로 p, i, z, z, a입니다. 
 # 따라서 "pizza"를 return 합니다.
+
+
+
+def solution(my_string, index_list):
+    
+    answer = ''.join(my_string[i] for i in index_list)
+    return answer
