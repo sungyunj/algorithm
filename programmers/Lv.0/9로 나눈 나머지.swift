@@ -32,3 +32,14 @@
 // 예제 2번의 number는 78720646226947352489으로 각자리 숫자의 합은 101입니다. 
 // 101을 9로 나눈 나머지는 2이고, 실제로 78720646226947352489 = 9 × 8746738469660816943 + 2입니다. 
 // 따라서 2를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ number: String) -> Int {
+    
+    let sumOfDigits = number.reduce(0) { $0 + (Int(String($1)) ?? 0) }
+    
+    return sumOfDigits % 9
+}
