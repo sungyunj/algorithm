@@ -34,3 +34,25 @@
 // [6, 10]	    "programmers"
 
 // 따라서 "programmers"를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ my_string: String, _ queries: [[Int]]) -> String {
+    var myList = Array(my_string)
+
+    for query in queries {
+
+        let s = query[0]
+        let e = query[1]
+ 
+        let subArray = myList[s...e].reversed()
+
+        for (index, value) in subArray.enumerated() {
+            myList[s + index] = value
+        }
+    }
+
+    return String(myList)
+}
