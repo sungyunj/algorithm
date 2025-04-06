@@ -37,3 +37,17 @@
 # 2	"99999"	    [56789, 99999]
 
 # 따라서 [56789, 99999]를 return 합니다.
+
+
+
+def solution(intStrs, k, s, l):
+
+    answer = []
+
+    for num_str in intStrs:
+        part = int(num_str[s:s + l])
+
+        if part > k:
+            answer.append(part)
+
+    return answer
