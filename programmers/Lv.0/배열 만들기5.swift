@@ -37,3 +37,25 @@
 // 2	"99999"	    [56789, 99999]
 
 // 따라서 [56789, 99999]를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ intStrs: [String], _ k: Int, _ s: Int, _ l: Int) -> [Int] {
+    
+    var answer: [Int] = []
+
+    for numStr in intStrs {
+
+        let startIndex = numStr.index(numStr.startIndex, offsetBy: s)
+        let endIndex = numStr.index(startIndex, offsetBy: l)
+        let part = Int(numStr[startIndex..<endIndex]) ?? 0
+        
+        if part > k {
+            answer.append(part)
+        }
+    }
+
+    return answer
+}
