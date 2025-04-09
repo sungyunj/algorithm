@@ -33,3 +33,23 @@
 
 // 각 부분 문자열을 순서대로 이어 붙인 문자열은 "programmers"입니다. 
 // 따라서 "programmers"를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ my_strings: [String], _ parts: [[Int]]) -> String {
+    
+    var answer = ""
+    
+    for i in 0..<my_strings.count {
+
+        let s = parts[i][0]
+        let e = parts[i][1]
+        let substring = my_strings[i].substring(with: s...e)
+
+        answer += substring
+    }
+    
+    return answer
+}
