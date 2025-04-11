@@ -26,3 +26,14 @@
 // 입출력 예 #2
 
 // 예제 2번의 my_string에서 뒤의 5글자는 "W0r1d"이므로 이 문자열을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ my_string: String, _ n: Int) -> String {
+
+    let startIndex = my_string.index(my_string.endIndex, offsetBy: -n)
+    
+    return String(my_string[startIndex...])
+}
