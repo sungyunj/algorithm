@@ -33,3 +33,12 @@
 
 # 예제 2번의 my_string는 "programmers"이고 모든 접미사는 "programmers", "rogrammers", "ogrammers", "grammers", "rammers", "ammers", "mmers", "mers", "ers", "rs", "s"입니다. 
 # 이를 사전순으로 정렬한 문자열 배열 ["ammers", "ers", "grammers", "mers", "mmers", "ogrammers", "programmers", "rammers", "rogrammers", "rs", "s"]를 return 합니다.
+
+
+
+def solution(my_string):
+
+    answer = [my_string[i:] for i in range(len(my_string))]
+    answer.sort()
+
+    return answer
