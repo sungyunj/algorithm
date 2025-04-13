@@ -33,3 +33,21 @@
 
 // 예제 2번의 my_string는 "programmers"이고 모든 접미사는 "programmers", "rogrammers", "ogrammers", "grammers", "rammers", "ammers", "mmers", "mers", "ers", "rs", "s"입니다. 
 // 이를 사전순으로 정렬한 문자열 배열 ["ammers", "ers", "grammers", "mers", "mmers", "ogrammers", "programmers", "rammers", "rogrammers", "rs", "s"]를 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ my_string: String) -> [String] {
+
+    var answer: [String] = []
+
+    for i in my_string.indices {
+        
+        let suffix = String(my_string[i...])
+        answer.append(suffix)
+    }
+
+    return answer.sorted()
+}
