@@ -37,3 +37,9 @@
 
 # 입출력 예 #4
 # 예제 4번에서 is_suffix가 my_string의 접미사가 아니기 때문에 0을 return 합니다.
+
+
+
+def solution(my_string, is_suffix):
+    
+    return int(my_string.endswith(is_suffix))
