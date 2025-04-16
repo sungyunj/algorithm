@@ -27,3 +27,9 @@
 
 # 입출력 예 #2
 # 예제 2번의 my_string에서 앞의 5글자는 "He110"이므로 이 문자열을 return 합니다.
+
+
+
+def solution(my_string, n):
+    
+    return my_string[:n]
