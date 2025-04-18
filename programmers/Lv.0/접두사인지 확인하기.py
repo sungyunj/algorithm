@@ -37,3 +37,9 @@
 
 # 입출력 예 #4
 # 예제 4번에서 is_prefix가 my_string의 접두사가 아니기 때문에 0을 return 합니다.
+
+
+
+def solution(my_string, is_prefix):
+    
+    return int(my_string.startswith(is_prefix))
