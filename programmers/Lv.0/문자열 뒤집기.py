@@ -27,3 +27,9 @@
 
 # 입출력 예 #2
 # 예제 2번의 my_string에서 인덱스 4부터 인덱스 10까지를 뒤집으면 원래 문자열과 같은 "Stanley1yelnatS"이므로 "Stanley1yelnatS"를 return 합니다.
+
+
+
+def solution(my_string, s, e):
+    
+    return my_string[:s] + my_string[s:e+1][::-1] + my_string[e+1:]
