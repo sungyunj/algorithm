@@ -39,3 +39,13 @@
 # 입출력 예 #2
 # 예제 2번의 my_string은 m이 1이므로 세로로 "programmers"를 적는 것과 같고 따라서 1열에 적힌 글자를 세로로 읽으면 programmers입니다. 
 # 따라서 "programmers"를 return 합니다.
+
+
+
+def solution(my_string, m, c):
+    answer = ''
+
+    for i in range(0, len(my_string), m):
+        answer += my_string[i + c - 1]
+        
+    return answer
