@@ -39,3 +39,21 @@
 // 입출력 예 #2
 // 예제 2번의 my_string은 m이 1이므로 세로로 "programmers"를 적는 것과 같고 따라서 1열에 적힌 글자를 세로로 읽으면 programmers입니다. 
 // 따라서 "programmers"를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ my_string: String, _ m: Int, _ c: Int) -> String {
+    var answer = ""
+    let chars = Array(my_string)
+
+    for i in stride(from: 0, to: chars.count, by: m) {
+        
+        if i + c - 1 < chars.count {
+            answer.append(chars[i + c - 1])
+        }
+    }
+
+    return answer
+}
