@@ -39,3 +39,16 @@
 # q로 나눈 나머지	0	0	0	0	0	0	0	0	0	0	0
 
 # `q`로 나눈 나머지가 1인 인덱스의 문자들을 앞에서부터 순서대로 이어 붙이면 "programmers"가 되므로 이를 return 합니다.
+
+
+
+def solution(q, r, code):
+
+    answer = ''
+
+    for i in range(len(code)):
+
+        if i % q == r:
+            answer += code[i]
+            
+    return answer
