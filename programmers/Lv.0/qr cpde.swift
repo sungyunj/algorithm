@@ -39,3 +39,21 @@
 // q로 나눈 나머지	0	0	0	0	0	0	0	0	0	0	0
 
 // `q`로 나눈 나머지가 1인 인덱스의 문자들을 앞에서부터 순서대로 이어 붙이면 "programmers"가 되므로 이를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ q: Int, _ r: Int, _ code: String) -> String {
+
+    var answer = ""
+
+    for (i, char) in code.enumerated() {
+        
+        if i % q == r {
+            answer.append(char)
+        }
+    }
+
+    return answer
+}
