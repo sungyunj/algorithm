@@ -26,3 +26,28 @@
 // 예제 1번의 my_string에서 'P'가 1개, 'a'가 1개, 'e'가 1개, 'g'가 1개, 'm'이 2개, 'o'가 1개, 'r'가 3개, 's'가 1개 있으므로 
 // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, 0]
 // 를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ my_string: String) -> [Int] {
+    
+    var answer = Array(repeating: 0, count: 52)
+
+    for ch in my_string {
+        
+        if let ascii = ch.asciiValue {
+            if ch >= "A" && ch <= "Z" {
+                let index = Int(ascii - Character("A").asciiValue!)
+                answer[index] += 1
+            } 
+            else if ch >= "a" && ch <= "z" {
+                let index = Int(ascii - Character("a").asciiValue!) + 26
+                answer[index] += 1
+            }
+        }
+    }
+
+    return answer
+}
