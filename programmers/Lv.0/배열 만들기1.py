@@ -26,3 +26,14 @@
 
 # 입출력 예 #2
 # 1 이상 15 이하의 5의 배수는 5, 10, 15 이므로 [5, 10, 15]를 return 합니다.
+
+
+
+def solution(n, k):
+    
+    answer = []
+
+    for i in range(k, n+1, k):
+        answer.append(i)
+
+    return answer
