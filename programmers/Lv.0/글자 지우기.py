@@ -29,3 +29,12 @@
 # my_string	a	p	p	o	r	o	o	g	r	a	p	e	m	m	e	m	p	r	s
 
 # `indices`에 있는 인덱스의 글자들을 지우고 이어붙이면 "programmers"가 되므로 이를 return 합니다.
+
+
+
+def solution(my_string, indices):
+
+    indices_set = set(indices)
+    result = ''.join(char for i, char in enumerate(my_string) if i not in indices_set)
+    
+    return result
