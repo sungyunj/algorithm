@@ -32,3 +32,19 @@
 
 
 
+import Foundation
+
+func solution(_ my_string: String, _ indices: [Int]) -> String {
+
+    let indicesSet = Set(indices)
+    var result = ""
+    
+    for (i, char) in my_string.enumerated() {
+        
+        if !indicesSet.contains(i) {
+            result.append(char)
+        }
+    }
+    
+    return result
+}
