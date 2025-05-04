@@ -21,3 +21,13 @@
 
 // 입출력 예 #1
 // 10부터 3까지 1씩 감소하는 수를 담은 리스트는 [10, 9, 8, 7, 6, 5, 4, 3]입니다.
+
+
+
+
+import Foundation
+
+func solution(_ start_num: Int, _ end_num: Int) -> [Int] {
+    
+    return Array(stride(from: start_num, through: end_num, by: -1))
+}
