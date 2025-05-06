@@ -33,3 +33,20 @@
 
 // 입출력 예 #3
 // 3번 인덱스의 값이 1입니다. 따라서 3을 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ arr: [Int], _ idx: Int) -> Int {
+
+    for i in (idx + 1)..<arr.count {
+
+        if arr[i] == 1 {
+            return i
+        }
+    }
+
+    return -1
+}
