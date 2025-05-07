@@ -40,3 +40,18 @@
 
 # 입출력 예 #2
 # [1, 2, 3, 4, 5, 6, 7, 8, 9]에서 1번 인덱스부터 5번 인덱스까지 2개 간격으로 자른 리스트는 [2, 4, 6]입니다.
+
+
+
+def solution(n, slicer, num_list):
+
+    a, b, c = slicer
+    
+    if n == 1:
+        return num_list[:b+1]
+    elif n == 2:
+        return num_list[a:]
+    elif n == 3:
+        return num_list[a:b+1]
+    elif n == 4:
+        return num_list[a:b+1:c]
