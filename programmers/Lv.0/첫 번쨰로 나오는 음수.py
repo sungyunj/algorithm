@@ -27,3 +27,14 @@
 
 # 입출력 예 #2
 # 음수가 없으므로 -1을 return합니다.
+
+
+
+
+def solution(num_list):
+
+    for i, num in enumerate(num_list):
+        if num < 0:
+            return i
+        
+    return -1
