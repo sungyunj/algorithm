@@ -30,3 +30,13 @@
 # 두 번째 구간에 해당하는 배열은 [1, 2, 3, 4, 5] 입니다.
 
 # 따라서 이 두 배열을 앞뒤로 붙인 배열인 [2, 3, 4, 1, 2, 3, 4, 5]를 return 합니다.
+
+
+
+
+def solution(arr, intervals):
+    
+    first = arr[intervals[0][0]:intervals[0][1] + 1]
+    second = arr[intervals[1][0]:intervals[1][1] + 1]
+    
+    return first + second
