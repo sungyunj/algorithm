@@ -37,3 +37,19 @@
 
 // 입출력 예 #4
 // 2가 있는 인덱스는 1번, 3번, 6번 인덱스이므로 1번부터 6번 인덱스까지의 부분 배열인 [2, 1, 2, 1, 10, 2]를 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ arr: [Int]) -> [Int] {
+
+    guard let first = arr.firstIndex(of: 2),
+          let last = arr.lastIndex(of: 2) else {
+        return [-1]
+    }
+
+
+    return Array(arr[first...last])
+}
