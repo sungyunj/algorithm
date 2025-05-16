@@ -36,3 +36,24 @@
 // 2	        [1, 2, 3, 4]	        [1, 2, 3]	        2번 인덱스의 쿼리이므로 뒷부분을 자른다.
 
 // 따라서 [1, 2, 3]을 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ arr: [Int], _ query: [Int]) -> [Int] {
+
+    var result = arr
+
+    for i in 0..<query.count {
+        if i % 2 == 0 {
+            result = Array(result[0...query[i]])
+        } 
+        else {
+            result = Array(result[query[i]...])
+        }
+    }
+
+    return result
+}
