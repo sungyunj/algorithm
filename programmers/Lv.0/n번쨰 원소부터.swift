@@ -25,3 +25,13 @@
 
 // 입출력 예 #2
 // [5, 2, 1, 7, 5]의 두 번째 원소부터 마지막 원소까지의 모든 원소는 [2, 1, 7, 5]입니다.
+
+
+
+
+import Foundation
+
+func solution(_ num_list: [Int], _ n: Int) -> [Int] {
+    
+    return Array(num_list[(n - 1)...])
+}
