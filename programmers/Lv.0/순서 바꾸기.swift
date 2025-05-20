@@ -28,3 +28,16 @@
 
 // 입출력 예 #2
 // [5, 2, 1, 7, 5]에서 세 번째 이후의 원소는 [7, 5]이고 세 번째까지의 원소는 [5, 2, 1]입니다. 두 리스트를 이어 붙이면 [7, 5, 5, 2, 1]가 됩니다.
+
+
+
+
+import Foundation
+
+func solution(_ num_list: [Int], _ n: Int) -> [Int] {
+
+    let left = Array(num_list[n...])
+    let right = Array(num_list[..<n])
+    
+    return left + right
+}
