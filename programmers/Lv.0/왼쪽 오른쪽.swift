@@ -29,3 +29,21 @@
 
 // 입출력 예 #2
 // "l"의 왼쪽에 문자열이 없기 때문에 빈 리스트를 return합니다.
+
+
+
+import Foundation
+
+func solution(_ str_list: [String]) -> [String] {
+
+    for (i, s) in str_list.enumerated() {
+        if s == "l" {
+            return Array(str_list[..<i])
+        } 
+        else if s == "r" {
+            return Array(str_list[(i + 1)...])
+        }
+    }
+    
+    return []
+}
