@@ -27,3 +27,12 @@
 
 # 입출력 예 #2
 # [5, 2, 1, 7, 5]의 첫 번째 원소부터 세 번째 원소까지의 모든 원소는 [5, 2, 1]입니다.
+
+
+
+
+def solution(num_list, n):
+    return num_list[:n]
+
+
+# print(solution([2,1,6], 1))
