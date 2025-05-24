@@ -27,3 +27,13 @@
 
 // 입출력 예 #2
 // [5, 2, 1, 7, 5]의 첫 번째 원소부터 세 번째 원소까지의 모든 원소는 [5, 2, 1]입니다.
+
+
+
+
+import Foundation
+
+func solution(_ num_list: [Int], _ n: Int) -> [Int] {
+
+    return Array(num_list.prefix(n))
+}
