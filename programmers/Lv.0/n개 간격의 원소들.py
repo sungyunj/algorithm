@@ -28,3 +28,13 @@
 
 # 입출력 예 #2
 # [4, 2, 6, 1, 7, 6]에서 4개 간격으로 저장되어 있는 원소들은 [4, 7]입니다.
+
+
+
+def solution(num_list, n):
+
+    return num_list[::n]
+
+
+
+# print(solution([4, 2, 6, 1, 7, 6], 2))
