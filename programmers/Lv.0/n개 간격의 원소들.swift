@@ -28,3 +28,13 @@
 
 // 입출력 예 #2
 // [4, 2, 6, 1, 7, 6]에서 4개 간격으로 저장되어 있는 원소들은 [4, 7]입니다.
+
+
+
+
+import Foundation
+
+func solution(_ num_list:[Int], _ n:Int) -> [Int] {
+    return stride(from: 0, to: num_list.count, by: n).map { num_list[$0] }
+}
+
