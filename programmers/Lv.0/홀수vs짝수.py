@@ -28,3 +28,21 @@
 
 # 입출력 예 #2
 # 홀수 번째 원소들의 합은 -1 + 5 + 3 = 7, 짝수 번째 원소들의 합은 2 + 6 = 8 이므로 8을 return합니다.
+
+
+
+
+def solution(num_list):
+    odd_sum = 0
+    even_sum = 0
+    
+    for i in range(len(num_list)):
+        if i % 2 == 0:
+            odd_sum += num_list[i]
+        else:
+            even_sum += num_list[i]
+    
+    return max(odd_sum, even_sum)
+
+
+# print(solution([4, 2, 6, 1, 7, 6]))
