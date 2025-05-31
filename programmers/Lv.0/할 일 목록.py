@@ -28,3 +28,15 @@
 # 입출력 예 #1
 # 예제 1번의 todo_list 중에서 "problemsolving"과 "swim"은 마쳤고, "practiceguitar"와 "studygraph"는 아직 마치지 못했으므로 
 # todo_list에서 나온 순서대로 담은 문자열 배열 ["practiceguitar", "studygraph"]를 return 합니다.
+
+
+
+
+def solution(todo_list, finished):
+    answer = []
+
+    for i in range(len(todo_list)):
+        if not finished[i]:
+            answer.append(todo_list[i])
+            
+    return answer
