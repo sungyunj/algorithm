@@ -41,3 +41,17 @@
 
 
 
+import Foundation
+
+func solution(_ numbers: [Int], _ n: Int) -> Int {
+    var total = 0
+    
+    for number in numbers {
+        total += number
+        if total > n {
+            return total
+        }
+    }
+    
+    return total
+}
