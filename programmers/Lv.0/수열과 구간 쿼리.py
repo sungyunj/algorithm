@@ -40,5 +40,27 @@
 
 
 def solution(arr, queries):
-    answer = []
-    return answer
+    n = len(arr)
+    diff = [0] * (n + 1)
+
+
+    for s, e in queries:
+        diff[s] += 1
+        if e + 1 < len(diff):
+            diff[e + 1] -= 1
+
+
+    for i in range(1, n):
+        diff[i] += diff[i - 1]
+
+
+    for i in range(n):
+        arr[i] += diff[i]
+
+    return arr
+
+
+
+# arr = [0, 1, 2, 3, 4]
+# queries = [[0, 1], [1, 2], [2, 3]]
+# print(solution(arr, queries))
