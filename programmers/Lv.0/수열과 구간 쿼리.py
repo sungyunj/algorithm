@@ -36,3 +36,9 @@
 # 2	    [2,3]	    [1, 3, 4, 4, 4]
 
 # 따라서 [1, 3, 4, 4, 4]를 return 합니다.
+
+
+
+def solution(arr, queries):
+    answer = []
+    return answer
