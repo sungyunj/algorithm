@@ -36,3 +36,37 @@
 // 2	    [2,3]	    [1, 3, 4, 4, 4]
 
 // 따라서 [1, 3, 4, 4, 4]를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ arr: [Int], _ queries: [[Int]]) -> [Int] {
+    var result = arr
+    let n = arr.count
+    var diff = Array(repeating: 0, count: n + 1)
+
+    for query in queries {
+        let s = query[0]
+        let e = query[1]
+        diff[s] += 1
+
+        if e + 1 < diff.count {
+            diff[e + 1] -= 1
+        }
+    }
+
+    for i in 1..<n {
+        diff[i] += diff[i - 1]
+    }
+
+    for i in 0..<n {
+        result[i] += diff[i]
+    }
+
+    return result
+}
+
+// let arr = [0, 1, 2, 3, 4]
+// let queries = [[0, 1], [1, 2], [2, 3]]
+// print(solution(arr, queries))
