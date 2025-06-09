@@ -39,3 +39,31 @@
 # 6	         [63, 2, 63, 51, 99, 99]
 
 # 이후로 arr가 변하지 않으며, arr(5) = arr(6)이므로 5를 return 합니다.
+
+
+
+
+def solution(arr):
+    answer = 0
+
+    while True:
+        new_arr = []
+
+        for num in arr:
+            if num >= 50 and num % 2 == 0:
+                new_arr.append(num // 2)
+            elif num < 50 and num % 2 == 1:
+                new_arr.append(num * 2 + 1)
+            else:
+                new_arr.append(num)
+
+        if new_arr == arr:
+            break
+
+        arr = new_arr
+        answer += 1
+
+    return answer
+
+
+# print(solution([1, 2, 3, 100, 99, 98]))
