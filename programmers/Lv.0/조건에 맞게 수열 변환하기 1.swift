@@ -26,3 +26,27 @@
 // 1, 3은 50 미만의 홀수 이므로 2를 곱하고, 100, 98은 50 이상의 짝수이므로 2로 나눕니다.
 // 나머지 값들은 변경 조건에 해당하지 않으므로 바꾸지 않습니다.
 // 따라서 [2, 2, 6, 50, 99, 49]를 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ arr: [Int]) -> [Int] {
+
+    var answer: [Int] = []
+
+    for num in arr {
+        if num >= 50 && num % 2 == 0 {
+            answer.append(num / 2)
+        } 
+        else if num < 50 && num % 2 == 1 {
+            answer.append(num * 2)
+        } 
+        else {
+            answer.append(num)
+        }
+    }
+
+    return answer
+}
