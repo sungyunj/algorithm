@@ -39,3 +39,39 @@
 // 6	         [63, 2, 63, 51, 99, 99]
 
 // 이후로 arr가 변하지 않으며, arr(5) = arr(6)이므로 5를 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ arr: [Int]) -> Int {
+    
+    var answer = 0
+    var currentArr = arr
+
+    while true {
+        var newArr: [Int] = []
+
+        for num in currentArr {
+            if num >= 50 && num % 2 == 0 {
+                newArr.append(num / 2)
+            } 
+            else if num < 50 && num % 2 == 1 {
+                newArr.append(num * 2 + 1)
+            } 
+            else {
+                newArr.append(num)
+            }
+        }
+
+        if newArr == currentArr {
+            break
+        }
+
+        currentArr = newArr
+        answer += 1
+    }
+
+    return answer
+}
