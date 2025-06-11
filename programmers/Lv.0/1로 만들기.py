@@ -30,3 +30,22 @@
 
 # 입출력 예 #1
 # 12는 3번, 4는 2번, 15는 3번, 1은 0번, 14는 3번의 연산이 필요하기 때문에 총 11번의 연산이 필요합니다.
+
+
+
+
+def solution(num_list):
+    answer = 0
+
+    for i in num_list:
+        while i > 1:
+            if i % 2 == 0:
+                i //= 2
+            else:
+                i = (i - 1) // 2
+            answer += 1
+
+    return answer
+
+
+# print(solution([12, 4, 15, 1, 14]))
