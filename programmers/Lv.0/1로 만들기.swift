@@ -30,3 +30,26 @@
 
 // 입출력 예 #1
 // 12는 3번, 4는 2번, 15는 3번, 1은 0번, 14는 3번의 연산이 필요하기 때문에 총 11번의 연산이 필요합니다.
+
+
+
+
+import Foundation
+
+func solution(_ num_list: [Int]) -> Int {
+    var answer = 0
+
+    for var num in num_list {
+        while num > 1 {
+            if num % 2 == 0 {
+                num /= 2
+            } 
+            else {
+                num = (num - 1) / 2
+            }
+            answer += 1
+        }
+    }
+
+    return answer
+}
