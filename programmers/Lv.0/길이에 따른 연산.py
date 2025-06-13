@@ -27,3 +27,21 @@
 
 # 입출력 예 #2
 # 리스트의 길이가 4이므로 모든 원소의 곱인 120을 return합니다.
+
+
+
+
+def solution(num_list):
+    if len(num_list) >= 11:
+        return sum(num_list)
+    else:
+        result = 1
+        for num in num_list:
+            result *= num
+
+        return result
+    
+
+# print(solution([3, 4, 5, 2, 5, 4, 6, 7, 3, 7, 2, 2, 1]))
+
+# print(solution([2, 3, 4, 5]))
