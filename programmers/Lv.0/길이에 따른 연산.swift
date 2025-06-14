@@ -27,3 +27,17 @@
 
 // 입출력 예 #2
 // 리스트의 길이가 4이므로 모든 원소의 곱인 120을 return합니다.
+
+
+
+
+import Foundation
+
+func solution(_ num_list: [Int]) -> Int {
+    if num_list.count >= 11 {
+        return num_list.reduce(0, +)
+    } 
+    else {
+        return num_list.reduce(1, *)
+    }
+}
