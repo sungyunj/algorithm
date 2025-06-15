@@ -28,3 +28,17 @@
 
 # 입출력 예 #2
 # myString의 길이가 pat보다 더 짧기 때문에 myString의 부분 문자열 중 pat와 같은 문자열이 있을 수 없습니다. 따라서 0을 return 합니다.
+
+
+
+
+def solution(myString, pat):
+    if pat.lower() in myString.lower():
+        return 1
+    else:
+        return 0
+
+
+
+# print(solution("AbCdEfG", "aBc"))
+# print(solution("aaAA", "aaaaa"))
