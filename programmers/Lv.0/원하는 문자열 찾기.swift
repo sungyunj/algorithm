@@ -28,3 +28,17 @@
 
 // 입출력 예 #2
 // myString의 길이가 pat보다 더 짧기 때문에 myString의 부분 문자열 중 pat와 같은 문자열이 있을 수 없습니다. 따라서 0을 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ myString: String, _ pat: String) -> Int {
+    if myString.lowercased().contains(pat.lowercased()) {
+        return 1
+    } 
+    else {
+        return 0
+    }
+}
