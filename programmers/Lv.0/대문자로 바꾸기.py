@@ -17,3 +17,12 @@
 # myString	    result
 # "aBcDeFg"	    "ABCDEFG"
 # "AAA"	        "AAA"
+
+
+
+
+def solution(myString):
+    return myString.upper()
+
+
+# print(solution("aBcDeFg"))
