@@ -18,3 +18,13 @@
 # myString	    result
 # "aBcDeFg"	    "abcdefg"
 # "aaa"	        "aaa"
+
+
+
+
+def solution(myString):
+    return myString.lower()
+
+
+
+# print(solution("aBcDeFg"))
