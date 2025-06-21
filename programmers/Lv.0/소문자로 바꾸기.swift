@@ -18,3 +18,12 @@
 // myString	        result
 // "aBcDeFg"	    "abcdefg"
 // "aaa"	        "aaa"
+
+
+
+
+import Foundation
+
+func solution(_ myString: String) -> String {
+    return myString.lowercased()
+}
