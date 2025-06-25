@@ -32,3 +32,26 @@
 // 5번 인덱스의 "a"는 소문자이므로 대문자로 고쳐줍니다.
 // 다른 문자들은 전부 "a"가 아닌 소문자이므로 바꾸지 않습니다.
 // 따라서 "progrAmmers"를 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ myString: String) -> String {
+    var result = ""
+
+    for ch in myString {
+        if ch == "a" {
+            result += "A"
+        } 
+        else if ch.isUppercase && ch != "A" {
+            result += ch.lowercased()
+        } 
+        else {
+            result += String(ch)
+        }
+    }
+
+    return result
+}
