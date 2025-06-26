@@ -26,3 +26,13 @@
 
 # 입출력 예 #2
 # 예제 2번의 alp는 "x"이고 my_string에 x는 없습니다. 따라서 "lowercase"를 return 합니다.
+
+
+
+
+def solution(my_string, alp):
+    return my_string.replace(alp, alp.upper())
+
+
+
+# print(solution("programmers", "p"))
