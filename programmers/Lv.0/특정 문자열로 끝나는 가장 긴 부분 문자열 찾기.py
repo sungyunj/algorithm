@@ -29,3 +29,13 @@
 
 # 입출력 예 #2
 # "AAAAaaaa"에서 "a"는 총 네 번 등장하며 이 중 가장 마지막에 있는 위치까지 잘라내면 "AAAAaaaa"가 됩니다. 따라서 이 문자열이 "a"로 끝나는 가장 긴 문자열이며, "AAAAaaaa"를 return 합니다.
+
+
+
+def solution(myString, pat):
+    index = myString.rfind(pat)
+
+    return myString[:index + len(pat)]
+
+
+# print(solution("AbCdEFG", "dE"))
