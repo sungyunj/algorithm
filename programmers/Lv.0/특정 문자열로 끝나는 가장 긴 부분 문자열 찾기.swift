@@ -29,3 +29,19 @@
 
 // 입출력 예 #2
 // "AAAAaaaa"에서 "a"는 총 네 번 등장하며 이 중 가장 마지막에 있는 위치까지 잘라내면 "AAAAaaaa"가 됩니다. 따라서 이 문자열이 "a"로 끝나는 가장 긴 문자열이며, "AAAAaaaa"를 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ myString: String, _ pat: String) -> String {
+    if let range = myString.range(of: pat, options: .backwards) {
+        let endIndex = range.upperBound
+        
+        return String(myString[..<endIndex])
+    } 
+    else {
+        return "" 
+    }
+}
