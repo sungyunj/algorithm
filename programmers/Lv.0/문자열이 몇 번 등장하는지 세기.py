@@ -29,3 +29,19 @@
 # 입출력 예 #2
 # "aaaa"에서 0 ~ 2번 인덱스에서 한 번, 1 ~ 3번 인덱스에서 한 번, 2 ~ 4번 인덱스에서 한 번 "aa"가 등장해서 총 세 번 등장합니다. 
 # 따라서 3을 return 합니다.
+
+
+
+def solution(myString, pat):
+    count = 0
+    for i in range(len(myString) - len(pat) + 1):
+        if myString[i:i+len(pat)] == pat:
+            count += 1
+
+    return count
+
+
+
+
+# print(solution("banana", "ana"))
+# print(solution("aaaa", "aa"))
