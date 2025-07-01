@@ -29,3 +29,23 @@
 // 입출력 예 #2
 // "aaaa"에서 0 ~ 2번 인덱스에서 한 번, 1 ~ 3번 인덱스에서 한 번, 2 ~ 4번 인덱스에서 한 번 "aa"가 등장해서 총 세 번 등장합니다. 
 // 따라서 3을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ myString: String, _ pat: String) -> Int {
+    let myChars = Array(myString)
+    let patChars = Array(pat)
+    let patLength = patChars.count
+    var count = 0
+
+    for i in 0...(myChars.count - patLength) {
+        let slice = myChars[i..<i + patLength]
+        if Array(slice) == patChars {
+            count += 1
+        }
+    }
+
+    return count
+}
