@@ -28,3 +28,18 @@
 
 // 입출력 예 #2
 // "ad"가 부분 문자열로 들어간 문자열이 존재하지 않습니다. 따라서 원래 배열을 그대로 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ strArr:[String]) -> [String] {
+    return strArr.filter { !$0.contains("ad") }
+}
+
+
+
+// let a = ["and", "notad", "abcd"]
+// let b = solution(a)
+// print(b)
