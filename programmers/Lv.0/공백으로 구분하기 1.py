@@ -26,3 +26,13 @@
 
 # 입출력 예 #2
 # 예제 2번의 my_string은 "programmers"로 단어가 하나만 있습니다. 따라서 ["programmers"]를 return 합니다.
+
+
+
+def solution(my_string):
+    return my_string.split()
+
+
+
+# print(solution("i love you"))
+# print(solution("programmers"))
