@@ -29,3 +29,12 @@
 # 입출력 예 #2
 # "x"를 기준으로 문자열을 나누면 ["", "abc", "def", "ghi"]가 됩니다. 
 # 각각의 길이로 배열을 만들면 [0, 3, 3, 3]입니다. 따라서 [0, 3, 3, 3]을 return 합니다.
+
+
+
+def solution(myString):
+    return [len(part) for part in myString.split('x')]
+
+
+
+print(solution("oxooxoxxox"))
