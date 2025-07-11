@@ -32,3 +32,16 @@
 
 # myString을 "x"를 기준으로 자른 배열은 ["d","cc","bbb","aaaa"]이며, 이 배열을 사전순으로 정렬하면 ["aaaa","bbb","cc","d"]입니다. 
 # 따라서 해당 배열을 return 합니다.
+
+
+
+def solution(myString):
+    parts = myString.split("x")
+    filtered = [s for s in parts if s]
+    sorted_list = sorted(filtered)
+    
+    return sorted_list
+
+
+# print(solution("axbxcxdx"))
+# print(solution("dxccxbbbxaaaa"))
