@@ -32,3 +32,16 @@
 
 // myString을 "x"를 기준으로 자른 배열은 ["d","cc","bbb","aaaa"]이며, 이 배열을 사전순으로 정렬하면 ["aaaa","bbb","cc","d"]입니다. 
 // 따라서 해당 배열을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ myString: String) -> [String] {
+
+    let parts = myString.components(separatedBy: "x")
+    let filtered = parts.filter { !$0.isEmpty }
+    let sortedList = filtered.sorted()
+    
+    return sortedList
+}
