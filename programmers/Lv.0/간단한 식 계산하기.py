@@ -32,3 +32,18 @@
 
 # 입출력 예 #3
 # 예제 3번의 binomial은 "40000 * 40000"으로 이 식을 계산한 결과인 40000 × 40000 = 1600000000을 return 합니다.
+
+
+
+
+def solution(binomial):
+    a, op, b = binomial.split()
+    a = int(a)
+    b = int(b)
+
+    if op == '+':
+        return a + b
+    elif op == '-':
+        return a - b
+    elif op == '*':
+        return a * b
