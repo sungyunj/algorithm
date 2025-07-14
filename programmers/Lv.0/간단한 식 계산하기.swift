@@ -32,3 +32,30 @@
 
 // 입출력 예 #3
 // 예제 3번의 binomial은 "40000 * 40000"으로 이 식을 계산한 결과인 40000 × 40000 = 1600000000을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ binomial: String) -> Int {
+    let components = binomial.split(separator: " ")
+
+    guard components.count == 3,
+          let a = Int(components[0]),
+          let b = Int(components[2]) else {
+        return 0 
+    }
+
+    let op = components[1]
+
+    switch op {
+    case "+":
+        return a + b
+    case "-":
+        return a - b
+    case "*":
+        return a * b
+    default:
+        return 0
+    }
+}
