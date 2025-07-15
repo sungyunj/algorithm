@@ -28,3 +28,12 @@
 
 # 입출력 예 #2
 # "ABAB"에서 "A"와 "B"를 서로 바꾸면 "BABA"입니다. 여기에는 부분문자열 "BABA"가 없기 때문에 0을 return 합니다.
+
+
+
+def solution(myString, pat):
+
+    trans = str.maketrans("AB", "BA")
+    converted = myString.translate(trans)
+
+    return 1 if pat in converted else 0
