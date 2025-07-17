@@ -43,3 +43,10 @@
 # 입출력 예 #4
 # 예제 4번의 rny_string에는 'm'이 없습니다. 
 # 따라서 rny_string 그대로인 "burn"를 return 합니다.
+
+
+
+
+def solution(rny_string):
+    
+    return rny_string.replace('m', 'rn')
