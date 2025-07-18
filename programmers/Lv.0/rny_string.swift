@@ -43,3 +43,11 @@
 // 입출력 예 #4
 // 예제 4번의 rny_string에는 'm'이 없습니다. 
 // 따라서 rny_string 그대로인 "burn"를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ rny_string: String) -> String {
+    return rny_string.replacingOccurrences(of: "m", with: "rn")
+}
