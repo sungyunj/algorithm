@@ -36,3 +36,12 @@
 # 입출력 예 #3
 # "a", "b", "c" 이외의 문자가 존재하지 않습니다. 따라서 저장할 문자열이 없습니다.
 # 따라서 ["EMPTY"]를 return 합니다.
+
+
+
+def solution(myStr):
+    for ch in 'abc':
+        myStr = myStr.replace(ch, ' ')
+    result = [s for s in myStr.split() if s]
+
+    return result if result else ["EMPTY"]
