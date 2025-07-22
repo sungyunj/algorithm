@@ -50,3 +50,15 @@
 # 1	    [1]
 
 # 따라서 [1]을 return 합니다.
+
+
+
+def solution(arr):
+    answer = []
+    for a in arr:
+        answer.extend([a] * a)
+
+    return answer
+
+
+# print(solution([5, 1, 4]))
