@@ -50,3 +50,16 @@
 // 1	    [1]
 
 // 따라서 [1]을 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ arr: [Int]) -> [Int] {
+    var answer: [Int] = []
+    for a in arr {
+        answer += Array(repeating: a, count: a)
+    }
+    return answer
+}
