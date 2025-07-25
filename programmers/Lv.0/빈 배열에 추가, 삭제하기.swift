@@ -34,3 +34,21 @@
 // 4	    false	3	    [3, 3, 3, 3, 4, 4, 4, 4]
 
 // 따라서 [3, 3, 3, 3, 4, 4, 4, 4]를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ arr: [Int], _ flag: [Bool]) -> [Int] {
+    var answer: [Int] = []
+
+    for i in 0..<arr.count {
+        if flag[i] {
+            answer += Array(repeating: arr[i], count: arr[i] * 2)
+        } else {
+            answer.removeLast(arr[i])
+        }
+    }
+
+    return answer
+}
