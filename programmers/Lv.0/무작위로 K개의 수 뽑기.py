@@ -37,3 +37,21 @@
 # 입출력 예 #2
 
 # 서로 다른 수의 개수가 2개 뿐이므로 서로 다른 수들을 앞에서부터 차례대로 저장한 [0, 1]에서 이후 2개의 인덱스를 -1로 채워넣은 [0, 1, -1, -1]을 return 합니다.
+
+
+
+def solution(arr, k):
+    answer = []
+    seen = set()
+
+    for num in arr:
+        if num not in seen:
+            seen.add(num)
+            answer.append(num)
+            if len(answer) == k:
+                break
+
+    while len(answer) < k:
+        answer.append(-1)
+
+    return answer
