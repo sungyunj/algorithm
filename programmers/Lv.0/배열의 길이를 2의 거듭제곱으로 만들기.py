@@ -32,3 +32,17 @@
 
 # 예제 2번의 arr의 길이는 4이고 이미 2의 정수 거듭제곱입니다. 
 # 따라서 뒤에 0을 추가하지 않아도 되므로 [58, 172, 746, 89]를 return 합니다.
+
+
+
+
+
+def solution(arr):
+    n = len(arr)
+    power = 1
+
+    while power < n:
+        power *= 2
+
+    zeros_to_add = power - n
+    return arr + [0] * zeros_to_add
