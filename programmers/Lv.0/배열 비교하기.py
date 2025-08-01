@@ -41,3 +41,20 @@
 # 입출력 예 #3
 # 예제 3번에서는 arr1의 길이와 arr2의 길이가 5로 같고 각 배열의 모든 원소의 합 또한 15로 같습니다. 
 # 따라서 arr1과 arr2가 같으므로 0을 return 합니다.
+
+
+
+def solution(arr1, arr2):
+    if len(arr1) > len(arr2):
+        return 1
+    elif len(arr1) < len(arr2):
+        return -1
+    else:
+        sum1 = sum(arr1)
+        sum2 = sum(arr2)
+        if sum1 > sum2:
+            return 1
+        elif sum1 < sum2:
+            return -1
+        else:
+            return 0
