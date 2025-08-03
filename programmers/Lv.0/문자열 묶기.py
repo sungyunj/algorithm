@@ -29,3 +29,18 @@
 # 2	            ["bc","hi"]	    2
 # 3	            ["efg"]	        1
 # 개수의 최댓값은 2이므로 2를 return 합니다.
+
+
+
+
+def solution(strArr):
+    length_count = {}
+
+    for s in strArr:
+        length = len(s)
+        if length in length_count:
+            length_count[length] += 1
+        else:
+            length_count[length] = 1
+
+    return max(length_count.values())
