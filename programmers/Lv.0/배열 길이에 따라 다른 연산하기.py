@@ -30,3 +30,19 @@
 # 입출력 예 #1
 # 예제 2번의 arr의 길이는 4로 짝수입니다. 
 # 따라서 arr의 홀수 인덱스 1, 3에 주어진 n 값인 100을 더하면 [444, 655, 666, 877]이 됩니다. 따라서 [444, 655, 666, 877]를 return 합니다.
+
+
+
+def solution(arr, n):
+    answer = []
+    is_odd_length = len(arr) % 2 == 1
+
+    for i in range(len(arr)):
+        if is_odd_length and i % 2 == 0:
+            answer.append(arr[i] + n)
+        elif not is_odd_length and i % 2 == 1:
+            answer.append(arr[i] + n)
+        else:
+            answer.append(arr[i])
+    
+    return answer
