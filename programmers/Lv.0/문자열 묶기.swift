@@ -29,3 +29,18 @@
 // 2	            ["bc","hi"]	    2
 // 3	            ["efg"]	        1
 // 개수의 최댓값은 2이므로 2를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ strArr: [String]) -> Int {
+    var lengthCount: [Int: Int] = [:]
+
+    for str in strArr {
+        let length = str.count
+        lengthCount[length, default: 0] += 1
+    }
+
+    return lengthCount.values.max() ?? 0
+}
