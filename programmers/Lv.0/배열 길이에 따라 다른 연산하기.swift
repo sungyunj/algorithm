@@ -30,3 +30,25 @@
 // 입출력 예 #1
 // 예제 2번의 arr의 길이는 4로 짝수입니다. 
 // 따라서 arr의 홀수 인덱스 1, 3에 주어진 n 값인 100을 더하면 [444, 655, 666, 877]이 됩니다. 따라서 [444, 655, 666, 877]를 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ arr: [Int], _ n: Int) -> [Int] {
+    var answer: [Int] = []
+    let isOddLength = arr.count % 2 == 1
+
+    for i in 0..<arr.count {
+        if isOddLength && i % 2 == 0 {
+            answer.append(arr[i] + n)
+        } else if !isOddLength && i % 2 == 1 {
+            answer.append(arr[i] + n)
+        } else {
+            answer.append(arr[i])
+        }
+    }
+
+    return answer
+}
