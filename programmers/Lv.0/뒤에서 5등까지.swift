@@ -24,3 +24,14 @@
 // 입출력 예 #1
 
 // [12, 4, 15, 46, 38, 1, 14]를 정렬하면 [1, 4, 12, 14, 15, 38, 46]이 되고, 앞에서 부터 5개를 고르면 [1, 4, 12, 14, 15]가 됩니다.
+
+
+
+
+import Foundation
+
+func solution(_ numList: [Int]) -> [Int] {
+    let sortedNum = numList.sorted()
+    
+    return Array(sortedNum.prefix(5))
+}
