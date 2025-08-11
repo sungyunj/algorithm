@@ -45,3 +45,15 @@
 # 예제 3번에서 1, 2, 3등은 각각 1번, 3번, 4번 학생이지만 세 학생 모두 전국 대회에 참석 불가능합니다. 
 # 다음으로 4, 5, 6등은 각각 5번, 2번, 0번 학생이고 세 학생 모두 전국 대회에 참석 가능하므로 각각 1순위, 2순위, 3순위로 선발됩니다. 
 # 따라서 10000 × 5 + 100 × 2 + 0 = 50200을 return 합니다.
+
+
+
+def solution(rank, attendance):
+    students = [(i, rank[i]) for i in range(len(rank))]
+
+    available_students = [s for s in students if attendance[s[0]]]
+    available_students.sort(key=lambda x: x[1])
+
+    a, b, c = available_students[0][0], available_students[1][0], available_students[2][0]
+    
+    return 10000 * a + 100 * b + c
