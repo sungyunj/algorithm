@@ -45,3 +45,24 @@
 // 예제 3번에서 1, 2, 3등은 각각 1번, 3번, 4번 학생이지만 세 학생 모두 전국 대회에 참석 불가능합니다. 
 // 다음으로 4, 5, 6등은 각각 5번, 2번, 0번 학생이고 세 학생 모두 전국 대회에 참석 가능하므로 각각 1순위, 2순위, 3순위로 선발됩니다. 
 // 따라서 10000 × 5 + 100 × 2 + 0 = 50200을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ rank: [Int], _ attendance: [Bool]) -> Int {
+
+    var students: [(index: Int, rank: Int)] = []
+    for i in 0..<rank.count {
+        students.append((i, rank[i]))
+    }
+
+    let availableStudents = students.filter { attendance[$0.index] }
+    let sortedStudents = availableStudents.sorted { $0.rank < $1.rank }
+
+    let a = sortedStudents[0].index
+    let b = sortedStudents[1].index
+    let c = sortedStudents[2].index
+
+    return 10000 * a + 100 * b + c
+}
