@@ -25,3 +25,11 @@
 
 // 입출력 예 #2
 // 69.32의 정수 부분은 69입니다.
+
+
+
+import Foundation
+
+func solution(_ flo: Double) -> Int {
+    return Int(flo)
+}
