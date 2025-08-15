@@ -25,3 +25,10 @@
 
 # 입출력 예 #2
 # 문자열 안의 모든 숫자를 더하면 1이 됩니다.
+
+
+
+def solution(num_str):
+    answer = sum(int(char) for char in num_str)
+
+    return answer 
