@@ -25,3 +25,12 @@
 
 // 입출력 예 #2
 // 문자열 안의 모든 숫자를 더하면 1이 됩니다.
+
+
+
+
+import Foundation
+
+func solution(_ num_str: String) -> Int {
+    return num_str.reduce(0) { $0 + Int(String($1))! }
+}
