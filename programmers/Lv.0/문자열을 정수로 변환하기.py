@@ -26,3 +26,8 @@
 
 # 입출력 예 #2
 # "8542"를 정수로 바꾸면 8542입니다.
+
+
+
+def solution(n_str):
+    return int(n_str)
