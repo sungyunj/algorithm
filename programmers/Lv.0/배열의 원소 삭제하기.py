@@ -32,3 +32,10 @@
 # 입출력 예 #2
 # 예제 2번의 arr의 원소 중 delete_list에 있는 원소는 없습니다. 
 # 따라서 arr 그대로인 [110, 66, 439, 785, 1]을 return 합니다.
+
+
+
+def solution(arr, delete_list):
+    delete_set = set(delete_list)
+    
+    return [x for x in arr if x not in delete_set]
