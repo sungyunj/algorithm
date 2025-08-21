@@ -32,3 +32,11 @@
 
 # 입출력 예 #2
 # 문제 설명과 같습니다.
+
+
+
+def solution(my_string, target):
+    if target in my_string:
+        return 1
+    else:
+        return 0
