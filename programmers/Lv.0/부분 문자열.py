@@ -29,3 +29,9 @@
 
 # 입출력 예 #2
 # "tbbttb"에는 "tbt"가 없으므로 0을 return합니다.
+
+
+
+def solution(str1, str2):
+    return 1 if str1 in str2 else 0
+
