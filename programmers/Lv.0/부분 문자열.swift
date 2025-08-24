@@ -29,3 +29,11 @@
 
 // 입출력 예 #2
 // "tbbttb"에는 "tbt"가 없으므로 0을 return합니다.
+
+
+
+import Foundation
+
+func solution(_ str1: String, _ str2: String) -> Int {
+    return str2.contains(str1) ? 1 : 0
+}
