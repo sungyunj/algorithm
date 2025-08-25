@@ -31,3 +31,13 @@
 
 # 입출력 예 #2
 # 리스트 안의 모든 문자열이 "c"를 포함하므로 빈 문자열을 return합니다.
+
+
+
+def solution(str_list, ex):
+    answer = ''
+    for s in str_list:
+        if ex not in s:
+            answer += s
+            
+    return answer
