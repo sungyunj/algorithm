@@ -31,3 +31,19 @@
 
 // 입출력 예 #2
 // 리스트 안의 모든 문자열이 "c"를 포함하므로 빈 문자열을 return합니다.
+
+
+
+
+import Foundation
+
+func solution(_ str_list: [String], _ ex: String) -> String {
+    var answer = ""
+    
+    for s in str_list {
+        if !s.contains(ex) {
+            answer += s
+        }
+    }
+    return answer
+}
