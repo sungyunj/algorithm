@@ -27,3 +27,8 @@
 
 # 입출력 예 #2
 # [15, 98, 23, 2, 15] 안에 20이 없으므로 0을 return합니다.
+
+
+
+def solution(num_list, n):
+    return 1 if n in num_list else 0
