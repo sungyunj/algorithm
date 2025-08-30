@@ -35,3 +35,19 @@
 
 // 입출력 예 #3
 // 예제 3번에서 두 주사위 숫자가 모두 홀수가 아니므로 |2 - 4| = |-2| = 2점을 얻습니다. 따라서 2를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ a: Int, _ b: Int) -> Int {
+    if a % 2 == 1 && b % 2 == 1 {
+        return a * a + b * b
+    } 
+    else if a % 2 == 1 || b % 2 == 1 {
+        return 2 * (a + b)
+    } 
+    else {
+        return abs(a - b)
+    }
+}
