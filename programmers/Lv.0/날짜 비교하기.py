@@ -32,3 +32,8 @@
 
 # 입출력 예 #2
 # date1과 date2는 날짜가 서로 같으므로 date1이 더 앞서는 날짜가 아닙니다. 따라서 0을 return 합니다.
+
+
+
+def solution(date1, date2):
+    return 1 if date1 < date2 else 0
