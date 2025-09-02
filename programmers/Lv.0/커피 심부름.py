@@ -49,3 +49,14 @@
 # 입출력 예 #2
 # 예제 2번의 입력에서는 모든 음료를 차가운 아메리카노로 시키게 됩니다. 
 # 따라서 결제 금액은 4500 × 3 = 13500원이고 13500을 return 합니다.
+
+
+
+def solution(order):
+    total = 0
+    for item in order:
+        if "americano" in item or item == "anything":
+            total += 4500
+        elif "cafelatte" in item:
+            total += 5000
+    return total
