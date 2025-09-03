@@ -49,3 +49,21 @@
 // 입출력 예 #2
 // 예제 2번의 입력에서는 모든 음료를 차가운 아메리카노로 시키게 됩니다. 
 // 따라서 결제 금액은 4500 × 3 = 13500원이고 13500을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ order: [String]) -> Int {
+    var total = 0
+    
+    for item in order {
+        if item.contains("americano") || item == "anything" {
+            total += 4500
+        } 
+        else if item.contains("cafelatte") {
+            total += 5000
+        }
+    }
+    return total
+}
