@@ -29,3 +29,12 @@
 
 # 입출력 예 #2
 # 주어진 k인 2는 짝수이므로, 전체 배열에 2를 더합니다. 따라서 [3, 4, 5, 102, 101, 100]을 return 합니다.
+
+
+
+
+def solution(arr, k):
+    if k % 2 == 1:
+        return [x * k for x in arr]
+    else:
+        return [x + k for x in arr]
