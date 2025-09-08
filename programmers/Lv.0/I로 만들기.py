@@ -31,3 +31,8 @@
 # 0번, 1번, 6번, 7번 인덱스의 문자 "j","j","k","k"는 각각 "l"보다 앞서는 문자입니다. 따라서 "l"로 고쳐줍니다.
 # 그 외의 문자는 모두 "l"보다 앞서지 않는 문자입니다. 따라서 바꾸지 않습니다.
 # 따라서 "llnnllllmm"을 return 합니다.
+
+
+
+def solution(myString):
+    return ''.join('l' if c < 'l' else c for c in myString)
