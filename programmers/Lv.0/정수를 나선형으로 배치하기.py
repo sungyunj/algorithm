@@ -41,3 +41,31 @@
 # 3	        14	23	22	21	8
 # 4	        13	12	11	10	9
 # 따라서 [[1, 2, 3, 4, 5], [16, 17, 18, 19, 6], [15, 24, 25, 20, 7], [14, 23, 22, 21, 8], [13, 12, 11, 10, 9]]를 return 합니다.
+
+
+
+def solution(n):
+    board = [[0] * n for _ in range(n)]
+
+    dx = [0, 1, 0, -1]
+    dy = [1, 0, -1, 0]
+
+    x, y = 0, 0
+    direction = 0
+    num = 1
+
+    for _ in range(n * n):
+        board[x][y] = num
+        num += 1
+
+        nx = x + dx[direction]
+        ny = y + dy[direction]
+
+        if nx < 0 or ny < 0 or nx >= n or ny >= n or board[nx][ny] != 0:
+            direction = (direction + 1) % 4 
+            nx = x + dx[direction]
+            ny = y + dy[direction]
+
+        x, y = nx, ny
+
+    return board
