@@ -41,3 +41,38 @@
 // 3	        14	23	22	21	8
 // 4	        13	12	11	10	9
 // 따라서 [[1, 2, 3, 4, 5], [16, 17, 18, 19, 6], [15, 24, 25, 20, 7], [14, 23, 22, 21, 8], [13, 12, 11, 10, 9]]를 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ n: Int) -> [[Int]] {
+    var board = Array(repeating: Array(repeating: 0, count: n), count: n)
+
+    // 방향: 오른쪽, 아래, 왼쪽, 위
+    let dx = [0, 1, 0, -1]
+    let dy = [1, 0, -1, 0]
+
+    var x = 0
+    var y = 0
+    var direction = 0
+    var num = 1
+
+    for _ in 0..<(n * n) {
+        board[x][y] = num
+        num += 1
+
+        let nx = x + dx[direction]
+        let ny = y + dy[direction]
+
+        if nx < 0 || ny < 0 || nx >= n || ny >= n || board[nx][ny] != 0 {
+            direction = (direction + 1) % 4
+        }
+
+        x += dx[direction]
+        y += dy[direction]
+    }
+
+    return board
+}
