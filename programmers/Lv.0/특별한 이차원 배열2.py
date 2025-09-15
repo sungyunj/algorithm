@@ -40,3 +40,14 @@
 # 입출력 예 #2
 # 예제 2번의 arr에서 arr[0][1] = 498 ≠ 63 = arr[1][0]이므로 조건을 만족하지 않습니다. 
 # 따라서 0을 return 합니다.
+
+
+
+def solution(arr):
+    n = len(arr)
+    
+    for i in range(n):
+        for j in range(n):
+            if arr[i][j] != arr[j][i]:
+                return 0
+    return 1
