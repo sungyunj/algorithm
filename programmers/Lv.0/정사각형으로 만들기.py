@@ -36,3 +36,18 @@
 # 입출력 예 #3
 # 예제 3번의 arr은 행의 수와 열의 수가 2로 같습니다. 
 # 따라서 0을 추가하지 않고 [[1, 2], [3, 4]]을 return 합니다.
+
+
+
+def solution(arr):
+    row = len(arr)
+    col = len(arr[0])
+
+    if row > col:
+        for i in range(row):
+            arr[i] += [0] * (row - col)
+    elif col > row:
+        for _ in range(col - row):
+            arr.append([0] * col)
+
+    return arr
