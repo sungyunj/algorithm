@@ -36,3 +36,25 @@
 // 입출력 예 #3
 // 예제 3번의 arr은 행의 수와 열의 수가 2로 같습니다. 
 // 따라서 0을 추가하지 않고 [[1, 2], [3, 4]]을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ arr: [[Int]]) -> [[Int]] {
+    var result = arr
+    let row = result.count
+    let col = result.first?.count ?? 0
+
+    if row > col {
+        for i in 0..<row {
+            result[i] += Array(repeating: 0, count: row - col)
+        }
+    } else if col > row {
+        for _ in 0..<(col - row) {
+            result.append(Array(repeating: 0, count: col))
+        }
+    }
+
+    return result
+}
