@@ -33,3 +33,13 @@
 # 3	3	4	5
 
 # i + j가 2보다 작거나 같은 항들의 합은 0 + 1 + 2 + 1 + 2 + 2 = 8이므로 8을 return 합니다.
+
+
+
+def solution(board, k):
+    answer = 0
+    for i in range(len(board)):
+        for j in range(len(board[i])):
+            if i + j <= k:
+                answer += board[i][j]
+    return answer
