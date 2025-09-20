@@ -27,9 +27,26 @@
 // 입출력 예 #1
 // 입출력 예 #1의 board를 표로 나타내면 다음과 같습니다.
 // i \ j	0	1	2
-// 0	0	1	2
-// 1	1	2	3
-// 2	2	3	4
-// 3	3	4	5
+// 0	    0	1	2
+// 1	    1	2	3
+// 2	    2	3	4
+// 3	    3	4	5
 
 // i + j가 2보다 작거나 같은 항들의 합은 0 + 1 + 2 + 1 + 2 + 2 = 8이므로 8을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ board: [[Int]], _ k: Int) -> Int {
+    var answer = 0
+    
+    for i in 0..<board.count {
+        for j in 0..<board[i].count {
+            if i + j <= k {
+                answer += board[i][j]
+            }
+        }
+    }
+    return answer
+}
