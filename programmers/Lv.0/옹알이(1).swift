@@ -36,3 +36,26 @@
 // 유의사항
 // 네 가지를 붙여 만들 수 있는 발음 이외에는 어떤 발음도 할 수 없는 것으로 규정합니다. 
 // 예를 들어 "woowo"는 "woo"는 발음할 수 있지만 "wo"를 발음할 수 없기 때문에 할 수 없는 발음입니다.
+
+
+
+import Foundation
+
+func solution(_ babbling: [String]) -> Int {
+    let possible = ["aya", "ye", "woo", "ma"]
+    var answer = 0
+
+    for word in babbling {
+        var tmp = word
+        for p in possible {
+            if let range = tmp.range(of: p) {
+                tmp.replaceSubrange(range, with: " ")
+            }
+        }
+        if tmp.trimmingCharacters(in: .whitespaces).isEmpty {
+            answer += 1
+        }
+    }
+
+    return answer
+}
