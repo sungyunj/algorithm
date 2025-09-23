@@ -29,3 +29,13 @@
 
 # 입출력 예 #2
 # [2, 4, 8]은 공비가 2인 등비수열이므로 다음에 올 수는 16이다.
+
+
+
+def solution(common):
+    if common[1] - common[0] == common[2] - common[1]:  # 등차수열
+        diff = common[1] - common[0]
+        return common[-1] + diff
+    else:  # 등비수열
+        ratio = common[1] // common[0]
+        return common[-1] * ratio
