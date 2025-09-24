@@ -29,3 +29,19 @@
 
 // 입출력 예 #2
 // [2, 4, 8]은 공비가 2인 등비수열이므로 다음에 올 수는 16이다.
+
+
+
+import Foundation
+
+func solution(_ common: [Int]) -> Int {
+    if common[1] - common[0] == common[2] - common[1] {
+        // 등차수열
+        let diff = common[1] - common[0]
+        return common.last! + diff
+    } else {
+        // 등비수열
+        let ratio = common[1] / common[0]
+        return common.last! * ratio
+    }
+}
