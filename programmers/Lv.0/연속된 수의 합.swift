@@ -36,3 +36,13 @@
 
 // 입출력 예 #4
 // 설명 생략
+
+
+
+import Foundation
+
+func solution(_ num: Int, _ total: Int) -> [Int] {
+    let start = total / num - (num - 1) / 2
+    
+    return (0..<num).map { start + $0 }
+}
