@@ -30,3 +30,8 @@
 
 # 입출력 예 #3
 # 이미 1 * 1 크기이므로 0을 return 합니다.
+
+
+
+def solution(M, N):
+    return M * N - 1
