@@ -30,3 +30,11 @@
 
 // 입출력 예 #3
 // 이미 1 * 1 크기이므로 0을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ M: Int, _ N: Int) -> Int {
+    return M * N - 1
+}
