@@ -17,7 +17,7 @@
 # A	        B	        result
 # "hello"	"ohell"	    1
 # "apple" 	"elppa"	    -1
-# "atat"	\"tata"	    1
+# "atat"	"tata"	    1
 # "abc"	    "abc"	    0
 
 
@@ -35,3 +35,16 @@
 
 # 입출력 예 #4
 # "abc"는 밀지 않아도 "abc"이므로 0을 반환합니다.
+
+
+
+def solution(A, B):
+    if A == B:
+        return 0
+    
+    for i in range(len(A)):
+        A = A[-1] + A[:-1]
+        if A == B:
+            return i + 1
+        
+    return -1
