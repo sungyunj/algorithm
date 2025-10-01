@@ -35,3 +35,27 @@
 
 // 입출력 예 #4
 // "abc"는 밀지 않아도 "abc"이므로 0을 반환합니다.
+
+
+
+
+import Foundation
+
+func solution(_ A: String, _ B: String) -> Int {
+    if A.count != B.count { return -1 }
+    if A == B { return 0 }
+
+    var a = A
+    let n = A.count
+
+    for i in 1...n {
+        if let last = a.last {
+            a = String(last) + a.dropLast()
+        }
+        if a == B {
+            return i
+        }
+    }
+
+    return -1
+}
