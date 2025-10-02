@@ -31,3 +31,8 @@
 # 유의사항
 # 입출력 예 #1의 경우 "abc1Addfggg4556b"를 길이 6씩 자르면 "abc1Ad", "dfggg4" 두개와 마지막 "556b"가 남습니다. 
 # 이런 경우 남은 문자열을 그대로 배열에 저장합니다.
+
+
+
+def solution(my_str, n):
+    return [my_str[i:i+n] for i in range(0,len(my_str),n)]
