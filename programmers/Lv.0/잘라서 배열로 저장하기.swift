@@ -31,3 +31,21 @@
 // 유의사항
 // 입출력 예 #1의 경우 "abc1Addfggg4556b"를 길이 6씩 자르면 "abc1Ad", "dfggg4" 두개와 마지막 "556b"가 남습니다. 
 // 이런 경우 남은 문자열을 그대로 배열에 저장합니다.
+
+
+
+
+import Foundation
+
+func solution(_ my_str: String, _ n: Int) -> [String] {
+    var result: [String] = []
+    let characters = Array(my_str)
+    
+    for i in stride(from: 0, to: characters.count, by: n) {
+        let end = min(i + n, characters.count)
+        let substring = String(characters[i..<end])
+        result.append(substring)
+    }
+    
+    return result
+}
