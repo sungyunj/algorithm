@@ -27,3 +27,8 @@
 
 # 입출력 예 #2
 # [10, 29]에는 7이 없으므로 0을 return 합니다.
+
+
+
+def solution(array):
+    return sum(str(num).count('7') for num in array)
