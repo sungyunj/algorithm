@@ -29,3 +29,11 @@
 
 // 입출력 예 #3
 // "Python"를 모두 소문자로 바꾸면 "python"이고 이를 알파벳 순으로 정렬하면 "hnopty"입니다.
+
+
+
+import Foundation
+
+func solution(_ my_string: String) -> String {
+    return String(my_string.lowercased().sorted())
+}
