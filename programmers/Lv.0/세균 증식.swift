@@ -27,3 +27,11 @@
 
 // 입출력 예 #2
 // 처음엔 7마리, 1시간 후엔 14마리, 2시간 후엔 28마리, ..., 15시간 후엔 229376마리가 됩니다. 따라서 229,376을 return합니다.
+
+
+
+import Foundation
+
+func solution(_ n: Int, _ t: Int) -> Int {
+    return n * Int(pow(2.0, Double(t)))
+}
