@@ -22,3 +22,10 @@
 
 # 입출력 예 #2
 # 976은 제곱수가 아닙니다. 따라서 2를 return합니다.
+
+
+
+import math
+
+def solution(n):
+    return 1 if math.isqrt(n) ** 2 == n else 2
