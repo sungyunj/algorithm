@@ -22,3 +22,13 @@
 
 // 입출력 예 #2
 // 976은 제곱수가 아닙니다. 따라서 2를 return합니다.
+
+
+
+import Foundation
+
+func solution(_ n: Int) -> Int {
+    let sqrtValue = Int(sqrt(Double(n)))
+    
+    return sqrtValue * sqrtValue == n ? 1 : 2
+}
