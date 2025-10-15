@@ -29,3 +29,11 @@
 
 // 입출력 예 #3
 // "AbcAbcA" str1에 str2가 없으므로 2를 return합니다.
+
+
+
+import Foundation
+
+func solution(_ str1: String, _ str2: String) -> Int {
+    return str1.contains(str2) ? 1 : 2
+}
