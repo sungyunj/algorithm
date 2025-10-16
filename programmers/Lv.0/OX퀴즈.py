@@ -29,3 +29,26 @@
 # 3 - 4 = -3 은 틀린 수식이므로 "X", 5 + 6 = 11 은 옳은 수식이므로 "O" 입니다. 따라서 ["X", "O"]를 return합니다.
 # 입출력 예 #2
 # 19 - 6 = 13 은 옳은 수식이므로 "O", 5 + 66 = 71 은 옳은 수식이므로 "O", 5 - 15 = 63 은 틀린 수식이므로 "X", 3 - 1 = 2는 옳은 수식이므로 "O" 따라서 ["O", "O", "X", "O"]를 return합니다.
+
+
+
+def solution(quiz):
+    answer = []
+    for q in quiz:
+        parts = q.split()  # ["3", "-", "4", "=", "-3"]
+        x = int(parts[0])
+        op = parts[1]
+        y = int(parts[2])
+        result = int(parts[4])
+        
+        if op == '+':
+            correct = x + y
+        else:
+            correct = x - y
+        
+        if correct == result:
+            answer.append("O")
+        else:
+            answer.append("X")
+    
+    return answer
