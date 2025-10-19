@@ -21,3 +21,8 @@
 
 # 입출력 예 #2
 # 9 + 3 + 0 + 2 + 1 + 1 = 16을 return합니다.
+
+
+
+def solution(n):
+    return sum(int(digit) for digit in str(n))
