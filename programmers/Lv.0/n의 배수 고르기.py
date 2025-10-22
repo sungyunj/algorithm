@@ -27,3 +27,8 @@
 
 # 입출력 예 #3
 # numlist에서 12의 배수만을 남긴 [120, 600, 12, 12]를 return합니다.
+
+
+
+def solution(n, numlist):
+    return [num for num in numlist if num % n == 0]
