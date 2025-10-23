@@ -27,3 +27,11 @@
 
 // 입출력 예 #3
 // numlist에서 12의 배수만을 남긴 [120, 600, 12, 12]를 return합니다.
+
+
+
+import Foundation
+
+func solution(_ n: Int, _ numlist: [Int]) -> [Int] {
+    return numlist.filter { $0 % n == 0 }
+}
