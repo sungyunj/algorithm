@@ -27,3 +27,18 @@
 
 // 입출력 예 #3
 // 123456에 7은 없으므로 -1을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ num: Int, _ k: Int) -> Int {
+    let numStr = String(num)
+    let kStr = String(k)
+    
+    if let index = numStr.firstIndex(of: Character(kStr)) {
+        return numStr.distance(from: numStr.startIndex, to: index) + 1
+    } else {
+        return -1
+    }
+}
