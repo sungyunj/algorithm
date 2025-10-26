@@ -25,3 +25,8 @@
 
 # 입출력 예 #2
 # 같은 원소가 없으므로 0을 return합니다.
+
+
+
+def solution(s1, s2):
+    return len(set(s1) & set(s2))
