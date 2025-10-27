@@ -25,3 +25,11 @@
 
 // 입출력 예 #2
 // 같은 원소가 없으므로 0을 return합니다.
+
+
+
+import Foundation
+
+func solution(_ s1: [String], _ s2: [String]) -> Int {
+    return Set(s1).intersection(Set(s2)).count
+}
