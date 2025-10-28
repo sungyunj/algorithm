@@ -28,3 +28,19 @@
 # 입출력 예 설명
 # 입출력 예 #1
 # 3 + 4 = 7을 return 합니다.
+
+
+
+def solution(my_string):
+    tokens = my_string.split()
+    result = int(tokens[0])
+
+    for i in range(1, len(tokens), 2):
+        op = tokens[i]
+        num = int(tokens[i + 1])
+        if op == '+':
+            result += num
+        else:
+            result -= num
+
+    return result
