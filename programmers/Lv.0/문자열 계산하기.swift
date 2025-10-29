@@ -28,3 +28,24 @@
 // 입출력 예 설명
 // 입출력 예 #1
 // 3 + 4 = 7을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ my_string: String) -> Int {
+    let tokens = my_string.split(separator: " ").map { String($0) }
+    var result = Int(tokens[0])!
+
+    for i in stride(from: 1, to: tokens.count, by: 2) {
+        let op = tokens[i]
+        let num = Int(tokens[i + 1])!
+
+        if op == "+" {
+            result += num
+        } else {
+            result -= num
+        }
+    }
+    return result
+}
