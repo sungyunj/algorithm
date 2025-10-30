@@ -23,3 +23,11 @@
 
 # 입출력 예 #2
 # 9, 10, 11, 8 중 가장 큰 수는 11이고 인덱스 2에 있습니다.
+
+
+
+def solution(array):
+    max_value = max(array)
+    max_index = array.index(max_value)
+    
+    return [max_value, max_index]
