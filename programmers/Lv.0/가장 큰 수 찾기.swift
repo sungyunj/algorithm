@@ -23,3 +23,14 @@
 
 // 입출력 예 #2
 // 9, 10, 11, 8 중 가장 큰 수는 11이고 인덱스 2에 있습니다.
+
+
+
+import Foundation
+
+func solution(_ array: [Int]) -> [Int] {
+    let maxValue = array.max()!
+    let maxIndex = array.firstIndex(of: maxValue)!
+
+    return [maxValue, maxIndex]
+}
