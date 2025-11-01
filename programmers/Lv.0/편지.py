@@ -26,3 +26,8 @@
 
 # 입출력 예 #2
 # message의 글자 수가 11개로 최소 가로 22cm의 편지지가 필요합니다.
+
+
+
+def solution(message):
+    return len(message) * 2
