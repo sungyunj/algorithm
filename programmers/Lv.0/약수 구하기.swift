@@ -21,3 +21,17 @@
 
 // 입출력 예 #2
 // 29의 약수를 오름차순으로 담은 배열 [1, 29]를 return합니다.
+
+
+
+import Foundation
+
+func solution(_ n: Int) -> [Int] {
+    var answer: [Int] = []
+    for i in 1...n {
+        if n % i == 0 {
+            answer.append(i)
+        }
+    }
+    return answer
+}
