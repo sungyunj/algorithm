@@ -28,3 +28,14 @@
 
 # 입출력 예 #3
 # "hello"에서 한 번씩 등장한 문자는 "heo"이고 이를 사전 순으로 정렬한 "eho"를 return 합니다.
+
+
+
+def solution(s):
+    answer = ''
+
+    for ch in s:
+        if s.count(ch) == 1:
+            answer += ch
+
+    return ''.join(sorted(answer))
