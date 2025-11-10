@@ -28,3 +28,21 @@
 
 // 입출력 예 #3
 // "hello"에서 한 번씩 등장한 문자는 "heo"이고 이를 사전 순으로 정렬한 "eho"를 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ s: String) -> String {
+    var onceChars: [Character] = []
+    
+    for ch in s {
+        let count = s.filter { $0 == ch }.count
+        if count == 1 {
+            onceChars.append(ch)
+        }
+    }
+
+    let result = String(onceChars.sorted())
+    return result
+}
