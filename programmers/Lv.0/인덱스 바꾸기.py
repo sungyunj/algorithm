@@ -25,3 +25,11 @@
 
 # 입출력 예 #2
 # "I love you"의 3번째 인덱스 "o"와 " "(공백)을 바꾸면 "I l veoyou"입니다.
+
+
+
+def solution(my_string, num1, num2):
+    s_list = list(my_string)
+    s_list[num1], s_list[num2] = s_list[num2], s_list[num1]
+
+    return ''.join(s_list)
