@@ -25,3 +25,34 @@
 
 // 입출력 예 #1
 // "onefourzerosixseven"를 숫자로 바꾼 14067를 return합니다.
+
+
+
+import Foundation
+
+func solution(_ numbers: String) -> Int64 {
+    let numMap: [String: String] = [
+        "zero": "0",
+        "one": "1",
+        "two": "2",
+        "three": "3",
+        "four": "4",
+        "five": "5",
+        "six": "6",
+        "seven": "7",
+        "eight": "8",
+        "nine": "9"
+    ]
+    var temp = ""
+    var result = ""
+
+    for ch in numbers {
+        temp.append(ch)
+        if let digit = numMap[temp] {
+            result.append(digit)
+            temp = ""
+        }
+    }
+    
+    return Int64(result)!
+}
