@@ -22,3 +22,15 @@
 
 # 입출력 예 #2
 # 소문자는 대문자로 대문자는 소문자로 바꾼 "ABcDeFGHij"를 return합니다.
+
+
+
+def solution(my_string):
+    result = ""
+    for ch in my_string:
+        if ch.islower():
+            result += ch.upper()
+        else:
+            result += ch.lower()
+            
+    return result
