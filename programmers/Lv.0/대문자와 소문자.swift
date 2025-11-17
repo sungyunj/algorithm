@@ -25,3 +25,18 @@
 
 
 
+import Foundation
+
+func solution(_ my_string: String) -> String {
+    var result = ""
+    
+    for ch in my_string {
+        if ch.isLowercase {
+            result.append(ch.uppercased())
+        } 
+        else {
+            result.append(ch.lowercased())
+        }
+    }
+    return result
+}
