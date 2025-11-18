@@ -28,3 +28,12 @@
 
 # 입출력 예 #2
 # "pfqallllabwaoclk" 의 2번째, 4번째, 6번째, 8번째, 10번째, 12번째, 14번째, 16번째 글자를 합친 "fallback"을 return합니다.
+
+
+
+def solution(cipher, code):
+    answer = ""
+    for i in range(code - 1, len(cipher), code):
+        answer += cipher[i]
+        
+    return answer
