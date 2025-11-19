@@ -28,3 +28,20 @@
 
 // 입출력 예 #2
 // "pfqallllabwaoclk" 의 2번째, 4번째, 6번째, 8번째, 10번째, 12번째, 14번째, 16번째 글자를 합친 "fallback"을 return합니다.
+
+
+
+import Foundation
+
+func solution(_ cipher: String, _ code: Int) -> String {
+    let chars = Array(cipher)
+    var result = ""
+
+    var i = code - 1
+    while i < chars.count {
+        result.append(chars[i])
+        i += code
+    }
+    
+    return result
+}
