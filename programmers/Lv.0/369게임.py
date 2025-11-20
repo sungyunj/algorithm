@@ -23,3 +23,13 @@
 
 # 입출력 예 #2
 # 29423은 3이 1개, 9가 1개 있으므로 2를 출력합니다.
+
+
+
+def solution(order):
+    answer = 0
+    for ch in str(order):
+        if ch in ['3', '6', '9']:
+            answer += 1
+            
+    return answer
