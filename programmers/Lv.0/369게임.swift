@@ -23,3 +23,20 @@
 
 // 입출력 예 #2
 // 29423은 3이 1개, 9가 1개 있으므로 2를 출력합니다.
+
+
+
+import Foundation
+
+func solution(_ order: Int) -> Int {
+    let orderString = String(order)
+    var count = 0
+
+    for char in orderString {
+        if char == "3" || char == "6" || char == "9" {
+            count += 1
+        }
+    }
+    
+    return count
+}
