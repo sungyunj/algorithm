@@ -24,3 +24,10 @@
 
 # 입출력 예 #2
 # 10, 11, 12 중 13과 가장 가까운 수는 12입니다.
+
+
+
+def solution(array, n):
+    array.sort(key=lambda x: (abs(x - n), x))
+    
+    return array[0]
