@@ -27,3 +27,18 @@
 
 
 
+import Foundation
+
+func solution(_ array: [Int], _ n: Int) -> Int {
+    let sortedArray = array.sorted {
+        let diff1 = abs($0 - n)
+        let diff2 = abs($1 - n)
+        
+        if diff1 == diff2 {
+            return $0 < $1
+        }
+        return diff1 < diff2
+    }
+    
+    return sortedArray[0]
+}
