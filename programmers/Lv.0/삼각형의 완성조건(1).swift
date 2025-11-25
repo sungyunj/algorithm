@@ -29,3 +29,18 @@
 
 // 입출력 예 #3
 // 가장 큰 변인 222가 나머지 두 변의 합 271보다 작으므로 삼각형을 완성할 수 있습니다. 따라서 1을 return합니다.
+
+
+
+import Foundation
+
+func solution(_ sides: [Int]) -> Int {
+    let sortedSides = sides.sorted()
+    
+    if sortedSides[2] < sortedSides[0] + sortedSides[1] {
+        return 1
+    } 
+    else {
+        return 2
+    }
+}
