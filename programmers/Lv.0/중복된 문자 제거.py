@@ -25,3 +25,16 @@
 
 # 입출력 예 #2
 # "We are the world"에서 중복된 문자 "e", " ", "r" 들을 제거한 "We arthwold"을 return합니다.
+
+
+
+def solution(my_string):
+    result = ""
+    seen = set()
+    
+    for ch in my_string:
+        if ch not in seen:
+            result += ch
+            seen.add(ch)
+    
+    return result
