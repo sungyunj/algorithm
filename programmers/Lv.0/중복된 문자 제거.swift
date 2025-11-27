@@ -25,3 +25,21 @@
 
 // 입출력 예 #2
 // "We are the world"에서 중복된 문자 "e", " ", "r" 들을 제거한 "We arthwold"을 return합니다.
+
+
+
+import Foundation
+
+func solution(_ my_string: String) -> String {
+    var seen: Set<Character> = []
+    var result = ""
+    
+    for ch in my_string {
+        if !seen.contains(ch) {
+            result.append(ch)
+            seen.insert(ch)
+        }
+    }
+    
+    return result
+}
