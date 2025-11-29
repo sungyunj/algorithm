@@ -59,3 +59,19 @@
 
 // 입출력 예 #3
 // 3부터 10까지 2는 한 번도 등장하지 않으므로 0을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ i: Int, _ j: Int, _ k: Int) -> Int {
+    let target = String(k)
+    var count = 0
+    
+    for num in i...j {
+        let strNum = String(num)
+        count += strNum.filter { String($0) == target }.count
+    }
+    
+    return count
+}
