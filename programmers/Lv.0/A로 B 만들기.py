@@ -22,3 +22,8 @@
 
 # 입출력 예 #2
 # "allpe"의 순서를 바꿔도 "apple"을 만들 수 없습니다.
+
+
+
+def solution(before, after):
+    return 1 if sorted(before) == sorted(after) else 0
