@@ -24,3 +24,8 @@
 
 # 입출력 예 #2
 # 1001 + 1111 = 11000 이므로 "11000"을 return합니다.
+
+
+
+def solution(bin1, bin2):
+    return bin(int(bin1, 2) + int(bin2, 2))[2:]
