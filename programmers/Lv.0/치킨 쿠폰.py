@@ -31,3 +31,15 @@
 # 1마리를 주문하면 쿠폰이 1장 발급됩니다.
 # 가지고 있는 쿠폰이 총 10장이므로 서비스 치킨 1마리를 추가로 주문할 수 있습니다.
 # 따라서 108 + 10 + 1 + 1 = 120 을 return합니다.
+
+
+
+def solution(chicken):
+    service = 0
+    coupon = chicken
+
+    while coupon >= 10:
+        service += coupon // 10
+        coupon = coupon // 10 + coupon % 10
+
+    return service
