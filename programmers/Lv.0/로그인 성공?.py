@@ -38,3 +38,17 @@
 
 # 입출력 예 #3
 # db에 아이디가 맞는 계정이 없으므로 "fail"을 return합니다.
+
+
+
+def solution(id_pw, db):
+    input_id, input_pw = id_pw
+    
+    for user_id, user_pw in db:
+        if input_id == user_id:
+            if input_pw == user_pw:
+                return "login"
+            else:
+                return "wrong pw"
+
+    return "fail"
