@@ -38,3 +38,28 @@
 
 // 입출력 예 #3
 // db에 아이디가 맞는 계정이 없으므로 "fail"을 return합니다.
+
+
+
+import Foundation
+
+func solution(_ id_pw:[String], _ db:[[String]]) -> String {
+    let inputId = id_pw[0]
+    let inputPw = id_pw[1]
+    
+    for user in db {
+        let userId = user[0]
+        let userPw = user[1]
+        
+        if userId == inputId {          // 아이디 일치
+            if userPw == inputPw {      // 비밀번호까지 일치
+                return "login"
+            } 
+            else {                    // 비밀번호 불일치
+                return "wrong pw"
+            }
+        }
+    }
+    
+    return "fail"                       // 아이디 자체가 없음
+}
