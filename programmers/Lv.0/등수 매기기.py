@@ -26,3 +26,12 @@
 # 입출력 예 #2
 # 평균은 각각 75, 75, 40, 95, 95, 100, 20 이므로 [4, 4, 6, 2, 2, 1, 7] 을 return합니다.
 # 공동 2등이 두 명, 공동 4등이 2명 이므로 3등과 5등은 없습니다.
+
+
+
+def solution(score):
+    avg = [ (s[0] + s[1]) / 2 for s in score ]
+    sorted_avg = sorted(avg, reverse=True)
+    ranks = [ sorted_avg.index(a) + 1 for a in avg ]
+    
+    return ranks
