@@ -26,3 +26,17 @@
 // 입출력 예 #2
 // 평균은 각각 75, 75, 40, 95, 95, 100, 20 이므로 [4, 4, 6, 2, 2, 1, 7] 을 return합니다.
 // 공동 2등이 두 명, 공동 4등이 2명 이므로 3등과 5등은 없습니다.
+
+
+
+import Foundation
+
+func solution(_ score: [[Int]]) -> [Int] {
+    let averages = score.map { (Double($0[0]) + Double($0[1])) / 2.0 }
+    let sortedAverages = averages.sorted(by: >)
+    
+    let ranks = averages.map { avg in
+        return sortedAverages.firstIndex(of: avg)! + 1
+    }
+    return ranks
+}
