@@ -29,3 +29,8 @@
 # 입출력 예 #2
 # 30에서 가까운 순으로 [36, 40, 20, 47, 10, 6, 7000, 10000]을 return합니다.
 # 20과 40은 거리가 같으므로 더 큰 40이 앞에 와야 합니다.
+
+
+
+def solution(numlist, n):
+    return sorted(numlist, key=lambda x: (abs(x - n), -x))
