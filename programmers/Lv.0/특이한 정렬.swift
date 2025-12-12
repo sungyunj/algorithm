@@ -29,3 +29,21 @@
 // 입출력 예 #2
 // 30에서 가까운 순으로 [36, 40, 20, 47, 10, 6, 7000, 10000]을 return합니다.
 // 20과 40은 거리가 같으므로 더 큰 40이 앞에 와야 합니다.
+
+
+
+import Foundation
+
+func solution(_ numlist: [Int], _ n: Int) -> [Int] {
+    return numlist.sorted {
+        let d1 = abs($0 - n)
+        let d2 = abs($1 - n)
+
+        if d1 == d2 {
+            return $0 > $1
+        } 
+        else {
+            return d1 < d2
+        }
+    }
+}
