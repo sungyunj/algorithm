@@ -42,3 +42,22 @@
 # Hint
 # 분자와 분모의 최대공약수로 약분하면 기약분수를 만들 수 있습니다.
 # 정수도 유한소수로 분류합니다.
+
+
+
+def solution(a, b):
+    def gcd(x, y):
+        while y:
+            x, y = y, x % y
+        return x
+
+    g = gcd(a, b)
+    b //= g
+
+    while b % 2 == 0:
+        b //= 2
+
+    while b % 5 == 0:
+        b //= 5
+
+    return 1 if b == 1 else 2
