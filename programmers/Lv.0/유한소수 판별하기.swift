@@ -42,3 +42,31 @@
 // Hint
 // 분자와 분모의 최대공약수로 약분하면 기약분수를 만들 수 있습니다.
 // 정수도 유한소수로 분류합니다.
+
+
+
+import Foundation
+
+func solution(_ a: Int, _ b: Int) -> Int {
+    func gcd(_ x: Int, _ y: Int) -> Int {
+        var x = x
+        var y = y
+        while y != 0 {
+            let temp = x % y
+            x = y
+            y = temp
+        }
+        return x
+    }
+
+    let g = gcd(a, b)
+    var denominator = b / g
+
+    while denominator % 2 == 0 {
+        denominator /= 2
+    }
+    while denominator % 5 == 0 {
+        denominator /= 5
+    }
+    return denominator == 1 ? 1 : 2
+}
