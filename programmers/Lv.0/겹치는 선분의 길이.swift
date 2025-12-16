@@ -37,3 +37,28 @@
 // 첫 번째와 세 번째 선분 [1, 5] 구간에서 겹칩니다.
 // 두 번째와 세 번째 선분 [3, 9] 구간에서 겹칩니다.
 // 따라서 [1, 9] 구간에 두 개 이상의 선분이 겹쳐있으므로, 8을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ lines: [[Int]]) -> Int {
+    var count = Array(repeating: 0, count: 201)
+
+    for line in lines {
+        let start = line[0]
+        let end = line[1]
+        
+        for i in start..<end {
+            count[i + 100] += 1
+        }
+    }
+
+    var answer = 0
+    for c in count {
+        if c >= 2 {
+            answer += 1
+        }
+    }
+    return answer
+}
