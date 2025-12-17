@@ -28,3 +28,22 @@
 
 # 입출력 예 #2
 # 점을 어떻게 연결해도 평행하지 않습니다.
+
+
+
+def solution(dots):
+    def slope(p1, p2):
+        return (p2[1] - p1[1]) / (p2[0] - p1[0])
+
+    if slope(dots[0], dots[1]) == slope(dots[2], dots[3]):
+        return 1
+    if slope(dots[0], dots[2]) == slope(dots[1], dots[3]):
+        return 1
+    if slope(dots[0], dots[3]) == slope(dots[1], dots[2]):
+        return 1
+    
+    return 0
+
+
+# print(solution([[1, 4], [9, 2], [3, 8], [11, 6]]))
+# print(solution([[3, 5], [4, 1], [2, 4], [5, 10]]))
