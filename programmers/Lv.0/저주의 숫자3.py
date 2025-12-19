@@ -30,3 +30,16 @@
 
 # 입출력 예 #2
 # 40을 3x 마을의 숫자로 변환하면 76입니다.
+
+
+def solution(n):
+    count = 0
+    num = 0
+    
+    while count < n:
+        num += 1
+        if num % 3 == 0 or '3' in str(num):
+            continue
+        count += 1
+    
+    return num
