@@ -30,3 +30,21 @@
 
 // 입출력 예 #2
 // 40을 3x 마을의 숫자로 변환하면 76입니다.
+
+
+
+import Foundation
+
+func solution(_ n: Int) -> Int {
+    var count = 0
+    var num = 0
+    
+    while count < n {
+        num += 1
+        if num % 3 == 0 || String(num).contains("3") {
+            continue
+        }
+        count += 1
+    }
+    return num
+}
