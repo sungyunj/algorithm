@@ -34,3 +34,17 @@
 
 # 입출력 예 #3
 # "s", "o", "m", "d" 를 조합해 만들 수 있는 단어가 dic에 존재하지 않습니다. 따라서 2을 return합니다.
+
+
+
+def solution(spell, dic):
+    target = sorted(spell)
+    
+    for word in dic:
+        if len(word) != len(spell):
+            continue
+        
+        if sorted(word) == target:
+            return 1
+    
+    return 2
