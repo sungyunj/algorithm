@@ -34,3 +34,23 @@
 
 // 입출력 예 #3
 // "s", "o", "m", "d" 를 조합해 만들 수 있는 단어가 dic에 존재하지 않습니다. 따라서 2을 return합니다.
+
+
+
+import Foundation
+
+func solution(_ spell: [String], _ dic: [String]) -> Int {
+    let target = spell.sorted()
+    
+    for word in dic {
+        if word.count != spell.count {
+            continue
+        }
+        let sortedWord = word.map { String($0) }.sorted()
+        
+        if sortedWord == target {
+            return 1
+        }
+    }
+    return 2
+}
