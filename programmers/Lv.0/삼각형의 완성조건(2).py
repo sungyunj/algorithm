@@ -38,3 +38,15 @@
 # 나머지 한 변이 가장 긴 변인 경우
 # 될 수 있는 한 변은 12, 13, 14, 15, 16, 17 로 6개입니다.
 # 따라서 7 + 6 = 13을 return합니다.
+
+
+
+def solution(sides):
+    a, b = sides
+    big = max(a, b)
+    small = min(a, b)
+
+    case1 = (a + b - 1) - big
+    case2 = big - (big - small + 1) + 1
+    
+    return case1 + case2
