@@ -38,3 +38,20 @@
 // 나머지 한 변이 가장 긴 변인 경우
 // 될 수 있는 한 변은 12, 13, 14, 15, 16, 17 로 6개입니다.
 // 따라서 7 + 6 = 13을 return합니다.
+
+
+
+import Foundation
+
+func solution(_ sides: [Int]) -> Int {
+    let a = sides[0]
+    let b = sides[1]
+    
+    let big = max(a, b)
+    let small = min(a, b)
+
+    let case1 = (a + b - 1) - big
+    let case2 = small
+    
+    return case1 + case2
+}
