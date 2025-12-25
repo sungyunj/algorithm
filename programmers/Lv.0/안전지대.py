@@ -31,3 +31,29 @@
 
 # 입출력 예 #3
 # 모든 지역에 지뢰가 있으므로 안전지역은 없습니다. 따라서 0을 return합니다.
+
+
+
+def solution(board):
+    n = len(board)
+    danger = [[0] * n for _ in range(n)]
+    
+    directions = [(-1, -1), (-1, 0), (-1, 1),
+                  (0, -1),  (0, 0),  (0, 1),
+                  (1, -1),  (1, 0),  (1, 1)]
+
+    for i in range(n):
+        for j in range(n):
+            if board[i][j] == 1:
+                for dx, dy in directions:
+                    ni, nj = i + dx, j + dy
+                    if 0 <= ni < n and 0 <= nj < n:
+                        danger[ni][nj] = 1
+
+    answer = 0
+    for i in range(n):
+        for j in range(n):
+            if danger[i][j] == 0:
+                answer += 1
+    
+    return answer
