@@ -31,3 +31,42 @@
 
 // 입출력 예 #3
 // 모든 지역에 지뢰가 있으므로 안전지역은 없습니다. 따라서 0을 return합니다.
+
+
+
+import Foundation
+
+func solution(_ board: [[Int]]) -> Int {
+    let n = board.count
+    var danger = Array(repeating: Array(repeating: 0, count: n), count: n)
+    
+    let directions = [
+        (-1, -1), (-1, 0), (-1, 1),
+        (0, -1),  (0, 0),  (0, 1),
+        (1, -1),  (1, 0),  (1, 1)
+    ]
+
+    for i in 0..<n {
+        for j in 0..<n {
+            if board[i][j] == 1 {
+                for (dx, dy) in directions {
+                    let ni = i + dx
+                    let nj = j + dy
+                    if ni >= 0 && ni < n && nj >= 0 && nj < n {
+                        danger[ni][nj] = 1
+                    }
+                }
+            }
+        }
+    }
+    var answer = 0
+    
+    for i in 0..<n {
+        for j in 0..<n {
+            if danger[i][j] == 0 {
+                answer += 1
+            }
+        }
+    }
+    return answer
+}
