@@ -27,3 +27,23 @@
 
 # 입출력 예 #2
 # "1a2b3c4d123Z"안의 자연수는 1, 2, 3, 4, 123 입니다. 따라서 1 + 2 + 3 + 4 + 123 = 133 을 return합니다.
+
+
+
+
+def solution(my_string):
+    answer = 0
+    temp = ""
+    
+    for ch in my_string:
+        if ch.isdigit():
+            temp += ch
+        else:
+            if temp:
+                answer += int(temp)
+                temp = ""
+
+    if temp:
+        answer += int(temp)
+    
+    return answer
