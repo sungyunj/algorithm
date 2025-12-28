@@ -27,3 +27,28 @@
 
 // 입출력 예 #2
 // "1a2b3c4d123Z"안의 자연수는 1, 2, 3, 4, 123 입니다. 따라서 1 + 2 + 3 + 4 + 123 = 133 을 return합니다.
+
+
+
+
+import Foundation
+
+func solution(_ my_string: String) -> Int {
+    var answer = 0
+    var temp = ""
+    
+    for ch in my_string {
+        if ch.isNumber {
+            temp.append(ch)
+        } else {
+            if !temp.isEmpty {
+                answer += Int(temp)!
+                temp = ""
+            }
+        }
+    }
+    if !temp.isEmpty {
+        answer += Int(temp)!
+    }
+    return answer
+}
