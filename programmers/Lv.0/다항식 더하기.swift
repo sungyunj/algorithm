@@ -37,3 +37,42 @@
 
 // 입출력 예 #2
 // "x + x + x"에서 동류항끼리 더하면 "3x"입니다.
+
+
+
+import Foundation
+
+func solution(_ polynomial: String) -> String {
+    let terms = polynomial.components(separatedBy: " + ")
+    
+    var xSum = 0
+    var numSum = 0
+    
+    for term in terms {
+        if term.contains("x") {
+            if term == "x" {
+                xSum += 1
+            } else {
+                let coef = term.replacingOccurrences(of: "x", with: "")
+                xSum += Int(coef)!
+            }
+        } 
+        else {
+            numSum += Int(term)!
+        }
+    }
+    var result: [String] = []
+
+    if xSum > 0 {
+        if xSum == 1 {
+            result.append("x")
+        } else {
+            result.append("\(xSum)x")
+        }
+    }
+
+    if numSum > 0 {
+        result.append("\(numSum)")
+    }
+    return result.joined(separator: " + ")
+}
