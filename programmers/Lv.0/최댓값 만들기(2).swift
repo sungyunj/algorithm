@@ -27,3 +27,17 @@
 
 // 입출력 예 #3
 // 두 수의 곱중 최댓값은 20 * 30 = 600 입니다.
+
+
+
+
+import Foundation
+
+func solution(_ numbers: [Int]) -> Int {
+    let sortedNumbers = numbers.sorted()
+    
+    let first = sortedNumbers[0] * sortedNumbers[1]
+    let second = sortedNumbers[sortedNumbers.count - 1] * sortedNumbers[sortedNumbers.count - 2]
+    
+    return max(first, second)
+}
