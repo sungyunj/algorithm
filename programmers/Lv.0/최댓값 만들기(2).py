@@ -27,3 +27,10 @@
 
 # 입출력 예 #3
 # 두 수의 곱중 최댓값은 20 * 30 = 600 입니다.
+
+
+
+def solution(numbers):
+    numbers.sort()
+    
+    return max(numbers[0] * numbers[1], numbers[-1] * numbers[-2])
