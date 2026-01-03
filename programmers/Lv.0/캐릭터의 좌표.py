@@ -34,3 +34,23 @@
 # 입출력 예 설명 #2
 # [0, 0]에서 아래로 다섯 칸 이동한 좌표는 [0, -5]이지만 맵의 세로 크기가 9이므로 아래로는 네 칸을 넘어서 이동할 수 없습니다. 
 # 따라서 [0, -4]를 return합니다.
+
+
+
+def solution(keyinput, board):
+    x, y = 0, 0
+    
+    max_x = board[0] // 2
+    max_y = board[1] // 2
+    
+    for key in keyinput:
+        if key == "up" and y < max_y:
+            y += 1
+        elif key == "down" and y > -max_y:
+            y -= 1
+        elif key == "left" and x > -max_x:
+            x -= 1
+        elif key == "right" and x < max_x:
+            x += 1
+            
+    return [x, y]
