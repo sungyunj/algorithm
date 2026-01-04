@@ -34,3 +34,32 @@
 // 입출력 예 설명 #2
 // [0, 0]에서 아래로 다섯 칸 이동한 좌표는 [0, -5]이지만 맵의 세로 크기가 9이므로 아래로는 네 칸을 넘어서 이동할 수 없습니다. 
 // 따라서 [0, -4]를 return합니다.
+
+
+
+
+import Foundation
+
+func solution(_ keyinput: [String], _ board: [Int]) -> [Int] {
+    var x = 0
+    var y = 0
+    
+    let maxX = board[0] / 2
+    let maxY = board[1] / 2
+    
+    for key in keyinput {
+        switch key {
+        case "up":
+            if y < maxY { y += 1 }
+        case "down":
+            if y > -maxY { y -= 1 }
+        case "left":
+            if x > -maxX { x -= 1 }
+        case "right":
+            if x < maxX { x += 1 }
+        default:
+            break
+        }
+    }
+    return [x, y]
+}
