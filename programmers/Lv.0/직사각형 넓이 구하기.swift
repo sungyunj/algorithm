@@ -25,3 +25,17 @@
 
 // 입출력 예 #2
 // 좌표 [[-1, -1], [1, 1], [1, -1], [-1, 1]]를 꼭짓점으로 갖는 직사각형의 가로, 세로 길이는 각각 2, 2이므로 직사각형의 넓이는 2 x 2 = 4입니다.
+
+
+
+import Foundation
+
+func solution(_ dots: [[Int]]) -> Int {
+    let xValues = dots.map { $0[0] }
+    let yValues = dots.map { $0[1] }
+    
+    let width = xValues.max()! - xValues.min()!
+    let height = yValues.max()! - yValues.min()!
+    
+    return width * height
+}
