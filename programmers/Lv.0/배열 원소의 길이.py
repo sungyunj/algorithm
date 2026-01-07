@@ -23,3 +23,8 @@
 
 # 입출력 예 #2
 # ["I", "Love", "Programmers."]의 각 원소의 길이인 [1, 4, 12]을 return합니다.
+
+
+
+def solution(strlist):
+    return [len(s) for s in strlist]
