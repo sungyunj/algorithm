@@ -42,3 +42,16 @@
 
 # 입출력 예 #4, #5
 # 설명 생략
+
+
+
+def solution(s):
+    stack = []
+    
+    for x in s.split():
+        if x == "Z":
+            stack.pop()
+        else:
+            stack.append(int(x))
+    
+    return sum(stack)
