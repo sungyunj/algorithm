@@ -41,3 +41,25 @@
 
 // 입출력 예 #4, #5
 // 설명 생략
+
+
+
+import Foundation
+
+func solution(_ s: String) -> Int {
+    var stack: [Int] = []
+
+    let items = s.split(separator: " ")
+    
+    for item in items {
+        if item == "Z" {
+            stack.removeLast()
+        } 
+        else {
+            if let num = Int(item) {
+                stack.append(num)
+            }
+        }
+    }
+    return stack.reduce(0, +)
+}
