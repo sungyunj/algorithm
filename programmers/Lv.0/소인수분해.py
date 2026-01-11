@@ -28,3 +28,20 @@
 
 # 입출력 예 #3
 # 420을 소인수분해하면 2 * 2 * 3 * 5 * 7 입니다. 따라서 [2, 3, 5, 7]을 return합니다.
+
+
+
+import math
+
+def solution(n):
+    answer = []
+
+    for i in range(2, int(math.sqrt(n)) + 1):
+        while n % i == 0:
+            if i not in answer:
+                answer.append(i)
+            n //= i
+    if n > 1:
+        answer.append(n)
+    
+    return answer
