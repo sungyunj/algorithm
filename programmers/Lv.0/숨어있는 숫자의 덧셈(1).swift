@@ -26,3 +26,18 @@
 
 // 유의사항
 // 연속된 숫자도 각각 한 자리 숫자로 취급합니다.
+
+
+
+import Foundation
+
+func solution(_ my_string: String) -> Int {
+    var sum = 0
+    
+    for ch in my_string {
+        if let num = ch.wholeNumberValue {
+            sum += num
+        }
+    }
+    return sum
+}
