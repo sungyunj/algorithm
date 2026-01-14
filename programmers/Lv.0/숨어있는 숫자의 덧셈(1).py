@@ -26,3 +26,13 @@
 
 # 유의사항
 # 연속된 숫자도 각각 한 자리 숫자로 취급합니다.
+
+
+
+def solution(my_string):
+    answer = 0
+    for ch in my_string:
+        if ch.isdigit():
+            answer += int(ch)
+            
+    return answer
