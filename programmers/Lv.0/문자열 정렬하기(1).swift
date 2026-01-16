@@ -27,3 +27,19 @@
 
 // 입출력 예 #3
 // "abcde0"에 있는 숫자 0을 오름차순 정렬한 [0]을 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ my_string: String) -> [Int] {
+    var numbers: [Int] = []
+    
+    for char in my_string {
+        if let num = char.wholeNumberValue {
+            numbers.append(num)
+        }
+    }
+    return numbers.sorted()
+}
