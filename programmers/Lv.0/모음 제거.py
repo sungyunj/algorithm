@@ -23,3 +23,11 @@
 
 # 입출력 예 #1
 # "nice to meet you"에서 모음 i, o, e, u를 모두 제거한 "nc t mt y"를 return합니다.
+
+
+
+def solution(my_string):
+    vowels = {'a', 'e', 'i', 'o', 'u'}
+    answer = ''.join(ch for ch in my_string if ch not in vowels)
+    
+    return answer
