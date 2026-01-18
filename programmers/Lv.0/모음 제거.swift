@@ -23,3 +23,15 @@
 
 // 입출력 예 #1
 // "nice to meet you"에서 모음 i, o, e, u를 모두 제거한 "nc t mt y"를 return합니다.
+
+
+
+
+import Foundation
+
+func solution(_ my_string: String) -> String {
+    let vowels: Set<Character> = ["a", "e", "i", "o", "u"]
+    let result = my_string.filter { !vowels.contains($0) }
+    
+    return String(result)
+}
