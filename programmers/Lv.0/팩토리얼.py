@@ -24,3 +24,15 @@
 
 # 입출력 예 #2
 # 3! = 6, 4! = 24입니다. n이 7이므로, 7 이하의 최대 팩토리얼인 3을 return 합니다.
+
+
+
+def solution(n):
+    fac = 1
+    i = 1
+    
+    while True:
+        fac *= i
+        if fac > n:
+            return i - 1
+        i += 1
