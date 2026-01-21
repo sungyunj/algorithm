@@ -23,3 +23,9 @@
 
 # 입출력 예 #1
 # 두 수의 곱중 최댓값은 31 * 24 = 744 입니다.
+
+
+
+def solution(numbers):
+    numbers.sort()
+    return numbers[-1] * numbers[-2]
