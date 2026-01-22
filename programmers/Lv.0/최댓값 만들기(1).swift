@@ -23,3 +23,14 @@
 
 // 입출력 예 #1
 // 두 수의 곱중 최댓값은 31 * 24 = 744 입니다.
+
+
+
+
+import Foundation
+
+func solution(_ numbers: [Int]) -> Int {
+    let sortedNumbers = numbers.sorted()
+    
+    return sortedNumbers[sortedNumbers.count - 1] * sortedNumbers[sortedNumbers.count - 2]
+}
