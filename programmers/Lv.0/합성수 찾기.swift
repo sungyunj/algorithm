@@ -23,3 +23,29 @@
 
 // 입출력 예 #2
 // 15 이하 합성수는 4, 6, 8, 9, 10, 12, 14, 15 로 8개입니다. 따라서 8을 return합니다.
+
+
+
+import Foundation
+
+func solution(_ n: Int) -> Int {
+    var answer = 0
+    
+    if n < 4 {
+        return 0
+    }
+    
+    for i in 4...n {
+        var divisorCount = 0
+        
+        for j in 1...i {
+            if i % j == 0 {
+                divisorCount += 1
+            }
+        }
+        if divisorCount >= 3 {
+            answer += 1
+        }
+    }    
+    return answer
+}
