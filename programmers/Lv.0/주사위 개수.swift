@@ -29,3 +29,11 @@
 
 // 입출력 예 #2
 // 상자의 크기가 가로 10, 세로 8, 높이 6이므로 모서리의 길이가 3인 주사위는 12개 들어갈 수 있습니다.
+
+
+
+import Foundation
+
+func solution(_ box: [Int], _ n: Int) -> Int {
+    return (box[0] / n) * (box[1] / n) * (box[2] / n)
+}
