@@ -23,3 +23,17 @@
 
 // 입출력 예 #2
 // numbers 가 [4, 455, 6, 4, -1, 45, 6]이고 direction이 "left" 이므로 왼쪽으로 한 칸씩 회전시킨 [455, 6, 4, -1, 45, 6, 4]를 return합니다.
+
+
+
+
+import Foundation
+
+func solution(_ numbers: [Int], _ direction: String) -> [Int] {
+    if direction == "right" {
+        return [numbers.last!] + numbers.dropLast()
+    } 
+    else {
+        return numbers.dropFirst() + [numbers.first!]
+    }
+}
