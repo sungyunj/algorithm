@@ -30,3 +30,19 @@
 
 // 입출력 예 #2
 // num_list가 [100, 95, 2, 4, 5, 6, 18, 33, 948] 로 길이가 9이고 n이 3이므로 3 * 3 배열로 변경한 [[100, 95, 2], [4, 5, 6], [18, 33, 948]] 을 return합니다.
+
+
+
+
+import Foundation
+
+func solution(_ num_list: [Int], _ n: Int) -> [[Int]] {
+    var result: [[Int]] = []
+    
+    for i in stride(from: 0, to: num_list.count, by: n) {
+        let chunk = Array(num_list[i..<i+n])
+        result.append(chunk)
+    }
+    
+    return result
+}
