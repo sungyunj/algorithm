@@ -32,3 +32,20 @@
 // Hint
 // 서로 다른 n개 중 m개를 뽑는 경우의 수 공식은 다음과 같습니다.
 // n! / (n-m)! * m! 
+
+
+
+
+import Foundation
+
+func solution(_ balls: Int, _ share: Int) -> Int {
+    var result = 1
+    
+    if share == 0 {
+        return 1
+    }
+    for i in 1...share {
+        result = result * (balls - i + 1) / i
+    }
+    return result
+}
