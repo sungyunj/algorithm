@@ -24,3 +24,18 @@
 
 # 입출력 예 #2
 # "205"는 순서대로 가위, 바위, 보이고 이를 모두 이기려면 바위, 보, 가위를 순서대로 내야하므로 “052”를 return합니다.
+
+
+
+def solution(rsp):
+    win_map = {
+        '2': '0',  # 가위 → 바위
+        '0': '5',  # 바위 → 보
+        '5': '2'   # 보 → 가위
+    }
+    answer = ''
+    
+    for ch in rsp:
+        answer += win_map[ch]
+        
+    return answer
