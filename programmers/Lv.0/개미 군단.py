@@ -30,3 +30,17 @@
 
 # 입출력 예 #3
 # hp가 999이므로, 장군개미 199 마리 병정개미 한마리 일개미 한마리로 사냥할 수 있습니다. 따라서 201을 return합니다.
+
+
+
+
+def solution(hp):
+    general = hp // 5
+    hp %= 5
+    
+    soldier = hp // 3
+    hp %= 3
+    
+    worker = hp
+    
+    return general + soldier + worker
