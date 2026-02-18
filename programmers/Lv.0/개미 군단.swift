@@ -30,3 +30,22 @@
 
 // 입출력 예 #3
 // hp가 999이므로, 장군개미 199 마리 병정개미 한마리 일개미 한마리로 사냥할 수 있습니다. 따라서 201을 return합니다.
+
+
+
+
+import Foundation
+
+func solution(_ hp: Int) -> Int {
+    var hp = hp
+    
+    let general = hp / 5
+    hp %= 5
+    
+    let soldier = hp / 3
+    hp %= 3
+    
+    let worker = hp
+    
+    return general + soldier + worker
+}
