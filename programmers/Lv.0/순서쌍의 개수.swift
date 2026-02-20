@@ -26,3 +26,20 @@
 
 
 
+import Foundation
+
+func solution(_ n: Int) -> Int {
+    var count = 0
+    let limit = Int(Double(n).squareRoot())
+    
+    for i in 1...limit {
+        if n % i == 0 {
+            count += 1
+            if i != n / i {
+                count += 1
+            }
+        }
+    }
+    
+    return count
+}
