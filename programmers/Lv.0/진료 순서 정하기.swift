@@ -28,3 +28,14 @@
 
 // 입출력 예 #3
 // emergency가 [30, 10, 23, 6, 100]이므로 응급도의 크기 순서대로 번호를 매긴 [2, 4, 3, 5, 1]를 return합니다.
+
+
+
+
+import Foundation
+
+func solution(_ emergency:[Int]) -> [Int] {
+    let sortedEmergency = emergency.sorted(by: >)
+    
+    return emergency.map { sortedEmergency.firstIndex(of: $0)! + 1 }
+}
