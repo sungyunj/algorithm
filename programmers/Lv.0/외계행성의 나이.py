@@ -31,3 +31,8 @@
 
 # 입출력 예 #3
 # age가 100이므로 "baa"를 return합니다.
+
+
+
+def solution(age):
+    return ''.join(chr(int(digit) + 97) for digit in str(age))
