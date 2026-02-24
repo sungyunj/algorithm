@@ -31,3 +31,13 @@
 
 // 입출력 예 #3
 // age가 100이므로 "baa"를 return합니다.
+
+
+
+import Foundation
+
+func solution(_ age:Int) -> String {
+    return String(age).map {
+        String(UnicodeScalar(Int(String($0))! + 97)!)
+    }.joined()
+}
