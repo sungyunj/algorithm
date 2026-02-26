@@ -24,3 +24,8 @@
 
 # 입출력 예 #2
 # [1, 3, 5]의 1번째 인덱스 3부터 2번째 인덱스 5까지 자른 [3, 5]를 return 합니다.
+
+
+
+def solution(numbers, num1, num2):
+    return numbers[num1:num2+1]
