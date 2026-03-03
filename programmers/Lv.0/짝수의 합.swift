@@ -21,3 +21,16 @@
 
 // 입출력 예 #2
 // n이 4이므로 2 + 4 = 6을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ n: Int) -> Int {
+    var sum = 0
+    
+    for i in stride(from: 2, through: n, by: 2) {
+        sum += i
+    }
+    return sum
+}
