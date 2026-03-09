@@ -32,3 +32,15 @@
 
 # 입출력 예 #3
 # angle이 180이므로 평각입니다. 따라서 4를 return합니다.
+
+
+
+def solution(angle):
+    if angle < 90:
+        return 1
+    elif angle == 90:
+        return 2
+    elif angle < 180:
+        return 3
+    else:
+        return 4
