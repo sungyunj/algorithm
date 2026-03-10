@@ -32,3 +32,20 @@
 
 // 입출력 예 #3
 // angle이 180이므로 평각입니다. 따라서 4를 return합니다.
+
+
+
+
+import Foundation
+
+func solution(_ angle:Int) -> Int {
+    if angle < 90 {
+        return 1
+    } else if angle == 90 {
+        return 2
+    } else if angle < 180 {
+        return 3
+    } else {
+        return 4
+    }
+}
