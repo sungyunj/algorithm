@@ -25,3 +25,10 @@
 
 # 입출력 예 #2
 # "BCBdbe" 에서 "B"를 모두 제거한 "Cdbe"를 return합니다.
+
+
+
+def solution(my_string, letter):
+    answer = my_string.replace(letter, '')
+    
+    return answer
