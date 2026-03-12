@@ -25,3 +25,11 @@
 
 // 입출력 예 #2
 // "BCBdbe" 에서 "B"를 모두 제거한 "Cdbe"를 return합니다.
+
+
+
+import Foundation
+
+func solution(_ my_string:String, _ letter:String) -> String {
+    return my_string.replacingOccurrences(of: letter, with: "")
+}
