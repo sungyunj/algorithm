@@ -19,3 +19,12 @@
 # 입출력 예 설명
 # 입출력 예 #1
 # "hello"의 각 문자를 세 번씩 반복한 "hhheeellllllooo"를 return 합니다.
+
+
+
+def solution(my_string, n):
+    answer = ''
+    for c in my_string:
+        answer += c * n
+        
+    return answer
