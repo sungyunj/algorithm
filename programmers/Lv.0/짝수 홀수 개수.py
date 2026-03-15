@@ -22,3 +22,17 @@
 
 # 입출력 예 #2
 # [1, 3, 5, 7]에는 짝수가 없고 홀수가 네 개 있습니다.
+
+
+
+
+def solution(num_list):
+    even_count, odd_count = 0, 0
+    
+    for i in num_list:
+        if i % 2 == 0:
+            even_count += 1
+        else:
+            odd_count += 1
+    
+    return [even_count, odd_count]
