@@ -22,3 +22,11 @@
 
 // 입출력 예 #2
 // my_string이 "bread"이므로 거꾸로 뒤집은 "daerb"를 return합니다.
+
+
+
+import Foundation
+
+func solution(_ my_string: String) -> String {
+    return String(my_string.reversed())
+}
