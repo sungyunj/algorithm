@@ -27,3 +27,12 @@
 
 // 입출력 예 #3
 // num_list가 [1, 0, 1, 1, 1, 3, 5]이므로 순서를 거꾸로 뒤집은 배열 [5, 3, 1, 1, 1, 0, 1]을 return합니다.
+
+
+
+
+import Foundation
+
+func solution(_ num_list: [Int]) -> [Int] {
+    return num_list.reversed()
+}
