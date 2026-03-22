@@ -23,3 +23,11 @@
 
 // 입출력 예 #2
 // 2022년 기준 23살이므로 2000년생입니다.
+
+
+
+import Foundation
+
+func solution(_ age:Int) -> Int {
+    return 2022 - age + 1
+}
