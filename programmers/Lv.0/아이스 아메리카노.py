@@ -23,3 +23,10 @@
 
 # 입출력 예 #2
 # 15,000원은 아이스 아메리카노 두 잔을 살 수 있고 잔돈은 4,000원입니다.
+
+
+
+def solution(money):
+    cups = money // 5500
+    change = money % 5500
+    return [cups, change]
