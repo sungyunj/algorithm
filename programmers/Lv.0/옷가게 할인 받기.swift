@@ -24,3 +24,20 @@
 
 // 입출력 예 #2
 // 580,000원에서 20%를 할인한 464,000원을 return 합니다.
+
+
+
+
+import Foundation
+
+func solution(_ price: Int) -> Int {
+    if price >= 500000 {
+        return Int(Double(price) * 0.8)
+    } else if price >= 300000 {
+        return Int(Double(price) * 0.9)
+    } else if price >= 100000 {
+        return Int(Double(price) * 0.95)
+    } else {
+        return price
+    }
+}
