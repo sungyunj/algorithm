@@ -24,3 +24,8 @@
 
 # 입출력 예 #2
 # numbers의 원소들의 평균 값은 94.0입니다.
+
+
+
+def solution(numbers):
+    return sum(numbers) / len(numbers)
