@@ -23,3 +23,8 @@
 
 # 입출력 예 #2
 # 12명이 4조각으로 자른 피자를 한 조각 이상씩 먹으려면 최소 3판을 시켜야 합니다.
+
+
+
+def solution(slice, n):
+    return (n + slice - 1) // slice
