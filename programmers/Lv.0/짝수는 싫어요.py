@@ -21,3 +21,8 @@
 
 # 입출력 #1
 # 15 이하의 홀수가 담긴 배열 [1, 3, 5, 7, 9, 11, 13, 15]를 return합니다.
+
+
+
+def solution(n):
+    return list(range(1, n + 1, 2))
