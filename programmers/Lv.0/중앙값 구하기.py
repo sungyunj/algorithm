@@ -25,3 +25,9 @@
 
 # 입출력 예 #2
 # 9, -1, 0을 오름차순 정렬하면 -1, 0, 9이고 가장 중앙에 위치하는 값은 0입니다.
+
+
+
+def solution(array):
+    array.sort()
+    return array[len(array) // 2]
