@@ -25,3 +25,12 @@
 
 // 입출력 예 #2
 // 9, -1, 0을 오름차순 정렬하면 -1, 0, 9이고 가장 중앙에 위치하는 값은 0입니다.
+
+
+
+import Foundation
+
+func solution(_ array: [Int]) -> Int {
+    let sortedArray = array.sorted()
+    return sortedArray[sortedArray.count / 2]
+}
