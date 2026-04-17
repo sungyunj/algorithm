@@ -22,3 +22,8 @@
 
 # 입출력 예 #2
 # num1이 10, num2가 5이므로 10을 5로 나눈 나머지 0을 return 합니다.
+
+
+
+def solution(num1, num2):
+    return num1 % num2
