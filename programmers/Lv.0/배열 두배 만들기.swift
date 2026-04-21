@@ -23,3 +23,11 @@
 
 // 입출력 예 #2
 // [1, 2, 100, -99, 1, 2, 3]의 각 원소에 두배를 한 배열 [2, 4, 200, -198, 2, 4, 6]을 return합니다.
+
+
+
+import Foundation
+
+func solution(_ numbers: [Int]) -> [Int] {
+    return numbers.map { $0 * 2 }
+}
