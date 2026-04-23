@@ -22,3 +22,27 @@
 
 // 입출력 예 #2
 // 9 / 2 + 1 / 3 = 29 / 6입니다. 따라서 [29, 6]을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ numer1: Int, _ denom1: Int, _ numer2: Int, _ denom2: Int) -> [Int] {
+    let num = numer1 * denom2 + numer2 * denom1
+    let denom = denom1 * denom2
+
+    func gcd(_ a: Int, _ b: Int) -> Int {
+        var a = a
+        var b = b
+        
+        while b != 0 {
+            let temp = a % b
+            a = b
+            b = temp
+        }
+        return a
+    }
+    let divisor = gcd(num, denom)
+
+    return [num / divisor, denom / divisor]
+}
