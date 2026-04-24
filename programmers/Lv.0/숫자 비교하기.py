@@ -30,3 +30,8 @@
 # 입출력 예 설명 #3
 # num1이 7이고 num2가 99이므로 다릅니다. 
 # 따라서 -1을 return합니다.
+
+
+
+def solution(num1, num2):
+    return 1 if num1 == num2 else -1
