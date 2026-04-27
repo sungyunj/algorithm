@@ -26,3 +26,11 @@
 
 // 입출력 예 #3
 // num1이 1, num2가 16이므로 1 / 16 = 0.0625에 1,000을 곱하면 62.5가 되며, 정수 부분은 62입니다.
+
+
+
+import Foundation
+
+func solution(_ num1:Int, _ num2:Int) -> Int {
+    return Int((Double(num1) / Double(num2)) * 1000)
+}
