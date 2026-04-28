@@ -22,3 +22,11 @@
 
 // 입출력 예 #2
 // num1이 7, num2가 2이므로 7을 2로 나눈 몫 3을 return 합니다.
+
+
+
+import Foundation
+
+func solution(_ num1: Int, _ num2: Int) -> Int {
+    return num1 / num2
+}
