@@ -25,3 +25,5 @@
 # num1이 27, num2가 19이므로 27 * 19 = 513을 return합니다.
 
 
+def solution(num1, num2):
+    return num1 * num2
