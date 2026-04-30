@@ -23,3 +23,11 @@
 
 // 입출력 예 #2
 // num1이 27, num2가 19이므로 27 * 19 = 513을 return합니다.
+
+
+
+import Foundation
+
+func solution(_ num1:Int, _ num2:Int) -> Int {
+    return num1 * num2
+}
