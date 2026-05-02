@@ -22,3 +22,11 @@
 
 // 입출력 예 #2
 // num1이 100이고 num2가 2이므로 100 - 2 = 98을 return합니다.
+
+
+
+import Foundation
+
+func solution(_ num1:Int, _ num2:Int) -> Int {
+    return num1 - num2
+}
