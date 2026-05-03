@@ -22,3 +22,8 @@
 
 # 입출력 예 #2
 # num1이 100이고 num2가 2이므로 100 + 2 = 102를 return합니다.
+
+
+
+def solution(num1, num2):
+    return num1 + num2
