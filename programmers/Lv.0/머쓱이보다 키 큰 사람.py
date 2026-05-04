@@ -24,3 +24,8 @@
 
 # 입출력 예 #2
 # 180, 120, 140 중 190보다 큰 수는 없으므로 0명입니다.
+
+
+
+def solution(array, height):
+    return sum(1 for x in array if x > height)
