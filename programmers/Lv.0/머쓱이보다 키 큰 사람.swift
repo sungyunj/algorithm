@@ -24,3 +24,11 @@
 
 // 입출력 예 #2
 // 180, 120, 140 중 190보다 큰 수는 없으므로 0명입니다.
+
+
+
+import Foundation
+
+func solution(_ array:[Int], _ height:Int) -> Int {
+    return array.filter { $0 > height }.count
+}
