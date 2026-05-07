@@ -23,3 +23,12 @@
 
 # 입출력 예 #2
 # [0, 2, 3, 4] 에는 1이 0개 있습니다.
+
+
+
+def solution(array, n):
+    answer = 0
+    for num in array:
+        if num == n:
+            answer += 1
+    return answer
