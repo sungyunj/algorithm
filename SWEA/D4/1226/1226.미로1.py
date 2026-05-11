@@ -23,6 +23,15 @@ pic2 = "1226.2.png"
 
 
 # import sys
+# sys.stdin = open("input.txt","r")
+'''
+import sys
+import os
+
+파일 경로를 못 찾는 에러 방지를 위한 안전한 경로 설정
+file_path = os.path.join(os.path.dirname(__file__), "input.txt")
+sys.stdin = open(file_path, "r")
+'''
 
 # # 1. 재귀 깊이 제한 늘리기 (미로 탐색 필수)
 # sys.setrecursionlimit(10**6)
@@ -82,5 +91,3 @@ for test_case in range(1, T + 1):
     result = dfs(1, 1)
     print(f"#{test_case} {result}")
 '''
-
-
