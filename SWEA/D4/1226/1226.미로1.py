@@ -77,6 +77,22 @@ for _ in range(10):
     # 출력 형식: #번호 결과
     print(f"#{tc_num} {result}")
 
+#시작점을 모를 경우
+'''
+for _ in range(10):
+    tc_num = input().strip()
+    maze = [list(map(int,input().strip())) for _ in range(16)]
+
+    start_y, start_x = 0, 0
+    for i in range(16):
+        for j in range(16):
+            if maze[i][j] == 2:
+                start_y, start_x = i, j
+                break
+    result = dfs(start_y, start_x)
+    print(f"#(num) {result}")
+'''
+
 # "첫 줄에 테스트 케이스의 개수 T가 주어진다" 라고 할 때 밑에 출력 코드
 '''
 # T = int(input()) 이 있는 경우
