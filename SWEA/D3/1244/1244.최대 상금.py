@@ -36,3 +36,44 @@
 # [출력]
 # 각 테스트 케이스마다, 첫 줄에는 “#C”를 출력해야 하는데 C는 케이스 번호이다.
 # 같은 줄에 빈 칸을 하나 사이에 두고 교환 후 받을 수 있는 가장 큰 금액을 출력한다.
+
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D3/1244/input.txt","r")
+
+
+def dfs(count):
+    global max_result
+    
+    # 현재 상태를 숫자로 변환
+    current_val = int("".join(cards))
+    
+    # [핵심] 가지치기: 이미 같은 횟수(count)에서 이 숫자를 확인했다면 스킵
+    if (count, current_val) in visited:
+        return
+    visited.add((count, current_val))
+
+    # 목표 횟수에 도달하면 최대값 갱신 후 종료
+    if count == target_count:
+        max_result = max(max_result, current_val)
+        return
+
+    # 모든 가능한 두 자리의 조합을 선택하여 교환 (완전 탐색)
+    for i in range(n):
+        for j in range(i + 1, n):
+            cards[i], cards[j] = cards[j], cards[i]  # 교환
+            dfs(count + 1)                           # 재귀 호출
+            cards[i], cards[j] = cards[j], cards[i]  # 원상 복구 (Backtracking)
+
+T = int(input())
+for t in range(1, T + 1):
+    data, target_count = input().split()
+    cards = list(data)
+    target_count = int(target_count)
+    n = len(cards)
+    
+    max_result = 0
+    visited = set() # (교환횟수, 숫자상태)를 저장하여 중복 방지
+    
+    dfs(0)
+    print(f"#{t} {max_result}")
