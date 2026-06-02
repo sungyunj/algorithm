@@ -3,7 +3,7 @@
 # 세준이의 여행 계획을 자세하게 말하면 다음과 같다
 
 #     -  여행의 첫 번째 날은 집에서 출발한다. 
-#     -  i (1 ≤ i ≤ N)번째 날에는 동서남북 중 Ai 방향으로 양의 정수 거리만큼 이동한다. 거리는 양의 정수이기만 하면 마음대로 정할 수 있다.
+#     -  i (1 ≤ i ≤ N)번째 날에는 동서남북 중 A_i 방향으로 양의 정수 거리만큼 이동한다. 거리는 양의 정수이기만 하면 마음대로 정할 수 있다.
 #     -  N번째 날에는 이동을 끝낸 순간 집에 도착하여야 한다. 
 
 # 길이 N의 문자열 A가 주어질 때, 여행의 마지막 날에 집에 돌아올 수 있도록, 각 날의 이동 거리를 정할 수 있는지 판별하는 프로그램을 작성하시오.
@@ -19,3 +19,24 @@
 # [출력]
 # 각 테스트 케이스 마다 한 줄씩, 정할 수 있다면 “Yes”, 없다면 “No” 를 출력하라. 
 
+
+
+# import sys
+# sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D3/26389/1_sample_input.txt","r")
+
+TC = int(input())
+
+for i in range(TC):
+    A = input().strip()
+
+    # 각 방향이 문자열에 존재하는지 확인 (True / False)
+    has_N = 'N' in A
+    has_S = 'S' in A
+    has_E = 'E' in A
+    has_W = 'W' in A
+
+    # N과 S의 존재 여부가 같고, E와 W의 존재 여부가 같아야만 집으로 돌아올 수 있음
+    if (has_N == has_S) and (has_E == has_W):
+        print("Yes")
+    else:
+        print("No")
