@@ -16,3 +16,34 @@
 
 # [출력]
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다.
+
+
+
+# import sys
+# sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D2/5186/sample_input.txt", "r")
+
+T = int(input())
+
+for tc in range(1, T + 1):
+    N = float(input())
+    
+    result = ""
+    cnt = 0  # 자릿수를 세기 위한 변수
+    
+    # N이 0이 될 때까지 반복
+    while N > 0:
+        N *= 2
+        cnt += 1
+        
+        # 13자리 이상 필요해지면 바로 overflow 처리 후 종료
+        if cnt >= 13:
+            result = "overflow"
+            break
+            
+        if N >= 1:
+            result += "1"
+            N -= 1  # 정수 부분 1 빼줌
+        else:
+            result += "0"
+            
+    print(f"#{tc} {result}")
