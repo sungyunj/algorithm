@@ -13,3 +13,23 @@
 
 # [출력]
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다.
+
+
+
+# import sys
+# sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D2/5185/sample_input.txt","r")
+
+T = int(input())
+
+for tc in range(1, T + 1):
+    # N: 16진수의 길이, hex_str: 16진수 문자열
+    N, hex_str = input().split()
+    
+    result = ""
+    for char in hex_str:
+        # 16진수 글자를 10진수로 바꾼 뒤, 4자리 2진수(0으로 채움)로 변환
+        decimal_num = int(char, 16)
+        binary_str = format(decimal_num, '04b')
+        result += binary_str
+        
+    print(f"#{tc} {result}")
