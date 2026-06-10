@@ -29,3 +29,52 @@
 # [출력]
 # #과 1번부터인 테스트케이스 번호, 빈칸에 이어 계산결과를 정수로 출력하거나 또는 ‘error’를 출력한다.
 
+
+
+
+# import sys
+# sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D2/4874/sample_input.txt","r")
+
+T = int(input())
+
+for tc in range(1, T + 1):
+    code = input().split()
+    stack = []
+    error_flag = False
+
+    for char in code:
+        # 1. 숫자일 경우 스택에 push
+        if char.isdigit():
+            stack.append(int(char))
+        # 2. 연산자일 경우 (+, -, *, /)
+        elif char in ["+", "-", "*", "/"]:
+            # 피연산자가 2개 미만이면 에러
+            if len(stack) < 2:
+                error_flag = True
+                break
+            # 스택의 특성. 먼저 pop되는 숫자가 오른쪽 피연산자(b)가 됨.
+            b = stack.pop()
+            a = stack.pop()
+
+            if char == "+":
+                stack.append(a + b)
+            elif char == "-":
+                stack.append(a - b)
+            elif char == "*":
+                stack.append(a * b)
+            elif char == "/":
+                stack.append(a // b)
+        # 3. '.' 일 경우 출력
+        elif char == ".":
+            if len(stack) != 1:
+                error_flag = True
+            break
+        # 4. 정의되지 않은 문자가 들어왔을 경우 (예외 처리)
+        else:
+            error_flag = True
+            break
+    
+    if error_flag:
+        print(f"#{tc} error")
+    else:
+        print(f"#{tc} {stack[0]}")
