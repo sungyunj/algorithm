@@ -15,3 +15,21 @@
 # [출력]
 # #과 1번부터인 테스트케이스 번호, 빈칸에 이어 답을 출력한다.
 
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D2/4873/sample_input.txt","r")
+
+T = int(input())
+
+for tc in range(1, T + 1):
+    string = input()
+    stack = []
+
+    for char in string:
+        # 1. 스택이 비어있지 않고, 맨 뒤 원소가 현재 문자와 같다면 터뜨리기
+        if stack and stack[-1] == char:
+            stack.pop()
+        # 2. 스택이 비어있거나, 맨 위 원소와 다르다면 쌓기 
+        else:
+            stack.append(char)
+
+    print(f"#{tc} {len(stack)}")
