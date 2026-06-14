@@ -17,3 +17,46 @@ pic1 = '4871.png'
 
 # [출력]
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다.
+
+
+
+def dfs(current, target):
+    # 현재 노드가 목적지라면 경로가 존재하는 것이므로 1 반환
+    if current == target:
+        return 1
+    
+    # 현재 노드 방문 처리
+    visited[current] = True
+    
+    # 현재 노드와 연결된 다음 노드들을 확인
+    for next_node in graph[current]:
+        if not visited[next_node]: # 아직 방문하지 않은 노드라면
+            # 재귀적으로 탐색을 이어감
+            if dfs(next_node, target) == 1:
+                return 1 # 목적지를 찾았다면 즉시 1을 리턴하며 탈출
+                
+    return 0 # 모든 연결된 노드를 방문해도 목적지를 못 찾았다면 0 반환
+
+
+T = int(input()) # 테스트 케이스 개수 입력
+
+for tc in range(1, T + 1):
+    # V: 노드 개수, E: 간선 개수
+    V, E = map(int, input().split())
+    
+    # 인접 리스트 초기화 (노드 번호가 1부터 시작하므로 V+1 크기로 생성)
+    graph = [[] for _ in range(V + 1)]
+    visited = [False] * (V + 1)
+    
+    # 간선 정보 입력 받기
+    for _ in range(E):
+        u, v = map(int, input().split())
+        graph[u].append(v) # 방향성 그래프 (u -> v)
+        
+    # S: 출발 노드, G: 도착 노드
+    S, G = map(int, input().split())
+    
+    # DFS 탐색 시작
+    result = dfs(S, G)
+    
+    print(f"#{tc} {result}")
