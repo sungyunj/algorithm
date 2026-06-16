@@ -15,4 +15,29 @@
 
 
 # [출력]
-# 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다.
+# 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다. 
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D2/4869/sample_input.txt","r")
+
+T = int(input())
+
+for tc in range(1, T + 1):
+    N = int(input())
+    
+    # N을 10으로 나눈 값을 크기로 사용 (N이 300까지이므로 최대 index는 30)
+    size = N // 10
+    
+    # DP 테이블 초기화 (size 크기만큼 공간 필요)
+    dp = [0] * (size + 1)
+    
+    # 초기 조건 설정
+    dp[1] = 1
+    if size >= 2:
+        dp[2] = 3
+        
+    # 점화식을 이용한 상점식(Bottom-up) DP 진행
+    for i in range(3, size + 1):
+        dp[i] = dp[i-1] + (2 * dp[i-2])
+        
+    print(f"#{tc} {dp[size]}")
