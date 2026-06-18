@@ -14,3 +14,32 @@
 
 # [출력]
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다.
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D2/4866/sample_input.txt","r")
+
+T = int(input())
+for tc in range(1, T + 1):
+    line = input()
+    stack = []
+    result = 1
+
+    for char in line:
+        # 1. 여는 괄호는 스택에 저장
+        if char =='{' or char =='(':
+            stack.append(char)
+        # 2. 닫는 괄호들
+        elif char == '}':
+            if not stack or stack.pop() != '{':
+                result = 0
+                break
+        
+        elif char == ')':
+            if not stack or stack.pop() != '(':
+                result = 0
+                break
+# 3. 문자열을 다 돌았는데 스택에 여는 괄호가 남아있는 경우
+    if stack:
+        result = 0
+
+    print(f"#{tc} {result}")
