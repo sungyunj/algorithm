@@ -12,3 +12,28 @@
 
 # [출력]
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다.
+
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D2/4865/sample_input.txt","r")
+
+T = int(input())
+
+for tc in range(1, T+1):
+    str1 = input()
+    str2 = input()
+
+    # 1. str1의 글자들을 key로 가지는 딕셔너리 초기화
+    char_count = {}
+    for char in str1:
+        char_count[char] = 0
+
+    # 2. str2를 돌면서 str1에 포함된 글자의 개수 카운트
+    for char in str2:
+        if char in char_count:
+            char_count[char] += 1
+    
+    # 3. 딕셔너리의 value 중 가장 큰 값 찾기
+    max_count = max(char_count.values())
+
+    print(f"#{tc} {max_count}")
