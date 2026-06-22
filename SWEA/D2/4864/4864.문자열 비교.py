@@ -21,3 +21,22 @@
 # [출력]
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다.
 
+
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D2/4864/Sample_input1.txt","r")
+
+
+T = int(input())
+
+for tc in range(1, T + 1):
+    str1 = input().strip()  # 찾을 패턴 문자열
+    str2 = input().strip()  # 전체 문자열
+    
+    # str1이 str2에 포함되어 있는지 확인
+    if str1 in str2:
+        result = 1
+    else:
+        result = 0
+
+    print(f"#{tc} {result}")
