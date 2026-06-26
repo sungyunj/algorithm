@@ -25,3 +25,43 @@
 
 # [출력]
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다.
+
+
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D2/4861/sample_input.txt", "r")
+
+T = int(input())
+
+for tc in range(1, T + 1):
+    N, M = map(int, input().split())
+    
+    # N x N 글자판(문자열 리스트)
+    board = [input() for _ in range(N)]
+    ans = ""
+
+    # 1. 가로 방향 탐색
+    for i in range(N):
+        # 길이가 M인 구간 슬라이딩 윈도우처럼 이동
+        for j in range(N - M + 1):
+            target = board[i][j : j + M]
+            if target == target[::-1]:  # 회문 확인
+                ans = target
+                break
+        if ans: break  # 회문 찾으면 탈출
+
+    # 가로에서 못 찾았을 경우에만 세로 방향 탐색
+    if not ans:
+        for j in range(N):  # 열 고정
+            for i in range(N - M + 1):  # 행 시작 위치 이동
+                # 세로 문자열 만들기
+                target = ""
+                for k in range(M):
+                    target += board[i + k][j]
+                
+                if target == target[::-1]:  # 회문 확인
+                    ans = target
+                    break
+            if ans: break
+
+    print(f"#{tc} {ans}")
