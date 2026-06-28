@@ -22,3 +22,45 @@
 
 # [출력]
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, A, B, 0 중 하나를 출력한다.
+
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D2/4839/sample_input.txt","r")
+
+def count_search(P, target):
+    l = 1
+    r = P
+    count = 0
+    
+    while l <= r:
+        c = int((l + r) / 2)
+        count += 1  # 탐색 횟수 증가
+        
+        if c == target:
+            return count
+        elif c < target:
+            l = c  # 목적지가 중간보다 오른쪽에 있으면 왼쪽 경계를 c로 변경
+        else:
+            r = c  # 목적지가 중간보다 왼쪽에 있으면 오른쪽 경계를 c로 변경
+            
+    return count
+
+T = int(input())
+
+for tc in range(1, T + 1):
+    # P: 전체 쪽수, Pa: A가 찾을 쪽, Pb: B가 찾을 쪽
+    P, Pa, Pb = map(int, input().split())
+    
+    # A와 B의 탐색 횟수 계산
+    cnt_A = count_search(P, Pa)
+    cnt_B = count_search(P, Pb)
+    
+    # 승자 판별 (탐색 횟수가 적은 사람이 승리)
+    if cnt_A < cnt_B:
+        result = 'A'
+    elif cnt_A > cnt_B:
+        result = 'B'
+    else:
+        result = 0
+        
+    print(f"#{tc} {result}")
