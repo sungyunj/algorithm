@@ -21,3 +21,34 @@
 
 # [출력]
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다.
+
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D2/4836/sample_input.txt","r")
+
+T = int(input())
+
+for tc in range(1, T + 1):
+    N = int(input())
+
+    # 1. 10x10 격자판을 0으로 초기화
+    grid = [[0] * 10 for _ in range(10)]
+
+    # 보라색 칸의 수를 저장할 변수
+    puple_c = 0
+
+    for _ in range(N):
+        r1, c1, r2, c2, color = map(int, input().split())
+
+        # 2. 지정된 영역에 색칠하기 (r1부터 r2까지, c1부터 c2까지)
+        for r in range(r1, r2 + 1):
+            for c in range(c1, c2 + 1):
+                grid[r][c] += color
+    
+    # 3. 전체 격자를 순회하며 보라색(3)이 된 칸의 개수 세기
+    for r in range(10):
+        for c in range(10):
+            if grid[r][c] == 3:
+                puple_c += 1
+
+    print(f"#{tc} {puple_c}")
