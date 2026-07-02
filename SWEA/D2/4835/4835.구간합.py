@@ -24,3 +24,34 @@
 # [출력]
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다.
 
+
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D2/4835/sample_input.txt","r")
+
+T = int(input())
+
+for tc in range(1, T + 1):
+    # N(정수의 개수), M(구간의 크기)
+    N, M = map(int, input().split())
+    
+    # N개의 정수 배열 입력
+    arr = list(map(int, input().split()))
+    
+    # 최댓값과 최솟값을 저장할 변수 초기화
+    max_sum = float('-inf')
+    min_sum = float('inf')
+    
+    # 구간합 구하기
+    for i in range(N - M + 1):
+        # i부터 i+M 전까지의 부분 배열의 합 계산
+        current_sum = sum(arr[i:i+M])
+        
+        # 최댓값과 최솟값 갱신
+        if current_sum > max_sum:
+            max_sum = current_sum
+        if current_sum < min_sum:
+            min_sum = current_sum
+
+    result = max_sum - min_sum
+    print(f"#{tc} {result}")
