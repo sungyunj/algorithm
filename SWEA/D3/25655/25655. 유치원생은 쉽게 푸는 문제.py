@@ -34,3 +34,20 @@
 # [출력]
 # 각 테스트 케이스마다, 닫힌 공간의 개수가 X인 가장 작은 음이 아닌 정수를 출력한다.
  
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D3/25655/1_sample_input.txt","r")
+
+T = int(input())
+
+for _ in range(T):
+    X = int(input())
+    
+    if X == 1:
+        print(0)
+    elif X % 2 == 1:
+        # 홀수: 맨 앞 '4', 나머지 '8'
+        print('4' + '8' * ((X - 1) // 2))
+    else:
+        # 짝수: 전부 '8'
+        print('8' * (X // 2))
