@@ -19,28 +19,48 @@
 import sys
 sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D3/25469/1_sample_input.txt","r")
 
+import sys
+input = sys.stdin.readline
+
 T = int(input())
 
-for test_case in range(1, T + 1):
+for _ in range(T):
     H, W = map(int, input().split())
-    
-    # 격자판 입력받기
-    grid = [input().strip() for _ in range(H)]
-    
-    # 검은색('#')이 존재하는 행과 열의 번호를 저장할 세트
-    black_rows = set()
-    black_cols = set()
-    
-    for r in range(H):
-        for c in range(W):
-            if grid[r][c] == '#':
-                black_rows.add(r)
-                black_cols.add(c)
-    
-    # 검은색이 아예 없으면 0, 있으면 둘 중 최솟값
-    if not black_rows:
-        ans = 0
-    else:
-        ans = min(len(black_rows), len(black_cols))
-        
-    print(f"#{test_case} {ans}")
+
+    # graph[i] : i번 행과 연결된(검은색인) 열들
+    graph = [[] for _ in range(H)]
+
+    for i in range(H):
+        s = input().strip()
+        for j, c in enumerate(s):
+            if c == '#':
+                graph[i].append(j)
+
+    # match[j] = j번 열과 매칭된 행 번호
+    # -1이면 아직 매칭되지 않음
+    match = [-1] * W
+
+    def dfs(v):
+        for nxt in graph[v]:
+            if visited[nxt]:
+                continue
+            visited[nxt] = True
+
+            # 비어있는 열이거나,
+            # 기존 매칭을 다른 곳으로 옮길 수 있으면 매칭 성공
+            if match[nxt] == -1 or dfs(match[nxt]):
+                match[nxt] = v
+                return True
+
+        return False
+
+    ans = 0
+
+    # 모든 행에서 증가 경로 탐색
+    for i in range(H):
+        visited = [False] * W
+        if dfs(i):
+            ans += 1
+
+    # 최대 매칭 = 최소 정점 커버 = 최소 연산 횟수
+    print(ans)
