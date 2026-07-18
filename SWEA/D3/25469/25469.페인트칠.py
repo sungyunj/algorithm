@@ -14,3 +14,33 @@
 # [출력]
 # 각 테스트 케이스마다, 주어진 격자판 상태를 만들기 위해 필요한 최소 연산 횟수를 한 줄에 하나씩 출력한다.
 
+
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D3/25469/1_sample_input.txt","r")
+
+T = int(input())
+
+for test_case in range(1, T + 1):
+    H, W = map(int, input().split())
+    
+    # 격자판 입력받기
+    grid = [input().strip() for _ in range(H)]
+    
+    # 검은색('#')이 존재하는 행과 열의 번호를 저장할 세트
+    black_rows = set()
+    black_cols = set()
+    
+    for r in range(H):
+        for c in range(W):
+            if grid[r][c] == '#':
+                black_rows.add(r)
+                black_cols.add(c)
+    
+    # 검은색이 아예 없으면 0, 있으면 둘 중 최솟값
+    if not black_rows:
+        ans = 0
+    else:
+        ans = min(len(black_rows), len(black_cols))
+        
+    print(f"#{test_case} {ans}")
