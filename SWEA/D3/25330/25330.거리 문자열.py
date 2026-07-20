@@ -13,3 +13,37 @@
 # [출력]
 # 각 테스트 케이스마다, S가 위의 조건들을 모두 만족하면 “yes”를, 그렇지 않다면 “no”를 출력한다.
 
+
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D3/25330/1_sample_input.txt","r")
+
+T = int(input())
+
+for _ in range(T):
+    S = input().strip()
+
+    # pos[d] : 숫자 d가 등장한 위치들
+    pos = [[] for _ in range(10)]
+
+    for i, c in enumerate(S):
+        pos[int(c)].append(i)
+
+    ok = True
+
+    for d in range(10):
+        # 등장하지 않은 숫자는 조건 만족
+        if len(pos[d]) == 0:
+            continue
+
+        # 등장했다면 반드시 정확히 두 번 등장해야 함
+        if len(pos[d]) != 2:
+            ok = False
+            break
+
+        # 두 숫자 사이의 거리 확인
+        if pos[d][1] - pos[d][0] != d + 1:
+            ok = False
+            break
+
+    print("yes" if ok else "no")
