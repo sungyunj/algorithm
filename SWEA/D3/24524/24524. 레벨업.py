@@ -32,3 +32,32 @@
 
 
 # 첫 번째 예제: X_4를 방문하지 않으면 총 이동 거리는 |X_2 - X_1| + |X_3 - X_2| + |X_5 - X_3| = 2+3+1 = 6으로 최소이다.
+
+
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D3/24524/1_sample_input.txt","r")
+T = int(input())
+
+for _ in range(T):
+    N = int(input())
+    X = list(map(int, input().split()))
+
+    # 기본 이동 거리
+    total = 0
+    for i in range(N - 1):
+        total += abs(X[i + 1] - X[i])
+
+    answer = total
+
+    # 하나의 중간 체크포인트를 생략
+    for i in range(1, N - 1):
+        dist = (
+            total
+            - abs(X[i] - X[i - 1])
+            - abs(X[i + 1] - X[i])
+            + abs(X[i + 1] - X[i - 1])
+        )
+        answer = min(answer, dist)
+
+    print(answer)
