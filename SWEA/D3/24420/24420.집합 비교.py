@@ -22,4 +22,21 @@
 # 각 테스트 케이스마다, 집합 A와 B 사이의 관계를 나타내는 문자를, 한 줄에 하나씩 출력한다.
 
 
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D3/24420/1_sample_input.txt", "r")
 
+T = int(input())
+
+for _ in range(T):
+    na, nb = map(int, input().split())
+    A = set(map(int, input().split()))
+    B = set(map(int, input().split()))
+
+    if A == B:
+        print("=")
+    elif A < B:   # A가 B의 진부분집합
+        print("<")
+    elif A > B:   # B가 A의 진부분집합
+        print(">")
+    else:
+        print("?")
