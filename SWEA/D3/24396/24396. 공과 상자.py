@@ -16,3 +16,28 @@
 # [출력]
 
 # 각 테스트 케이스마다, 가능한 최대 점수 합을 출력한다.
+
+
+
+import sys
+
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D3/24396/1_sample_input.txt","r")
+
+T = int(input())
+
+for _ in range(T):
+    B, W, X, Y, Z = map(int, input().split())
+
+    # 가능한 최소한의 같은 색 배치
+    if B >= W:
+        ans = (B - W) * X + 2 * W * Z
+    else:
+        ans = (W - B) * Y + 2 * B * Z
+
+    # 검은-검은 + 흰-흰 한 쌍을 추가했을 때의 이득
+    gain = X + Y - 2 * Z
+
+    if gain > 0:
+        ans += min(B, W) * gain
+
+    print(ans)
