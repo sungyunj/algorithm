@@ -19,7 +19,6 @@
 # [출력]
 # 각 테스트 케이스마다, 문자열 S의 물음표를 L 또는 R로 적절히 대체하여 로봇과 원점 사이의 최대 거리를 최대화했을 때, 이 최대 거리를 한 줄에 하나씩 출력한다.
 
- 
 
 # 입력 예제            
 # 3
@@ -36,3 +35,34 @@
 # 예제 1: “LLLL” 또는 “RRRR”
 
 # 예제 2: “LRRRRRRLL”로 대체하면, 로봇의 좌표는 [-1, 0, 1, 2, 3, 4, 5, 4, 3]이고, 각각 원점으로부터의 거리는 [1, 0, 1, 2, 3, 4, 5, 4, 3]이므로, 원점에서부터의 최대 거리는 5이다. 
+
+
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D3/24001/1_sample_input.txt","r")
+
+T = int(input())
+
+for _ in range(T):
+    S = input().strip()
+
+    pos_r = 0
+    pos_l = 0
+    answer = 0
+
+    for c in S:
+        # 모든 ?를 R로 바꾸는 경우
+        if c == 'L':
+            pos_r -= 1
+        else:
+            pos_r += 1
+
+        # 모든 ?를 L로 바꾸는 경우
+        if c == 'R':
+            pos_l += 1
+        else:
+            pos_l -= 1
+
+        answer = max(answer, abs(pos_r), abs(pos_l))
+
+    print(answer)
