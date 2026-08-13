@@ -33,3 +33,44 @@
 # 6
 # 1 4 2 6 3 5
 # 2 3 1 6 5 4
+
+
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D3/23791/1_sample_input.txt","r")
+
+T = int(input())
+
+for _ in range(T):
+    N = int(input())
+    A = list(map(int, input().split()))
+    B = list(map(int, input().split()))
+
+    used = [False] * (N + 1)
+    answer = [''] * N
+
+    a = 0
+    b = 0
+
+    for turn in range(N):
+        if turn % 2 == 0:
+            # A팀 차례
+            while used[A[a]]:
+                a += 1
+
+            player = A[a]
+            used[player] = True
+            answer[player - 1] = 'A'
+            a += 1
+
+        else:
+            # B팀 차례
+            while used[B[b]]:
+                b += 1
+
+            player = B[b]
+            used[player] = True
+            answer[player - 1] = 'B'
+            b += 1
+
+    print(''.join(answer))
