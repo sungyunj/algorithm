@@ -35,3 +35,35 @@
 # red purple        C
 # red green         X
 # red yellow
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D3/23003/1_sample_input.txt","r")
+
+
+T = int(input())
+
+colors = {
+    "red": 0,
+    "orange": 1,
+    "yellow": 2,
+    "green": 3,
+    "blue": 4,
+    "purple": 5
+}
+
+for _ in range(T):
+    a, b = input().split()
+
+    x = colors[a]
+    y = colors[b]
+
+    d = abs(x - y)
+
+    if d == 0:
+        print("E")
+    elif d == 1 or d == 5:
+        print("A")
+    elif d == 3:
+        print("C")
+    else:
+        print("X")
