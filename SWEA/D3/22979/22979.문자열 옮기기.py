@@ -30,3 +30,23 @@
 # samsung                             ngsamsu
 # 5
 # 3 2 -6 4 2
+
+
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D3/22979/1_sample_input.txt","r")
+T = int(input())
+
+for _ in range(T):
+    S = input()
+    K = int(input())
+    operations = list(map(int, input().split()))
+
+    move = sum(operations)
+    n = len(S)
+
+    move %= n
+
+    S = S[move:] + S[:move]
+
+    print(S)
