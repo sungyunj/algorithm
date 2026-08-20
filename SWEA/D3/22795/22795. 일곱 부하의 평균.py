@@ -24,3 +24,25 @@
 # 2                                   7
 # 1 2 3 4 5 6                         305
 # 100 100 200 200 300 300
+
+import sys
+sys.stdin = open("/Users/tjddbsj/Desktop/github/algorithm/algorithm/SWEA/D3/22795/1_sample_input.txt","r")
+
+def solve():
+    t = int(input())
+    ans = []
+
+    for _ in range(t):
+        heights = list(map(int, input().split()))
+        total = sum(heights)
+        mx = max(heights)
+
+        x = mx + 1
+        while (total + x) % 7 != 0:
+            x += 1
+
+        ans.append(str(x))
+
+    print("\n".join(ans))
+
+solve()
