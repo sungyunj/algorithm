@@ -21,7 +21,6 @@
 # 각 테스트 케이스마다, 모든 경우에 대해 고객이 단제품 대신 묶음 세트를 하나 더 구매하는 자연수 X가 존재하면 “yes”를, 존재하지 않는다면 “no”를 출력한다.
 
  
-
 # 입력 예제                   출력 예제
 # 3                         no
 # 1 2                       yes
@@ -33,4 +32,24 @@
 
 # 위에 명시한 X 외의 가능한 X가 존재할 수 있다.
 
- 
+import sys
+
+
+def solve():
+    data = sys.stdin.read().strip().split()
+    if not data:
+        return
+    it = iter(data)
+    t = int(next(it))
+    out_lines = []
+    for _ in range(t):
+        L = int(next(it)); R = int(next(it))
+        if R <= 2 * L - 1:
+            out_lines.append("yes")
+        else:
+            out_lines.append("no")
+    sys.stdout.write("\n".join(out_lines))
+
+
+if __name__ == '__main__':
+    solve()
